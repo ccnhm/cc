@@ -5,8 +5,8 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 		<title>《猫头鹰》系列</title>
-		<script type="text/javascript" src="https://share.jaadee.net/h5/js/jquery-1.10.2.js"></script>
-		<script type="text/javascript" src="https://share.jaadee.net/h5/js/get_set_url.js"></script>
+		<script type="text/javascript" src="/h5/js/jquery-1.10.2.js"></script>
+		<script type="text/javascript" src="/h5/js/get_set_url.js"></script>
 		<script src="https://res.jaadee.net/rn/JaadeeAppJsBridge.js?v=1.4"></script>
 
 		<style>
@@ -80,7 +80,7 @@
 	</head>
 
 	<body>
-		<script type="text/javascript" src="https://share.jaadee.net/h5/js/flexible.debug.js"></script>
+		<script type="text/javascript" src="/h5/js/flexible.debug.js"></script>
 		
 		<div class="head">
 			<style type="text/css">
@@ -188,19 +188,19 @@
 		<!--<ul class="nav-box clear">
 			<li class="nav-item">
 				<a href="javascript:void()" class="foot1">
-					<img src="https://share.jaadee.net/h5/2018618/zhc/img/foot-icon1.png" alt="" class="icon1 icon">
+					<img src="/h5/2018618/zhc/img/foot-icon1.png" alt="" class="icon1 icon">
 					<p class="text">珠宝欢乐购</p>
 				</a>
 			</li>
 			<li class="nav-item">
 				<a href="javascript:void()" class="foot2">
-					<img src="https://share.jaadee.net/h5/2018618/zhc/img/foot-icon2.png" alt="" class="icon3 icon">
+					<img src="/h5/2018618/zhc/img/foot-icon2.png" alt="" class="icon3 icon">
 					<p class="text"> 一口价</p>
 				</a>
 			</li>
 			<li class="nav-item">
 				<a href="javascript:void()" class="foot3">
-					<img src="https://share.jaadee.net/h5/2018618/zhc/img/foot-icon3.png" alt="" class="icon2 icon">
+					<img src="/h5/2018618/zhc/img/foot-icon3.png" alt="" class="icon2 icon">
 					<p class="text">领取卡包</p>
 				</a>
 			</li>
@@ -213,14 +213,14 @@
 		
 			//var share = getUrlParam("share");
 			if(RNJsBriageObject.isInApp) {
-				$(".foot1").attr("href","https://share.jaadee.net/h5/2018618/zhc/mzhc.html")
-				$(".foot2").attr("href","https://share.jaadee.net/h5/2018618/ykj/mykj.html")
-				$(".foot3").attr("href","https://share.jaadee.net/h5/Wuyi18/bind.html")
+				$(".foot1").attr("href","/h5/2018618/zhc/mzhc.html")
+				$(".foot2").attr("href","/h5/2018618/ykj/mykj.html")
+				$(".foot3").attr("href","/h5/Wuyi18/bind.html")
 			} else {
 				$(".head").show()
-				$(".foot1").attr("href","https://share.jaadee.net/h5/2018618/zhc/mzhc.html?share=1")
-				$(".foot2").attr("href","https://share.jaadee.net/h5/2018618/ykj/mykj.html?share=1")
-				$(".foot3").attr("href","https://share.jaadee.net/h5/Wuyi18/bind.html?share=1")
+				$(".foot1").attr("href","/h5/2018618/zhc/mzhc.html?share=1")
+				$(".foot2").attr("href","/h5/2018618/ykj/mykj.html?share=1")
+				$(".foot3").attr("href","/h5/Wuyi18/bind.html?share=1")
 			}
 			
 		
@@ -236,8 +236,8 @@
 			RNJsBriageObject.shareInfo = {
 				name: '万物皆有其灵|翡翠与檀木的旷世奇缘',
 				desc: '6月19日—6月24日，杨相象原创首饰《猫头鹰》系列限量首发。',
-				url: 'https://share.jaadee.net/h5/2018618/mty/mmty.html',
-				logo: 'https://share.jaadee.net/h5/2018618/mty/img/share.jpg'
+				url: '/h5/2018618/mty/mmty.html',
+				logo: '/h5/2018618/mty/img/share.jpg'
 			};
 			//微信分享
 
@@ -247,10 +247,10 @@
 				var title = "万物皆有其灵|翡翠与檀木的旷世奇缘";
 				var desc = "6月19日—6月24日，杨相象原创首饰《猫头鹰》系列限量首发。";
 				var linkurl = encodeURIComponent(location.href.split('#')[0]);
-				var imgurl = "https://share.jaadee.net/h5/2018618/mty/img/share.jpg";
+				var imgurl = "/h5/2018618/mty/img/share.jpg";
 				$.ajax({
 					type: "post",
-					url: "https://share.jaadee.net/h5/active/getShareInfo",
+					url: "/h5/active/getShareInfo",
 					data: {
 						imgurl: imgurl,
 						link: linkurl,
