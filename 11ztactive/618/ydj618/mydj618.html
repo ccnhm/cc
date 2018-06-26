@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+		<title>《关公》系列</title>
+		<script type="text/javascript" src="/h5/js/jquery-1.10.2.js"></script>
+		<script type="text/javascript" src="/h5/js/get_set_url.js"></script>
+		<script src="https://res.jaadee.net/rn/JaadeeAppJsBridge.js?v=1.4"></script>
+		<link rel="stylesheet" href="/h5/css/swiper.min.css" />
+		<script type="text/javascript" src="/h5/js/swiper.min.js" ></script>
+
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			
+			.head {
+				display: none;
+			}
+			
+			body {
+				background: #0f0d0c;
+			}
+			
+			img {
+				display: block;
+				width: 100%;
+			}
+			
+			.spbox {
+				margin-top: 0.4rem;
+				position: relative;
+			}
+			.spbox video{width:100%;display: block;}
+			.play{width: 1rem;position: absolute;top: 50%;left: 50%;margin-top: -0.5rem;margin-left: -0.5rem;}
+			.clear {
+				clear: both;
+			}
+			
+			
+			.copright {
+				font-size: 0.24rem;
+				color: #727171;
+				margin-top: 1.6rem;
+				text-align: center;
+				margin-bottom: 1.733333rem;
+			}
+			
+			
+			
+			.content {
+				padding: 0 3%;
+			}
+			
+			.sw{background: url(img/m__08.jpg) center;background-size: 100% 7.3rem ; height: 7.3rem;padding-top: 2.5rem;position: relative;}
+			.swiper-slide{}
+			.bg-black{background: #000;}
+			.tz img{ pointer-events: none; }
+			/*底部*/
+			.nav-box {width: 100%;background: #eee;border-top: 1px solid #d4d3d3;position: fixed;left: 0;bottom: 0;z-index: 99;}
+			.nav-box .nav-item {width: 33.3333%;height: 1.44rem;border-right: 0.02rem solid #d4d3d3;float: left;box-sizing: border-box;}
+			ul, li {list-style: none;}
+			.nav-box .nav-item a {text-decoration: none;display: block;width: 100%;height: 100%;display: flex;flex-direction: column;justify-content: center;align-items: center;}
+			.nav-box .nav-item .icon {margin-bottom: 0.05rem;width: 0.666666rem}
+			.nav-box .nav-item .text {font-size: 0.293333rem;color: #6b6c6b;}
+			.sw .swiper-button-next{display: block;position: absolute;width: 0.266666rem;height: 0.666666rem;opacity: 1;background-size: 100%;background-image: url(img/m__right.jpg);margin-top: 0.6rem;} 
+			.sw .swiper-button-prev{display: block;position: absolute;width: 0.266666rem;height: 0.666666rem;opacity: 1;background-size: 100%;background-image: url(img/m__left.jpg);margin-top: 0.6rem}
+			
+		</style>
+	</head>
+
+	<body>
+		<script type="text/javascript" src="/h5/js/flexible.debug.js"></script>
+
+		<div class="head">
+			<style type="text/css">
+				.fiextop {
+					width: 100%;
+					position: relative;
+				}
+				
+				.fiextop a {
+					width: 100%;
+				}
+				
+				.fiextop img {
+					width: 100%;
+				}
+				
+				.fiextop .close {
+					position: absolute;
+					z-index: 1;
+					width: 20%;
+					height: 100%;
+					left: 0;
+					top: 0;
+				}
+			</style>
+			<div class="fiextop">
+				<a target="_blank" href="https://app.jaadee.com/do.php?canal=huodong">
+					<img src="https://appres.jaadee.com/apps/images/fiexdtop.jpg">
+					<!--img src="https://apps.jaadee.com/static/images/ten-downapp.jpg" / -->
+				</a>
+				<div class="close" id="closeappimg"></div>
+			</div>
+			<script>
+				$("#closeappimg").click(function() {
+					$(".fiextop").remove();
+				});
+			</script>
+		</div>
+
+		<div class="banner">
+			<img src="img/m__01.jpg">
+		</div>
+		<div class="content">
+			<div class="spbox">
+				<video id="sp" poster="/h5/2018618/ydj618/img/mspslt.png"  preload="load"  name="media" x-webkit-airplay="true" playsinline="" webkit-playsinline="true" x5-video-player-type="h5">
+					<source src="https://appvideo.jaadee.net/2018/06/guanyu.mp4">
+				</video>
+				<img src="img/pc__zt.png" class="play" id="zt">
+				<script>
+					
+						var video1=document.getElementById("sp");
+						var video2=document.getElementById("zt");
+						
+						video1.addEventListener('pause', function() {
+					document.getElementById("zt").style.display = "block";
+				})
+						video2.onclick=function(){
+								    if(video1.paused){
+								        video1.play();
+								        document.getElementById("zt").style.display="none";
+								    }else{
+								        video1.pause();
+								        document.getElementById("zt").style.display="block";
+								    }
+								}
+						
+							
+							video1.onclick=function(){
+							    if(video1.paused){
+							        video1.play();
+							        document.getElementById("zt").style.display="none";
+							    }else{
+							        video1.pause();
+							        document.getElementById("zt").style.display="block";
+							    }
+							}
+					
+				</script>
+			</div>
+		</div>
+		<img src="img/m__02.jpg">
+		<div class="content">
+			<img src="img/m__03.jpg">
+			<img src="img/m__04.jpg">
+			<img src="img/m__05.jpg">
+			<img src="img/m__yw.jpg">
+			<img src="img/m__06.jpg">
+			<img src="img/m__07.jpg">
+		</div>
+		<div class="sw">
+			<div class="content" style="padding: 0 0 0 3%;">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide"><img src="img/04.jpg"></div>
+					    <div class="swiper-slide"><img src="img/05.jpg"></div>
+					    <div class="swiper-slide"><img src="img/06.jpg"></div>
+					    <div class="swiper-slide"><img src="img/01.jpg"></div>
+					    <div class="swiper-slide"><img src="img/02.jpg"></div>
+					    <div class="swiper-slide"><img src="img/03.jpg"></div>
+					    
+					</div>
+				</div>
+				<div class="swiper-button-prev"></div>
+				<div class="swiper-button-next"></div>
+					<script> 
+					var mySwiper = new Swiper('.swiper-container', {
+						autoplay: 5000,//可选选项，自动滑动
+						slidesPerView:2.2,
+						//slidesPerGroup : 3,
+						prevButton:'.swiper-button-prev',
+						nextButton:'.swiper-button-next',
+						autoplayDisableOnInteraction : false
+					})
+					</script>
+			</div>		
+		</div>
+		<div class="bg-black">
+			<div class="content">
+				<img src="img/m__09.jpg">
+				<img src="img/m__10.jpg">
+				<img src="img/m__11.jpg">
+				<div class="tz" onclick="tz('4','178605','YDJ034644','htpps://res.jaadee.net/goods/thumb/4-178605.jpg','34644')"><img src="img/m__12.jpg"></div>
+				<div class="tz" onclick="tz('4','178604','YDJ034641','htpps://res.jaadee.net/goods/thumb/4-178604.jpg','34641')"><img src="img/m__13.jpg"></div>
+				
+				
+			</div>
+		</div>
+		
+		<div class="copright">云南翡翠王朝网络科技有限公司©版权所有</div>
+
+		<div class="returnTop" onclick="ToTop();"></div>
+		<ul class="nav-box clear">
+			<li class="nav-item">
+				<a href="javascript:void()" class="foot1">
+					<img src="/h5/2018618/zhc/img/foot-icon1.png" alt="" class="icon1 icon">
+					<p class="text">珠宝欢乐购</p>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a href="javascript:void()" class="foot2">
+					<img src="/h5/2018618/zhc/img/foot-icon2.png" alt="" class="icon3 icon">
+					<p class="text"> 一口价</p>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a href="javascript:void()" class="foot3">
+					<img src="/h5/2018618/zhc/img/foot-icon3.png" alt="" class="icon2 icon">
+					<p class="text">领取卡包</p>
+				</a>
+			</li>
+		</ul>
+		<!--微信分享-->
+		<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+		<script>
+		
+			var share = getUrlParam("share");
+			if(share == 1) {
+				$(".head").show()
+			
+			
+				$(".foot1").attr("href","/h5/2018618/zhc/mzhc.html?share=1")
+				$(".foot2").attr("href","/h5/2018618/ykj/mykj.html?share=1")
+				$(".foot3").attr("href","/h5/Wuyi18/bind.html?share=1")
+				
+			} else {
+				
+			
+				$(".foot1").attr("href","/h5/2018618/zhc/mzhc.html")
+				$(".foot2").attr("href","/h5/2018618/ykj/mykj.html")
+				$(".foot3").attr("href","/h5/Wuyi18/bind.html")
+				
+			}
+
+			function ToTop() {
+				$("html,body").animate({
+					"scrollTop": "0"
+				}, "normal")
+			}
+
+			function tz(plat, goodsId, goodsSn, thumb,oldid) {
+				if(share == 1) {
+					window.location.href = "https://ydj.jaadee.com/Goods/" + oldid + ".html"
+				} else {
+					//goodsDetail(2,1,2,0,a,4,0)
+					AppJump.goGoodsDetail(plat, goodsId, goodsSn, thumb)
+				}
+			}
+			//RN分享参数默认值
+			RNJsBriageObject.shareInfo = {
+				name: '忠义千秋，侠骨柔肠|玉雕界出品原创镶嵌设计新品首发',
+				desc: '玉雕界出品【第二期】物慧工作室《关公》系列原创镶嵌设计新品，也可根据需求尺寸量身定制哦。',
+				url: '/h5/2018618/ydj618/mydj618.html?share=1',
+				logo: '/h5/2018618/ydj618/img/m__01.jpg'
+			};
+			//微信分享
+
+			wxshare();
+
+			function wxshare() {
+				var title = "忠义千秋，侠骨柔肠|玉雕界出品原创镶嵌设计新品首发";
+				var desc = "玉雕界出品【第二期】物慧工作室《关公》系列原创镶嵌设计新品，也可根据需求尺寸量身定制哦。";
+				var linkurl = encodeURIComponent(location.href.split('#')[0]);
+				var imgurl = "/h5/2018618/ydj618/img/m__01.jpg";
+				$.ajax({
+					type: "post",
+					url: "/h5/active/getShareInfo",
+					data: {
+						imgurl: imgurl,
+						link: linkurl,
+						title: title,
+						desc: desc,
+						debug: false
+
+					},
+					// async: false,
+					dataType: "json",
+					success: function(data) {
+						data = JSON.parse(data)
+						console.log(data)
+						if(data.status == 0) {
+
+							$("body").append(data.info)
+							//console.log(JSON.stringify(data))
+							// 注意：所有的JS接口只能在公众号绑定的域名下调用，公众号开发者需要先登录微信公众平台进入“公众号设置”的“功能设置”里填写“JS接口安全域名”。
+							// 如果发现在 Android 不能分享自定义内容，请到官网下载最新的包覆盖安装，Android 自定义分享接口需升级至 6.0.2.58 版本及以上。
+
+						}
+
+					}
+				})
+			};
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+		<title>东方格度玉石设计专场</title>
+		<script type="text/javascript" src="/h5/js/jquery-1.10.2.js"></script>
+		<script type="text/javascript" src="/h5/js/get_set_url.js"></script>
+		<script src="https://res.jaadee.net/rn/JaadeeAppJsBridge.js?v=1.4"></script>
+
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			.head{display: none;}
+			body {
+				background: #FFFFFF;
+			}
+			
+			img {
+				display: block;
+				width: 100%;
+				pointer-events: none;
+			}
+			
+			
+			
+			.clear {
+				clear: both;
+			}
+			
+			.goodlist {
+				padding: 0.1rem;
+			}
+			
+			.goodlist:after {
+				content: "\0020";
+				display: block;
+				height: 0;
+				clear: both;
+			}
+			
+			.goodli {
+				padding: 0.1rem;
+				float: left;
+				width: 50%;
+			}
+			
+			.goodli a {
+				text-decoration: none;
+			}
+			
+			.good {
+				background: #f0f0f0;
+			}
+			
+			.title {
+				text-align: center;
+				margin: 0.4rem 0;
+				font-size: 0.346666rem;
+				color: #2a2a2a;
+				width: 100%;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				white-space: nowrap;
+				padding: 0 0.266666rem;
+			}
+			
+			.ordernum {
+				font-size: 0.346666rem;
+				color: #626161;
+				margin-bottom: 0.4rem;
+				padding: 0 0.266666rem;
+			}
+			
+			.price {
+				font-size: 0.346666rem;
+				color: #626161;
+				padding: 0 0.266666rem 0.4rem 0.266666rem;
+			}
+			
+			.price span {
+				color: #990000;
+			}
+			
+			.relative {
+				position: relative;
+			}
+			
+			.love {
+				position: absolute;
+				width: 1.2rem;
+				right: 0.1rem;
+				top: 0;
+			}
+			
+			.copright {
+				font-size: 0.24rem;
+				color: #9fa0a0;
+				margin-top: 1.6rem;
+				text-align: center;
+				margin-bottom: 1.733333rem;
+			}
+			
+			.contentbox {
+				padding: 0 0.133333rem;
+				margin-top: 0.6rem;
+			}
+			
+			.linkmore {
+				width: 4rem;
+				margin: 0.466666rem auto;
+			}
+			
+			.returnTop {
+				position: fixed;
+				z-index: 999;
+				bottom: 1.8rem;
+				right: .4rem;
+				width: 1.066666rem;
+				height: 1.066666rem;
+				background: url(/h5/img/back_top.png) center no-repeat;
+				background-size: 100% auto;
+			}
+			
+			
+			.content {
+				padding: 0 3%;
+			}
+			
+		
+			.margin-b{margin-bottom: 0.4rem;}
+			/*底部*/
+			.nav-box {width: 100%;background: #eee;border-top: 1px solid #d4d3d3;position: fixed;left: 0;bottom: 0;z-index: 99;}
+			.nav-box .nav-item {width: 33.3333%;height: 1.44rem;border-right: 0.02rem solid #d4d3d3;float: left;box-sizing: border-box;}
+			ul, li {list-style: none;}
+			.nav-box .nav-item a {text-decoration: none;display: block;width: 100%;height: 100%;display: flex;flex-direction: column;justify-content: center;align-items: center;}
+			.nav-box .nav-item .icon {margin-bottom: 0.05rem;width: 0.666666rem}
+			.nav-box .nav-item .text {font-size: 0.293333rem;color: #6b6c6b;}
+		</style>
+	</head>
+
+	<body>
+		<script type="text/javascript" src="/h5/js/flexible.debug.js"></script>
+		
+		<div class="head">
+			<style type="text/css">
+				.fiextop{ width: 100%; position: relative;}
+				.fiextop a{width: 100%;}
+				.fiextop img{width: 100%;}
+				.fiextop .close{position: absolute; z-index: 1; width: 20%; height: 100%; left: 0; top: 0;}
+				</style>
+				<div class="fiextop">
+					<a target="_blank" href="https://app.jaadee.com/do.php?canal=huodong">
+						<img src="https://appres.jaadee.com/apps/images/fiexdtop.jpg">
+						<!--img src="https://apps.jaadee.com/static/images/ten-downapp.jpg" / -->
+					</a>
+				    <div class="close" id="closeappimg"></div>
+				</div>
+				<script>
+					$("#closeappimg").click(function(){
+						$(".fiextop").remove();
+					});
+				</script>
+		</div>
+		
+		<img src="img/m__01.jpg"  class="margin-b banner">
+		
+
+		<div class="goodlist">
+
+		</div>
+
+		<div class="linkmore"  onclick="getMore()"><img src="img/m__more.png"></div>
+		<div class="copright">云南翡翠王朝网络科技有限公司©版权所有</div>
+
+		<div class="returnTop" onclick="ToTop();"></div>
+		<ul class="nav-box clear">
+			<li class="nav-item">
+				<a href="javascript:void()" class="foot1">
+					<img src="/h5/2018618/zhc/img/foot-icon1.png" alt="" class="icon1 icon">
+					<p class="text">珠宝欢乐购</p>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a href="javascript:void()" class="foot2">
+					<img src="/h5/2018618/zhc/img/foot-icon2.png" alt="" class="icon3 icon">
+					<p class="text"> 一口价</p>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a href="javascript:void()" class="foot3">
+					<img src="/h5/2018618/zhc/img/foot-icon3.png" alt="" class="icon2 icon">
+					<p class="text">领取卡包</p>
+				</a>
+			</li>
+		</ul>
+		<!--微信分享-->
+		<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+		<script>
+			
+			
+			var page = 1;
+		
+			var share = getUrlParam("share");
+			if(share == 1) {
+				$(".head").show()
+				$(".foot1").attr("href","/h5/2018618/zhc/mzhc.html?share=1")
+				$(".foot2").attr("href","/h5/2018618/ykj/mykj.html?share=1")
+				$(".foot3").attr("href","/h5/Wuyi18/bind.html?share=1")
+				
+			} else {
+				$(".foot1").attr("href","/h5/2018618/zhc/mzhc.html")
+				$(".foot2").attr("href","/h5/2018618/ykj/mykj.html")
+				$(".foot3").attr("href","/h5/Wuyi18/bind.html")
+			}
+
+			function ToTop() {
+				$("html,body").animate({
+					"scrollTop": "0"
+				}, "normal")
+			}
+			
+			
+			getMore();
+
+			function getMore() {
+				$.ajax({
+					type: "get",
+					url: "/index.php/api/Active/getActive",
+					data: {
+						aid: 606,
+						page: page,
+						pagesize: 20
+					},
+					//async:false, 
+					dataType: "json",
+					success: function(data) {
+						if(data.status == 0) {
+							var html = "";
+
+							for(var i in data.info.activeGoodsLists) {
+								var kk = "";
+								if(share == 1) {
+
+									kk = '<a href="' + data.info.activeGoodsLists[i].url + '" >';
+								} else {
+									kk = '<a onclick="AppJump.goGoodsDetail(' + data.info.activeGoodsLists[i].platId + ',' + data.info.activeGoodsLists[i].goodsId + ',\'' + data.info.activeGoodsLists[i].goodsSn + '\',\'' + data.info.activeGoodsLists[i].thumb + '\')">';
+								}
+								if(data.info.activeGoodsLists[i].isSold == 0) {
+									if(data.info.activeGoodsLists[i].activePrice) {
+										jg = data.info.activeGoodsLists[i].activePrice
+									} else {
+										if(data.info.activeGoodsLists[i].shopPrice) {
+											jg = data.info.activeGoodsLists[i].shopPrice
+										} else {
+											jg = data.info.activeGoodsLists[i].marketPrice
+										}
+									}
+									if(data.info.activeGoodsLists[i].askPrice == 1) {
+										zt = '<div class="price">请联系客服询价</div>'
+									} else {
+										zt = '<div class="price">结缘价：<span>￥' + jg + '元</span></div>'
+									}
+
+								} else {
+									zt = '<div class="price"><span>已结缘</span></div>'
+
+								}
+
+								html += '<div class="goodli">' + kk + '<div class="good"><div class="goodimg"><img src="';
+								html += data.info.activeGoodsLists[i].thumb + '"></div><div class="title">';
+								html += data.info.activeGoodsLists[i].goodsName + '</div><div class="relative"><div class="ordernum">货   号：';
+								html += data.info.activeGoodsLists[i].goodsSn + '</div>';
+								html += zt + '<div class="love"><img src="/h5/2018618/zhc/img/activeicon.png"></div></div></div></a></div>';
+
+							}
+							
+								$(".goodlist").append(html)
+						
+							page++;
+							
+						} else {
+							//alert(data.msg);
+
+						}
+
+					}
+				});
+			}
+			//RN分享参数默认值
+			RNJsBriageObject.shareInfo = {
+				name: '【618特惠活动】东方格度轻奢玉石首饰专场，点靚冰爽夏日',
+				desc: '设计师玉石设计作品，最高满减2000元，可叠加优惠券使用',
+				url: '/h5/2018618/ns618/index.html?share=1',
+				logo: '/h5/2018618/ns618/img/share.jpg'
+			};
+			//微信分享
+
+			wxshare();
+
+			function wxshare() {
+				//				var title = sharetitle;
+				//				var desc = sharedes;
+				//				var linkurl = shareimgurl;
+				//				var imgurl = sharelink;
+				var title = "【618特惠活动】东方格度轻奢玉石首饰专场，点靚冰爽夏日";
+				var desc = "设计师玉石设计作品，最高满减2000元，可叠加优惠券使用";
+				var linkurl = encodeURIComponent(location.href.split('#')[0]);
+				var imgurl = "/h5/2018618/ns618/img/share.jpg";
+				$.ajax({
+					type: "post",
+					url: "/h5/active/getShareInfo",
+					data: {
+						imgurl: imgurl,
+						link: linkurl,
+						title: title,
+						desc: desc,
+						debug: false
+
+					},
+					// async: false,
+					dataType: "json",
+					success: function(data) {
+						data = JSON.parse(data)
+						console.log(data)
+						if(data.status == 0) {
+
+							$("body").append(data.info)
+							//console.log(JSON.stringify(data))
+							// 注意：所有的JS接口只能在公众号绑定的域名下调用，公众号开发者需要先登录微信公众平台进入“公众号设置”的“功能设置”里填写“JS接口安全域名”。
+							// 如果发现在 Android 不能分享自定义内容，请到官网下载最新的包覆盖安装，Android 自定义分享接口需升级至 6.0.2.58 版本及以上。
+
+						}
+
+					}
+				})
+			};
+		</script>
+	</body>
+
+</html>

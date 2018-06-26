@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+		<title>奈莎珠宝断镯修复</title>
+		<script type="text/javascript" src="/h5/js/jquery-1.10.2.js"></script>
+		<script type="text/javascript" src="/h5/js/get_set_url.js"></script>
+		<script src="https://res.jaadee.net/rn/JaadeeAppJsBridge.js?v=1.4"></script>
+
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			.head{display: none;}
+			body {
+				background: #f5f5f5;
+			}
+			
+			img {
+				display: block;
+				width: 100%;
+				pointer-events: none;
+			}
+			
+			
+			
+			.clear {
+				clear: both;
+			}
+			
+			.content {
+				padding: 0 2%;
+			}
+			
+			.tex1{
+				text-align: center;
+				line-height: 0.6rem;
+				color: #353535;
+			}
+			
+			.tex1_tex1{font-size: 0.466666rem;color: #000;margin-top: 0.2rem;}
+			.tex1_tex2{margin: 0.4rem 0;font-size: 0.293333rem;}
+			.tex1_tex3{font-size: 0.293333rem;color: #000;margin-bottom: 0.9rem;}
+			.tex2_tex1{width: 48%;float: left;font-size: 0.293333rem;color:#5d5d5d;line-height: 0.533333rem;}
+			.tex2_tex2{width: 50%;float: right;position: relative;margin-top: -0.5rem;}
+			.play {
+				position: absolute;
+				width: 1rem;
+				left: 50%;
+				margin-left: -0.5rem;
+				top: 50%;
+				margin-top: -0.5rem;
+				z-index: 5;
+				pointer-events: auto;
+			}
+			
+			#sp {
+				width: 100%;
+				height: 4.3rem;
+			}
+			.tex3{position: relative;}
+			.tex3_tex1{position: absolute;width: 48%;right: 0;top: 2.5rem;font-size: 0.293333rem;color:#5d5d5d;line-height: 0.533333rem;}
+			.tex4{position: relative;}
+			.tex4_tex1{position: absolute;width: 50%;left: 0;top: 2.3rem;font-size: 0.293333rem;color:#5d5d5d;line-height: 0.533333rem;}
+			.tex5{position: relative;}
+			.tex5_tex1{position: absolute;width: 48%;left: 0;top: 2.3rem;font-size: 0.293333rem;color:#5d5d5d;line-height: 0.533333rem;}
+			.tex6{background: #FFFFFF;margin-top: 0.3rem;    padding-bottom: 0.5rem;}
+			.but1{width: 70%;margin: 0.4rem auto;position: relative;}
+			.but2{width: 70%;margin: 0.4rem auto;}
+			@keyframes fingerHandle {  
+	            0% {  
+	                transform: none;  
+	            }  
+	            70% {  
+	                transform: scale3d(.8, .8, .8);  
+	            }  
+	            100% {  
+	                transform: none;  
+	            }  
+	        }
+	        .finger{animation: fingerHandle 1s ease infinite both;  position: absolute;    width: 0.8rem;right: 0.5rem;top: 0.3rem;}  
+		</style>
+	</head>
+
+	<body>
+		<script type="text/javascript" src="/h5/js/flexible.debug.js"></script>
+		
+		<div class="head">
+			<style type="text/css">
+				.fiextop{ width: 100%; position: relative;}
+				.fiextop a{width: 100%;}
+				.fiextop img{width: 100%;}
+				.fiextop .close{position: absolute; z-index: 1; width: 20%; height: 100%; left: 0; top: 0;}
+				</style>
+				<div class="fiextop">
+					<a target="_blank" href="https://app.jaadee.com/do.php?canal=huodong">
+						<img src="https://appres.jaadee.com/apps/images/fiexdtop.jpg">
+						<!--img src="https://apps.jaadee.com/static/images/ten-downapp.jpg" / -->
+					</a>
+				    <div class="close" id="closeappimg"></div>
+				</div>
+				<script>
+					$("#closeappimg").click(function(){
+						$(".fiextop").remove();
+					});
+				</script>
+		</div>
+		<img src="img/m__01.jpg">
+		<div class="content"><img src="img/m__text.jpg"></div>
+		<!--<div class="tex1">
+			<div class="tex1_tex1">最IN的设计 赋予断镯新生</div>
+			<div class="tex1_tex2">
+				<p>断裂的手镯里，往往住着主人的回忆和故事，</p>
+				<p>而修复一个手镯就是在珍藏一段故事，唤醒一段情怀。</p>
+				<p>奈莎珠宝秉承匠心，</p>
+				<p>为每一位期望重圆旧梦的翠友提供断镯修复服务。</p>
+			</div>
+			<div class="tex1_tex3">“我们想做的，就是用艺术将残破变为重生。”</div>
+		</div>-->
+		<img src="img/m__02.jpg">
+		<div class="content">
+			<img src="img/m__03.jpg">
+			<div class="tex2">
+				<div class="tex2_tex1">断口镶嵌采用宫廷式花纹，时尚贵气。断镯侧面开口，闭合是圆镯，打开呈S型，取拿灵活，佩戴舒适。上等玻璃种翡翠断镯，在奈莎设计师手下重生，被赋予崭新的艺术之美。</div>
+				<div class="tex2_tex2">
+					<video id="sp" poster="img/m__poster.jpg" preload="load" name="media" >
+						<source src="img/11.mp4">
+					</video>
+					<img src="img/m__play.png" class="play" id="zt">
+					<script>
+						var video1 = document.getElementById("sp");
+						var video2 = document.getElementById("zt");
+						//var u = navigator.userAgent;
+						//var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+						video1.addEventListener('pause', function() {
+							document.getElementById("zt").style.display = "block";
+						})
+						//document.getElementById("zt").style.display="none";
+						video2.onclick = function() {
+							if(video1.paused) {
+								video1.play();
+								document.getElementById("zt").style.display = "none";
+							} else {
+								video1.pause();
+								document.getElementById("zt").style.display = "block";
+							}
+						}
+		
+						video1.onclick = function() {
+							if(video1.paused) {
+								video1.play();
+								document.getElementById("zt").style.display = "none";
+							} else {
+								video1.pause();
+								document.getElementById("zt").style.display = "block";
+							}
+						}
+					</script>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<img src="img/m__04.jpg">
+			<div class="tex3">
+				<img src="img/m__05.jpg">
+				<div class="tex3_tex1">设计师在修复设计中，将4个断口设计成不同的造型，开合处设计为花朵造型隐藏住开合处的生硬感，搭配红宝石、白钻，运用扭线机、喷砂等工艺，使断镯以华丽的方式重生。</div>
+			</div>
+			<img src="img/m__06.jpg">
+			<div class="tex4">
+				<img src="img/m__07.jpg">
+				<div class="tex4_tex1">
+					<p>因撞击而产生的裂痕，使这只翡翠手镯在美观和安全方面都受到了影响。</p>
+					<p>结合手镯本身的颜色，设计师为这只手镯设计的掩裂修复方案，以简约为主：在裂痕处镶嵌贵金属，遮盖裂痕的同时也避免再次碰撞，且在正反两面分别设计了梅花和六字真言的图样，别具匠心。</p>
+				</div>
+			</div>
+			<img src="img/m__08.jpg">
+			<div class="tex5">
+				<img src="img/m__09.jpg">
+				<div class="tex5_tex1">
+					<p>手镯两个断口处均分布有较长、较多的暗纹，设计师借助蜂巢的造型，巧妙的遮挡接口的材质不完美。18K金的黄色与润泽的淡绿色形成对比，更显蜂巢的立体感，生动的小蜜蜂让传统的手镯多了份时尚与活力。</p>
+				</div>
+			</div>
+			<img src="img/m__10.jpg">
+			<img src="img/m__11.jpg">
+			
+			<div class="but1"><img src="img/m__but1.png?v=1"><img src="img/m__finger.png" class="finger"></div>
+			<img src="img/m__12.jpg">
+		</div>
+		<div class="tex6">
+			<div class="content">
+				<img src="img/m__13.jpg">
+				<img src="img/m__14.jpg">
+				
+				<div class="but2"><img src="img/m__but2.png"></div>
+			</div>
+		</div>
+		<img src="img/m__15.jpg">
+	
+		<!--微信分享-->
+		<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+		<script>
+			
+			if(RNJsBriageObject.isInApp) {
+				$(".but2 img").attr("src",'img/m__but2.png');
+			} else {
+				$(".head").show()
+				$(".but2 img").attr("src",'/h5/2018618/ns2-618/img/m__21_2.png');
+			}
+			
+			$(".but2").click(function(){
+				if(RNJsBriageObject.isInApp) {
+					AppJump.chatWithServer('媛媛','http://appmanage.jaadee.com/newupload/rnAdmin/upload/archive/ec1523145de46d438a278b721a3bc4d0/200x200.jpg','NASAcb')
+				} else {
+					
+				}
+			})
+			
+			$(".but1").click(function(){
+				if(RNJsBriageObject.isInApp) {
+					window.location.href="dzcy.html?share=2"
+				} else {
+					window.location.href="dzcy.html?share=1"
+				}
+			})
+			
+			
+			
+			//RN分享参数默认值
+			RNJsBriageObject.shareInfo = {
+				name: '多款修复案例，最硬的设计，赋予断镯新生',
+				desc: '奈莎珠宝断镯修复，不仅让断镯重圆，更让断镯美上加美',
+				url: '/h5/ns_dzxf/dzxf.html?share=1',
+				logo: '/h5/ns_dzxf/img/m__01.jpg'
+			};
+			//微信分享
+
+			wxshare();
+
+			function wxshare() {
+				//				var title = sharetitle;
+				//				var desc = sharedes;
+				//				var linkurl = shareimgurl;
+				//				var imgurl = sharelink;
+				var title = "多款修复案例，最硬的设计，赋予断镯新生";
+				var desc = "奈莎珠宝断镯修复，不仅让断镯重圆，更让断镯美上加美";
+				var linkurl = encodeURIComponent(location.href.split('#')[0]);
+				var imgurl = "/h5/ns_dzxf/img/m__01.jpg";
+				$.ajax({
+					type: "post",
+					url: "/h5/active/getShareInfo",
+					data: {
+						imgurl: imgurl,
+						link: linkurl,
+						title: title,
+						desc: desc,
+						debug: false
+
+					},
+					// async: false,
+					dataType: "json",
+					success: function(data) {
+						data = JSON.parse(data)
+						console.log(data)
+						if(data.status == 0) {
+
+							$("body").append(data.info)
+							//console.log(JSON.stringify(data))
+							// 注意：所有的JS接口只能在公众号绑定的域名下调用，公众号开发者需要先登录微信公众平台进入“公众号设置”的“功能设置”里填写“JS接口安全域名”。
+							// 如果发现在 Android 不能分享自定义内容，请到官网下载最新的包覆盖安装，Android 自定义分享接口需升级至 6.0.2.58 版本及以上。
+
+						}
+
+					}
+				})
+			};
+		</script>
+	</body>
+
+</html>

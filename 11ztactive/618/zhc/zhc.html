@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+		<meta charset="utf-8" />
+		<title>年中珠宝欢乐购</title>
+		<!--<link type="text/css" rel="stylesheet" href="/h5/css/animate.min.css" />-->
+		<script type="text/javascript" src="/h5/js/jquery-1.10.2.js"></script>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			
+			body {
+				font-family: "微软雅黑";
+				background: #a0232b;
+				font-size: 14px;
+			}
+			
+			img {
+				width: 100%;
+				display: block;
+			}
+			
+			.content {
+				width: 1200px;
+				margin: auto;
+				position: relative;
+			}
+			
+			.bannercontent {
+				width: 1200px;
+				margin: auto;
+				position: relative;
+				height: 1200px;
+			}
+			
+			.banner {
+				min-width: 1200px;
+				position: relative;
+				background: url(img/pc__banner.png) center no-repeat;
+				background-size: auto 1200px;
+				height: 1200px;
+				overflow: hidden;
+			}
+			
+			.coperight {
+				color: #888b8b;
+				font-size: 16px;
+				padding: 80px 0 110px 0;
+				text-align: center;
+			}
+			
+			.goodlist {
+				width: 1200px;
+				margin: auto;
+				padding: 5px;
+				margin-top: 30px;
+				padding-bottom: 120px;
+			}
+			
+			.goodlist:after,
+			.goodlist2:after,
+			.ykjlist:after,
+			.ykjzc:after {
+				content: "\0020";
+				display: block;
+				height: 0;
+				clear: both;
+			}
+			
+			.rk {
+				position: absolute;
+				right: 0;
+				bottom: 0;
+			}
+			
+			.goodlist2 {
+				padding-bottom: 100px;
+			}
+			
+			.goodli {
+				padding: 5px;
+				width: 20%;
+				float: left;
+			}
+			
+			.good {
+				background: #FFFFFF;
+			}
+			
+			.goodimg {
+				height: 228px;
+			}
+			
+			.title {
+				margin: 10px 0;
+				font-size: 16px;
+				color: #2a2a2a;
+				width: 100%;
+				text-align: center;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				white-space: nowrap;
+				padding: 0 15px;
+			}
+			
+			.ordernum {
+				font-size: 14px;
+				color: #626161;
+				margin-bottom: 10px;
+				padding: 0 15px;
+			}
+			
+			.price {
+				font-size: 14px;
+				color: #626161;
+				padding: 0 15px 30px 15px;
+			}
+			
+			.price span {}
+			
+			a {
+				text-decoration: none;
+			}
+			
+			.ys {
+				background: url(img/pc__bg2.jpg) center no-repeat;
+				background-size: 1920px auto;
+				height: 1705px;
+			}
+			
+			.tc1 {
+				height: 36px;
+			}
+			
+			.pad110 {
+				padding: 15px;
+				padding-top: 100px;
+			}
+			
+			.clear {
+				clear: both;
+			}
+			
+			.linkmore {
+				position: absolute;
+				bottom: 0;
+				left: 500px;
+			}
+			
+			.linkmore .getmore {
+				width: 200px;
+				height: 45px;
+				text-align: center;
+				color: #fbe96d;
+				background: #a2001f;
+				box-sizing: border-box;
+				line-height: 45px;
+				font-size: 18px;
+				border-radius: 50px;
+				cursor: pointer;
+			}
+			.linkmore img{width: 14px; vertical-align: middle;margin-left: 5px;display: initial;}
+			.tab {
+				background: #d20a21;
+				top: 0;
+				width: 100%;
+				z-index: 10;
+			}
+			
+			.nav {
+				width: 25%;
+				float: left;
+				line-height: 60px;
+				text-align: center;
+				color: #FFFFFF;
+				font-size: 20px;
+				cursor: pointer;
+			}
+			
+			.bor {}
+			
+			.active {
+				border-bottom: 2px solid #ffe063;
+				color: #ffe063;
+			}
+			
+			.relative {
+				position: relative;
+			}
+			
+			.qq1 {
+				position: absolute;
+				width: 299px;
+				left: -200px;
+				top: 70px;
+			}
+			
+			@keyframes hjtx {
+				0% {
+					transform: translate3d(-450%, 350%, 0);
+					opacity: 0
+				}
+				25% {
+					opacity: 1
+				}
+				100% {
+					transform: translateZ(0)
+				}
+			}
+			
+			.hjtx {
+				animation: hjtx 10s ease-in-out infinite
+			}
+			
+			.hj {
+				position: absolute;
+				width: 262px;
+				right: -200px;
+				top: -280px;
+			}
+			
+			.qq2 {
+				position: absolute;
+				width: 103px;
+				right: -106px;
+				top: 177px;
+			}
+			
+			@keyframes slideInUp2 {
+				0%,
+				100% {
+					transform: translateY(0) rotate(-6deg);
+				}
+				50% {
+					transform: translateY(-20px) rotate(8deg);
+				}
+			}
+			
+			.slideInUp2 {
+				animation: slideInUp2 6s ease-in-out infinite
+			}
+			
+			.d1 {
+				width: 50px;
+				bottom: 154px;
+				position: absolute;
+				left: -300px;
+			}
+			
+			.d2 {
+				width: 50px;
+				bottom: 194px;
+				position: absolute;
+				left: -170px;
+			}
+			
+			.d3 {
+				width: 50px;
+				bottom: 225px;
+				position: absolute;
+				left: -30px;
+			}
+			
+			.d4 {
+				width: 50px;
+				bottom: 225px;
+				position: absolute;
+				right: -40px;
+			}
+			
+			.d5 {
+				width: 50px;
+				bottom: 197px;
+				position: absolute;
+				right: -180px;
+			}
+			
+			.d6 {
+				width: 50px;
+				bottom: 157px;
+				position: absolute;
+				right: -310px;
+			}
+			
+			.love {
+				position: absolute;
+				width: 60px;
+				right: 10px;
+				top: 0;
+			}
+			
+			@-webkit-keyframes fadeIn {
+				0%,
+				100% {
+					opacity: 0
+				}
+				50% {
+					opacity: 1
+				}
+			}
+			
+			.fadeIn {
+				animation: fadeIn 3s infinite
+			}
+			
+			.fcwc-footer {
+				width: 100%;
+				padding: 50px 0;
+			}
+			
+			.fcwc-footer .navbox {
+				width: 100%;
+				text-align: center;
+			}
+			
+			ul,
+			li {
+				list-style: none;
+			}
+			
+			.fcwc-footer .navbox li {
+				display: inline-block;
+				height: 50px;
+				line-height: 50px;
+			}
+			
+			.fcwc-footer .navbox a {
+				margin: 0 5px;
+				display: inline-block;
+				font-size: 14px;
+				color: #FFFFFF;
+			}
+			
+			.fcwc-footer .copyright {
+				width: 100%;
+				text-align: center;
+				line-height: 25px;
+				font-size: 14px;
+				color: #FFFFFF;
+			}
+			/*翡翠王朝头部*/
+			
+			.bigwrap {
+				width: 100%;
+				height: auto;
+				overflow: hidden;
+			}
+			
+			.topwrap {
+				/*height:140px;*/
+				background: url(https://apps.jaadee.com/static/images/topbg.png) repeat-x top left;
+				overflow: hidden;
+				width: 100%;
+			}
+			
+			.count {
+				width: 1200px;
+				margin: 0 auto;
+			}
+			
+			.topinfo {
+				width: 100%;
+				height: 40px;
+				line-height: 40px;
+				color: #b2b2b2;
+				font-size: 12px;
+			}
+			
+			.welcome {
+				width: auto;
+				float: left;
+				float: left;
+			}
+			
+			.bigwrap.topwrap .count .topinfo .toptag .hasson.hasson_a {
+				padding: 0 10px;
+			}
+			
+			.logo {
+				width: 240px;
+				float: left;
+			}
+			
+			.logo img {
+				margin-top: 15px;
+			}
+			
+			.addztiy {
+				width: 170px;
+				height: 100px;
+				float: left;
+				margin: 7px 0 7px 10px;
+			}
+			
+			.showw_m {
+				margin-right: 1px;
+			}
+			
+			.baozl {
+				width: 780px;
+				height: 40px;
+				margin-top: 20px;
+				margin-bottom: 10px;
+				float: right;
+			}
+			
+			.baozl a {
+				float: left;
+				color: #CCC;
+				padding-left: 52px;
+				height: 40px;
+				margin-left: 10px;
+				background: url(https://apps.jaadee.com/static/images/topfocus.png) no-repeat left top;
+			}
+			
+			.baozl a.shbz:hover {
+				background-position: 0 -50px;
+			}
+			
+			.baozl a.yjbz {
+				background-position: -52px 0;
+			}
+			
+			.baozl a.yjbz:hover {
+				background-position: -52px -50px;
+			}
+			
+			.baozl a.swbz {
+				background-position: -104px 0;
+			}
+			
+			.baozl a.swbz:hover {
+				background-position: -104px -50px;
+			}
+			
+			.baozl a.zpbz {
+				background-position: -156px 0;
+			}
+			
+			.baozl a.zpbz:hover {
+				background-position: -156px -50px;
+			}
+			
+			.baozl a.ppbz {
+				background-position: -208px 0;
+			}
+			
+			.baozl a.ppbz:hover {
+				background-position: -208px -50px;
+			}
+			
+			.baozl a.czbz {
+				background-position: -260px 0;
+			}
+			
+			.baozl a.czbz:hover {
+				background-position: -260px -50px;
+			}
+			
+			.baozl a:hover {
+				color: #FFF;
+			}
+			
+			.baozl a span {
+				display: block;
+				background-color: #011E03;
+				height: 40px;
+				line-height: 20px;
+			}
+			
+			.lxfss {
+				width: 750px;
+				height: 35px;
+				float: right;
+				overflow: hidden;
+				position: relative;
+				color: #FFF;
+				line-height: 35px;
+			}
+			
+			.lxfss span {
+				padding-left: 10px;
+				float: left;
+				color: #b2b2b2;
+				font-size: 12px;
+			}
+			
+			.searchw {
+				width: 250px;
+				float: right;
+				overflow: hidden;
+				height: auto;
+				border-radius: 3px;
+				background: #FFF;
+				margin-top: 3px;
+			}
+			
+			.searchw input {
+				width: 175px;
+				height: 26px;
+				margin: 2px 2px;
+				line-height: 28px;
+				float: left;
+				border: none;
+				color: #848484;
+			}
+			
+			.searchw .searchb {
+				width: 60px;
+				height: 26px;
+				line-height: 26px;
+				float: right;
+				color: #FFF;
+				font-weight: bold;
+				cursor: pointer;
+				background: #411107;
+			}
+			
+			.navw {
+				width: 100%;
+				height: 40px;
+				background: url(https://apps.jaadee.com/static/images/navbg.png) repeat-x;
+			}
+			
+			.navul {
+				width: 1200px;
+				height: 40px;
+				float: left;
+			}
+			
+			.navul li span.hot {
+				background: url(https://apps.jaadee.com/static/images/hot.gif) no-repeat;
+				width: 12px;
+				height: 17px;
+				position: absolute;
+				top: -2px;
+				right: 7px;
+				display: block;
+			}
+			
+			.navul li span.ree {
+				background: url(https://apps.jaadee.com/static/images/reeimg.gif) no-repeat;
+				width: 12px;
+				height: 17px;
+				position: absolute;
+				top: -2px;
+				right: 7px;
+				display: block;
+			}
+			
+			.navul li {
+				width: auto;
+				position: relative;
+				padding: 0 16px 0 11px;
+				float: left;
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
+				background: url(https://apps.jaadee.com/static/images/anbj.png) center right no-repeat;
+			}
+			
+			.navul li a {
+				color: #FFF;
+				font-weight: normal;
+				font-size: 16px;
+				text-decoration: none;
+			}
+			
+			.navul li a:hover {
+				text-decoration: none;
+				width: 100%;
+				float: left;
+				color: #D1A100;
+				background: url(https://apps.jaadee.com/static/images/anbj_h.png) center no-repeat;
+			}
+			
+			.navul .navsmall {
+				width: 73px;
+				float: left;
+			}
+			
+			.navul .navsmall_l {
+				background: url(https://apps.jaadee.com/static/images/anbj_l.png) right no-repeat;
+				background-size: auto 40px;
+			}
+			
+			.navul .navsmall_r {
+				background: url(https://apps.jaadee.com/static/images/anbj_r.png) left no-repeat;
+				background-size: auto 40px;
+			}
+			
+			.navul .nobganav {
+				background: none;
+			}
+			
+			.topinfo {
+				height: 40px;
+				line-height: 40px;
+			}
+			
+			.toptagbg {
+				height: 40px;
+			}
+			
+			.toptag li {
+				height: 40px;
+				line-height: 40px;
+			}
+			
+			.toptag li a {
+				height: 40px;
+				line-height: 40px;
+			}
+			
+			.qxpp {
+				width: auto;
+				height: 40px;
+				line-height: 40px;
+				float: right;
+				color: #FBFDFF;
+				font-size: 12px;
+			}
+			
+			.qxpp span {
+				float: left;
+			}
+			
+			.qxpp ul {
+				width: auto;
+				height: 40px;
+				float: left;
+				margin: 0;
+				padding: 0;
+				overflow: hidden;
+			}
+			
+			.qxpp ul li {
+				width: auto;
+				display: inline-block;
+				height: 40px;
+				float: left;
+				margin: 0;
+				padding: 0px;
+			}
+			
+			.qxpp ul li a {
+				display: block;
+			}
+			
+			.qxpp ul li img {
+				width: auto;
+				margin-top: 5px;
+				max-height: 30px;
+			}
+			
+			.topwrap {
+				height: 155px;
+			}
+			
+			.qxpp ul .bor {
+				width: auto;
+				height: 20px;
+				margin: 10px 0;
+				border-left: 1px solid #CCC;
+				float: left;
+			}
+			
+			.top_adv {
+				width: 100%;
+				float: left;
+			}
+			
+			.top_adv a {
+				width: 100%;
+				text-align: center;
+				float: left;
+				overflow: hidden;
+			}
+			
+			.top_adv a img {
+				width: 100%;
+				float: left;
+			}
+			
+			.ztbox {
+				background: url(img/pc__bg1.jpg) top center;
+				background-repeat: repeat-y;
+				background-size: 1920px auto;
+				
+				margin-top: -235px;
+				padding-top: 120px;
+				padding-bottom: 75px;
+			}
+			
+			.zt {
+				width: 1228px;
+				margin: auto;
+				background: #a2001f;
+				position: relative;
+				padding: 75px 40px;
+			}
+			
+			.zt_dec1{position: absolute;width: 153px;left: 15px;top: 40px;}
+			.zt_dec2{position: absolute;width: 153px;right: 15px;top: 40px;}
+			.zt_dec3{position: absolute;width: 153px;left: 15px;bottom: 40px;}
+			.zt_dec4{position: absolute;width: 153px;right: 15px;bottom: 40px;}
+			
+			
+			.zcli {
+				width: 50%;
+				float: left;
+				width: 50%;
+				padding: 5px;
+				height: 312px;
+			}
+			
+			.zcli>div {
+				height: 302px;
+			}
+			
+			.zcfull {
+				padding: 5px;
+				height: 312px;
+				float: left;
+				width: 100%;
+			}
+			
+			.zcfull>div {
+				height: 302px;
+			}
+			
+			.tj {
+				background: #d20a21;
+			}
+			
+			.tj img {
+				margin-left: -150px;
+				width: 1350px;
+			}
+			
+			.tjbox {
+				background: url(img/pc__bg2.jpg) no-repeat;
+				background-size: 1920px 815px;
+				height: 815px;
+				min-width: 1200px;
+				padding-top: 50px;
+			}
+			
+			.listbg {
+				padding-top: 50px;
+				background: url(img/pc__listbg.jpg) center repeat;
+				background-size: 1920px 1377px;
+				min-width: 1200px;
+				min-height: 1377px;
+			}
+			
+			.tex {
+				font-size: 20px;
+				color: #ba090a;
+				line-height: 55px;
+				text-align: center;
+			}
+			
+			.ykjzc {
+				height: 714px;
+			}
+			
+			.ckgd {
+				line-height: 50px;
+				width: 185px;
+				text-align: center;
+				color: #FFFFFF;
+				font-size: 16px;
+				background: #a2001f;
+				margin: auto;
+				border-radius: 5px;
+			}
+			
+			.ckgd img {
+				width: 31px;
+				display: initial;
+				vertical-align: sub;
+				margin-left: 5px;
+			}
+			
+			.ds {
+				height: 14px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="bigwrap topwrap">
+			<div class="count">
+				<div class="topinfo">
+					<div class="welcome">翡翠王朝—让信赖如玉恒久</div>
+					<div class="qxpp">
+						<ul>
+							<li>
+								<a href="https://www.jaadee.com" target="_blank">
+									<img src="https://www.jaadee.com/static/jaadee2014/images/topfcwc.png">
+								</a>
+							</li>
+							<span class="bor"></span>
+							<li>
+								<a target="_blank" href="https://www.zhubaoleyuan.com">
+									<img src="https://www.jaadee.com/static/jaadee2014/images/topzbly.png">
+								</a>
+							</li>
+							<span class="bor"></span>
+							<li>
+								<a target="_blank" href="https://ydj.jaadee.com/pc.php">
+									<img src="https://www.jaadee.com/static/jaadee2014/images/topydj.png">
+								</a>
+							</li>
+							<span class="bor"></span>
+							<li>
+								<a target="_blank" href="https://nasa.jaadee.com">
+									<img src="https://www.jaadee.com/static/jaadee2014/images/topns.png">
+								</a>
+							</li>
+							<span class="bor"></span>
+							<li>
+								<a target="_blank" href="https://www.nanhongzhimi.com">
+									<img src="https://www.jaadee.com/static/jaadee2014/images/topnhzm.png">
+								</a>
+							</li>
+
+						</ul>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<a href="https://www.jaadee.com" target="_blank" class="logo">
+					<img alt="翡翠王朝" src="https://www.jaadee.com/static/jaadee2014/images/logo.png">
+				</a>
+				<div class="addztiy"><img src="https://www.jaadee.com/static/jaadee2017/app_vrcode_logo.png" width="170" height="100"></div>
+				<div class="baozl">
+					<a href="javascript:return void(0)" class="shbz"><span>真省好多<br>良心品牌</span></a>
+					<a href="javascript:return void(0)" class="yjbz"><span>源头供货<br>厂价直销</span></a>
+					<a href="javascript:return void(0)" class="swbz"><span>100%天然A货<br>假一赔十</span></a>
+					<a href="javascript:return void(0)" class="zpbz"><span>实物拍摄<br>视频展示</span></a>
+					<a href="javascript:return void(0)" class="czbz"><span>顺丰保价<br>安全送达</span></a>
+					<a href="javascript:return void(0)" class="ppbz"><span>省钱省心<br>七天自由退换</span></a>
+				</div>
+				<div class="lxfss">
+					<span>电话：0692-6991818  |   批发/货源协同请加微信：yangmuren456</span>
+					<form id="searchForm" name="searchForm" method="get" action="https://www.jaadee.com/Search/goods.html" onsubmit="return checkSearchForm()" class="searchw">
+						<input name="keys" id="keywords" type="text" onfocus="javascript:this.value=''" onblur="if(this.value==''){this.value=this.title;}" title="共有宝贝95019件，点击搜索" value="共有宝贝95019件，点击搜索">
+						<input class="searchb" type="submit" value="搜索">
+					</form>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="navw">
+			<div class="count">
+				<ul class="navul">
+					<li>
+						<a href="https://www.jaadee.com/">首页</a>
+					</li>
+					<li>
+						<a target="_blank" href="https://www.jaadee.com/xinpin/">翡翠新品</a>
+					</li>
+					<!--<li><a target="_blank" href="/juyou/">聚優品</a><span class="ree"></span></li>-->
+					<li>
+						<a target="_blank" href="https://www.jaadee.com/feicuipifa/">超值推荐</a>
+					</li>
+					<li>
+						<a target="_blank" href="https://www.jaadee.com/Cat/c22.html">翡翠挂件</a>
+					</li>
+					<li>
+						<a target="_blank" href="https://www.jaadee.com/Cat/c19.html">翡翠手镯</a>
+					</li>
+					<li>
+						<a target="_blank" href="https://www.jaadee.com/Cat/c20.html">翡翠饰品</a>
+					</li>
+					<li>
+						<a target="_blank" href="https://www.jaadee.com/Cat/c21.html">翡翠杂项</a>
+					</li>
+					<li>
+						<a target="_blank" href="https://www.jaadee.com/Cat/c18.html">翡翠手表</a>
+					</li>
+					<li>
+						<a target="_blank" href="https://ydj.jaadee.com/pc.php?m=Goods&amp;a=index">名家出品</a>
+					</li>
+					<li>
+						<a target="_blank" href="https://www.jaadee.com/Recommend/">大聚惠</a><span class="hot"></span></li>
+					<li>
+						<a target="_blank" href="https://www.jaadee.com/300001_99999999999/">收藏品</a>
+					</li>
+					<li>
+						<a target="_blank" href="https://www.jaadee.com/xinshang/">已售欣赏</a>
+					</li>
+					<li>
+						<a target="_blank" href="https://www.zhubaoleyuan.com">珠宝乐园</a>
+					</li>
+					<li class="nobganav">
+						<a target="_blank" href="https://idle.jaadee.com/web/Index/index.html">聚闲庄</a><span class="new"></span></li>
+				</ul>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="banner">
+			<div class="bannercontent">
+				<div class="qq1 slideInUp2"><img src="img/pc__qq1.png"></div>
+				<div class="qq2 slideInUp2"><img src="img/pc__qq2.png"></div>
+				<div class="hj hjtx"><img src="img/pc__hj.png"></div>
+				<div class="d1 fadeIn"><img src="img/pc_d1.png"></div>
+				<div class="d2 fadeIn"><img src="img/pc_d1.png"></div>
+				<div class="d3 fadeIn"><img src="img/pc_d1.png"></div>
+				<div class="d4 fadeIn"><img src="img/pc_d2.png"></div>
+				<div class="d5 fadeIn"><img src="img/pc_d2.png"></div>
+				<div class="d6 fadeIn"><img src="img/pc_d2.png"></div>
+			</div>
+		</div>
+		<div class="ztbox">
+			<div class="zt">
+				<div class="zt_dec1"><img src="img/pc__zs1.png"></div>
+				<div class="zt_dec2"><img src="img/pc__zs2.png"></div>
+				<div class="zt_dec3"><img src="img/pc__zs3.png"></div>
+				<div class="zt_dec4"><img src="img/pc__zs4.png"></div>
+				
+				<div class="zcli">
+					<div><img src="img/pc__zt1.jpg"></div>
+				</div>
+				<div class="zcli">
+					<div><img src="img/pc__zt2.jpg"></div>
+				</div>
+				<div class="zcli">
+					<div>
+						<a href="/h5/2018618/ykj/ykj.html"><img src="img/pc__zt3.jpg"></a>
+					</div>
+				</div>
+				<div class="zcli">
+					<div>
+						<a href="/h5/2018618/nh618/nh618.html"><img src="img/pc__zt4.jpg"></a>
+					</div>
+				</div>
+				<div class="zcli">
+					<div>
+						<a href="/h5/2018618/ydj618/ydj618.html"><img src="img/pc__zt5.jpg"></a>
+					</div>
+				</div>
+				<div class="zcli" >
+					<div>
+						<a href="/h5/2018618/ydj618-02/ydj618.html"><img src="img/pc__zt6.jpg"></a>
+					</div>
+				</div>
+				
+				<div class="zcli" >
+					<div>
+						<img src="img/pc__zt7.jpg?v=1">
+					</div>
+				</div>
+				<div class="zcli" >
+					<div>
+						<img src="img/pc__zt8.jpg">
+					</div>
+				</div>
+				
+				<div class="zcfull">
+					<div>
+						<a href="/h5/2018618/mty/mty.html"><img src="img/pc__zt9.jpg"></a>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="tj">
+			<div class="content"><img src="img/pc__tj.jpg"></div>
+		</div>
+		<div class="tjbox relative">
+			<div class="content ykjzc">
+				<div class="ykjlist">
+
+					<div class="goodli rk">
+						<a href="/h5/2018618/ykj/ykj.html">
+							<div class="good">
+								<div class="goodimg">
+									<img src="img/pc__ykj.jpg">
+								</div>
+								<div class="tex">点击进入专场</div>
+								<div class="ckgd">查看更多<img src="img/pc__sz.png"></div>
+								<div class="ds"></div>
+							</div>
+						</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div class="tab">
+			<div class="content">
+				<div class="relative">
+					<div class="nav">
+						<div class="bor active">翡翠</div>
+					</div>
+					<div class="nav">
+						<div class="bor">南红</div>
+					</div>
+					<div class="nav">
+						<div class="bor">彩宝文玩</div>
+					</div>
+					<div class="nav">
+						<div class="bor">玉雕&设计作品</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+		<div class="listbg">
+			<div class="content">
+				<div class="goodlist2">
+
+				</div>
+				<div class="linkmore clear">
+					<div class="getmore" onclick="getMore(1,2);">点击加载更多<img src="img/pc__right.png"></div>
+				</div>
+			</div>
+			
+			<div class="fcwc-footer">
+				<ul class="navbox">
+					<li>
+						<a target="_blank" href="https://www.jaadee.com/Help/about.html">关于我们</a>
+					</li><span>|</span>
+					<li>
+						<a target="_blank" href="https://www.jaadee.com/Help/contactus.html">联系我们</a>
+					</li><span>|</span>
+					<li>
+						<a target="_blank" href="https://www.jaadee.com/Help/sale_service.html">售后服务</a>
+					</li><span>|</span>
+					<li>
+						<a target="_blank" href="https://www.jaadee.com/Help/howbuy.html">如何购买</a>
+					</li><span>|</span>
+					<li>
+						<a target="_blank" href="https://www.jaadee.com/zixun/index.html">王朝学院</a>
+					</li>
+				</ul>
+				<div class="copyright">
+					<!--©2008-2015 翡翠王朝(www.jaadee.com)版权所有<br>-->
+					©2008-2017 云南牧仁者商贸有限公司(www.jaadee.com)版权所有<br> ICP备案号:滇ICP备12006083号-1 / 公安备案号: 53010203502103 / 工商注册号: 533102100010883<br> 公司地址：云南省瑞丽市金星石木文化城15栋1号 / 云南省昆明市人民中路169号(移动大厦17A) <span style="display:none;">/ 广东省佛山市平洲翠宝园3栋46/47A</span><br>
+				</div>
+			</div>
+		</div>
+			<script>
+				var page = 1;
+				var aid = 462;
+				var gx = false;
+				$(".nav").click(function() {
+					$(this).find(".bor").addClass("active");
+					$(this).siblings().find(".bor").removeClass("active");
+					if($(this).index() == 0) {
+						aid = 462
+					} else if($(this).index() == 1) {
+						aid = 465
+					} else if($(this).index() == 2) {
+						aid = 468
+					} else if($(this).index() == 3) {
+						aid = 471
+					}
+					page = 1;
+					gx = true
+					getMore();
+				})
+				ykjzc(451, 2);
+				ykjzc(456, 2);
+				ykjzc(457, 2);
+				ykjzc(459, 3);
+
+				$(window).scroll(function() {
+				if($(window).scrollTop() >= 4005) {
+				
+						$(".tab").css({
+							"position": "fixed"
+						})
+						$(".listbg").css({
+							"margin-top": "82px"
+						})
+					} else {
+						$(".tab").css({
+							"position": "initial"
+						})
+						$(".listbg").css({
+							"margin-top": "0"
+						})
+					}
+				})
+
+				getMore();
+
+				function getMore() {
+					//var height1=$(window).scrollTop()
+
+					$.ajax({
+						type: "post",
+						type: "get",
+						url: "/index.php/api/Active/getActive",
+						data: {
+							pc: 1,
+							aid: aid,
+							page: page,
+							pagesize: 20
+						},
+						dataType: "json",
+						success: function(data) {
+							if(data.status == 0) {
+								var dd = "";
+
+								for(var i in data.info.activeGoodsLists) {
+									var zt = "",
+										jg = "",
+										kk = "";
+									if(data.info.activeGoodsLists[i].isSold == 0) {
+										if(data.info.activeGoodsLists[i].activePrice) {
+											jg = data.info.activeGoodsLists[i].activePrice
+										} else {
+											if(data.info.activeGoodsLists[i].shopPrice) {
+												jg = data.info.activeGoodsLists[i].shopPrice
+											} else {
+												jg = data.info.activeGoodsLists[i].marketPrice
+											}
+										}
+										if(data.info.activeGoodsLists[i].askPrice == 1) {
+											zt = '<div class="price">请联系客服询价</div>'
+										} else {
+											zt = '<div class="price">结缘价：<span>￥' + jg + '元</span></div>'
+										}
+
+									} else {
+										zt = '<div class="price"><span>已结缘</span></div>'
+
+									}
+
+									kk = '<a href="' + data.info.activeGoodsLists[i].url + '">'
+
+									dd += '<div class="goodli">' + kk + '<div class="good"><div class="goodimg"><img src="';
+									dd += data.info.activeGoodsLists[i].thumb + '"></div><div class="title">';
+									dd += data.info.activeGoodsLists[i].goodsName + '</div><div class="relative"><div class="ordernum">货   号：';
+									dd += data.info.activeGoodsLists[i].goodsSn + '</div>';
+									dd += zt + '<div class="love"><img src="img/activeicon.png"></div></div></div></a></div>';
+								}
+
+								if(gx == true) {
+									$(".goodlist2").html(dd);
+									$('html,body').scrollTop($(".listbg").offset().top - $(".tab").height());
+								} else {
+									$(".goodlist2").append(dd)
+								}
+
+								page++;
+								gx = false;
+
+							} else {
+								//alert(data.msg);
+
+							}
+
+						}
+					});
+
+				}
+
+				function ykjzc(a, b) {
+					//var height1=$(window).scrollTop()
+
+					$.ajax({
+						type: "post",
+						type: "get",
+						url: "/index.php/api/Active/getActive",
+						data: {
+							pc: 1,
+							aid: a,
+							page: 1,
+							pagesize: b
+						},
+						dataType: "json",
+						success: function(data) {
+							if(data.status == 0) {
+								var dd = "";
+
+								for(var i in data.info.activeGoodsLists) {
+									var zt = "",
+										jg = "",
+										kk = "";
+									if(data.info.activeGoodsLists[i].isSold == 0) {
+										if(data.info.activeGoodsLists[i].activePrice) {
+											jg = data.info.activeGoodsLists[i].activePrice
+										} else {
+											if(data.info.activeGoodsLists[i].shopPrice) {
+												jg = data.info.activeGoodsLists[i].shopPrice
+											} else {
+												jg = data.info.activeGoodsLists[i].marketPrice
+											}
+										}
+										if(data.info.activeGoodsLists[i].askPrice == 1) {
+											zt = '<div class="price">请联系客服询价</div>'
+										} else {
+											zt = '<div class="price">结缘价：<span>￥' + jg + '元</span></div>'
+										}
+
+									} else {
+										zt = '<div class="price"><span>已结缘</span></div>'
+
+									}
+
+									kk = '<a href="' + data.info.activeGoodsLists[i].url + '">'
+
+									dd += '<div class="goodli">' + kk + '<div class="good"><div class="goodimg"><img src="';
+									dd += data.info.activeGoodsLists[i].thumb + '"></div><div class="title">';
+									dd += data.info.activeGoodsLists[i].goodsName + '</div><div class="relative"><div class="ordernum">货   号：';
+									dd += data.info.activeGoodsLists[i].goodsSn + '</div>';
+									dd += zt + '<div class="love"><img src="img/activeicon.png"></div></div></div></a></div>';
+								}
+
+								$(".ykjlist").append(dd)
+
+							} else {
+								//alert(data.msg);
+
+							}
+
+						}
+					});
+
+				}
+			</script>
+	</body>
+
+</html>

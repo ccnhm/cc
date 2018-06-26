@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+		<meta charset="utf-8" />
+		<title>每日上新推荐</title>
+		<link rel="stylesheet" href="/h5/css/swiper.min.css" />
+		<script type="text/javascript" src="/h5/js/swiper.min.js" ></script>
+		<script type="text/javascript" src="/h5/js/jquery-1.10.2.js"></script>
+		<style>
+			*{margin: 0;padding: 0;box-sizing: border-box;}
+			a{text-decoration: none;}
+			body{    font-family: "微软雅黑";    font-size: 14px;background: #efefef;}
+			img{width: 100%;display: block;}
+			.clear{clear: both;}
+			.content{width: 1200px;margin: auto;position: relative;}
+			.border1{margin-top: 20px;border-top: 5px solid #1b1b1b;}
+			.border2{padding-top: 45px;border-top: 5px solid #1b1b1b;}
+		
+			.coperight{color: #888b8b;font-size: 16px;padding: 80px 0 110px 0;text-align: center;}
+			.min-width{min-width: 1200px;}
+			.good-fj{width:1220px;margin: auto;margin-top: 60px;}
+			
+			.goodlist ,.goodlist2{width:1220px;margin: auto;padding: 5px;margin-top: 10px;}
+			
+			.goodlist:after,.goodlist2:after {content: "\0020";display: block;height: 0;clear: both;}
+			
+			.goodli {padding: 5px;width: 20%;float: left;}
+			
+			.good {background: #FFFFFF;}
+			
+			.title {margin: 10px 0;font-size: 16px;color: #2a2a2a;width: 100%;text-align: center;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;padding: 0 15px;}
+			
+			.ordernum {font-size: 14px;color: #626161;margin-bottom: 10px;padding: 0 15px;}
+			
+			.price {font-size: 14px;color: #626161;padding: 0 15px 30px 15px;}
+			
+			.price span {color: #990000;}
+			
+			.relative {position: relative;}
+			
+			.love {
+    position: absolute;
+    width: 60px;
+    right: 10px;
+    top: 0;
+}
+			.linkmore .getmore {
+			    width: 200px;
+			    height: 45px;
+			    text-align: center;
+			    color: #fbe96d;
+			    background: #a2001f;
+			    box-sizing: border-box;
+			    line-height: 45px;
+			    font-size: 18px;
+			    border-radius: 50px;
+			    cursor: pointer;
+			    margin: 30px auto;
+			}
+			.linkmore img {
+			    width: 14px;
+			    vertical-align: middle;
+			    margin-left: 5px;
+			    display: initial;
+			}
+			/*导航*/
+			.topnavw{ width:100%; height:auto; float:left;}
+			.topnavwb{ border-bottom:1px solid #e8e8e8; height:30px;}
+			.welws{ width:auto; float:left; color:#797979; font-size:12px; line-height:30px; float:left;}
+			.ydjoutgz{ width:auto; float:right;}
+			.ydjoutgz li{ width:auto; display:inline-block; margin-left:15px; cursor:pointer; height:31px; position:relative; padding:0 10px; line-height:30px;}
+			.top-r{ width:auto; float:right;}
+			.top-r a{ float:left; height:30px;}
+			.top-r a img{ float:left; max-height:22px; margin-top:4px;    width: auto;}
+			.top-r span{ margin:5px 5px 0 5px; float:left; color:#666;}
+			.topadv{ float:left; width:100%; height:150px; background:url(http://www.jaadee.com/static/jaadee2014/images/topbanner.jpg) center no-repeat;}
+			.count{ width:1200px; height:auto; margin:0 auto;}
+			.topinfo{ width:100%; height:30px; line-height:30px; float:left; color:#b2b2b2; font-size:12px;}
+			.welcome{ width:auto; float:left; float:left;}
+			.toptag{ width:auto; float:right;}
+			.toptag li{ width:auto; float:left; height:30px; padding:0 5px; margin:0 0 0 10px; position:relative;}
+			.toptag li:hover a{ text-decoration:underline;}
+			.toptag .hasson:hover{ background:url(https://ydj.jaadee.com/static/pc/images/shoutopbg.png); height:30px; float:left; width:auto; background-size:100% 100%;}
+			.toptag .hassonjt:hover .jtou{ background:url(https://ydj.jaadee.com/static/pc/images/jtdownimg.png) center right no-repeat;}
+			.topnavwnav{height:40px; background:#1e0906; line-height:40px;}
+			.ydjnavw { width:auto; float:left;}
+			.ydjnavw li{ width:auto; display:inline-block;}
+			.ydjnavw li a{ width:auto; color:#FFF; display:block; text-decoration:none; padding:0 23px;}
+			.ydjnavw li.thisli a{ background:#EEC87D; color:#000;}
+			.ydhifs{ width:auto; height:28px; float:right; margin:6px 0;}
+			.ydhifs input{ border:none; height:28px; line-height:28px; float:left;padding-left:10px;}
+			.ydjsubmit{ width:auto; padding:0 15px; background:#660000; color:#FFF;}
+			.loright{ width:1200px; float:right; height:110px; background:url(https://ydj.jaadee.com/static/pc/images/topimg2017.png) center right no-repeat;}
+			.smallinfo{ height:20px; line-height:20px; font-size:12px; color:#999999;}
+			/*尾部*/
+			.footer {
+			    width: 100%;
+			    height: auto;
+			    float: left;
+			    margin: 15px 0;
+			    font-size: 14px;
+			    line-height: 25px;
+			    color: #000;
+			    text-align: center;
+			}
+			.fmainfoot{ text-align:center; margin:15px 0;}
+			.fmainfoot li{ display:inline-block; margin:0 10px;}
+		    .fmainfoot li a{ color:#000;}
+		    .fmainfoot span{ color:#000;}
+
+
+			.banner{background: url(img/pc__banner.jpg) center;background-size: 1920px 650px; height: 650px;}
+			
+			
+			
+		</style>
+	</head>
+	<body>
+		<div style="background: #fff;">
+			<div class="topnavw topnavwb">
+				<div class="count">
+					<span class="welws">玉雕界-翡翠王朝旗下品牌</span>
+					<div class="top-r">
+						<a href="https://www.jaadee.com/" target="_blank"><img src="https://www.zhubaoleyuan.com/static/images/icon-fcwc.png"></a>
+						<span>|</span>
+						<a href="http://www.zhubaoleyuan.com" target="_blank"><img src="https://www.zhubaoleyuan.com/static/images/icon-zbly.png"></a>
+						<span>|</span>
+						<a href="https://yd.jaadee.com/" target="_blank"><img src="https://www.zhubaoleyuan.com/static/images/icon-ydj.png"></a>
+						<span>|</span>
+						<a href="https://nasa.jaadee.com" target="_blank"><img src="https://www.zhubaoleyuan.com/static/images/icon-ns.png"></a>
+						<span>|</span>
+						<a href="https://www.nanhongzhimi.com" target="_blank"><img src="https://www.zhubaoleyuan.com/static/images/icon-nhzm.png"></a>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="count">
+			    <div class="loright"></div>
+				<div class="clear"></div>
+			</div>
+			<div class="topnavw topnavwnav">
+				<div class="count">
+					<ul class="ydjnavw">
+						<li>
+							<a target="_blank" class="thisa" href="https://www.jaadee.com">翡翠王朝</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://yd.jaadee.com">玉雕界首页</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://yd.jaadee.com/World/index.html">全国巡展</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://yd.jaadee.com/Graver/index.html">玉雕名家</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://yd.jaadee.com/Goods/index.html">最新作品</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://yd.jaadee.com/Wool/index/p/1.html">玉石原料</a>
+						</li>
+			
+						<li>
+							<a target="_blank" href="https://yd.jaadee.com/Collection/index.html">收藏推荐</a>
+						</li>
+			
+						<li>
+							<a target="_blank" href="https://yd.jaadee.com/ArticleCat/index.html">动 态</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://yd.jaadee.com/Aboutus/attention.html">关注我们</a>
+						</li>
+			
+					</ul>
+					<a class="ydhifs" target="_blank" href="https://yd.jaadee.com">
+						<input type="hidden" name="m" value="Search">
+						<input type="hidden" name="a" value="index">
+						<input type="text" name="keyword" value="" id="keyword">
+						<input class="ydjsubmit" type="submit" value="搜 索">
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="banner clear"></div>
+		<!--<a href="https://www.jaadee.com/Live/ydmj.html"><img src="img/pc__02.jpg" class="min-width"></a>-->
+		
+		<div class="content">
+			<div class="goodlist"></div>
+		</div>
+		<div class="linkmore clear">
+					<div class="getmore" onclick="getMore(1,2);">点击加载更多<img src="/h5/2018618/zhc/img/pc__right.png"></div>
+				</div>
+		
+			
+				
+				
+		
+		
+			<ul class="fmainfoot">
+        		<li><a href="https://yd.jaadee.com/Aboutus/index.html" target="_blank">关于我们</a></li><span>|</span>
+            	<li><a href="https://yd.jaadee.com/Aboutus/contact.html" target="_blank">联系我们</a></li><span>|</span>
+            	<li><a href="https://yd.jaadee.com/Aboutus/aftersale.html" target="_blank">售后服务</a></li><span>|</span>
+            	<li><a href="https://yd.jaadee.com/Aboutus/howbuy.html" target="_blank">如何购买</a></li><span>|</span>
+            	<li><a href="https://yd.jaadee.com/ArticleCat/" target="_blank">最新动态</a></li><span>|</span>
+            	<li><a href="http://mp.weixin.qq.com/s?__biz=MzA3ODAwMTMwNA==&amp;mid=202540906&amp;idx=1&amp;sn=ce14f00cf000ea3e3808d6e4208bb33f&amp;scene=1&amp;from=singlemessage&amp;isappinstalled=0#rd" target="_blank">加入我们</a></li>
+        	</ul>
+				<div class="footer">
+	                玉雕行业“山寨成风”，谨防假冒，避免上当受骗，请认准玉雕界全国统一查询电话400-629-1314<br>
+	                2008-2017 翡翠王朝(www.jaadee.com)版权所有<br>
+	                ICP备案号:滇ICP备12006083号-1 / 公安备案号: 53010203502103 / 工商注册号: 530102100238794<br>
+	                公司地址：云南省瑞丽市金星石木文化城15栋1号 / 云南省昆明市人民中路169号(移动大厦17A)   / 广东省佛山市平洲翠宝园3栋46/47A<br>
+            </div>
+		<script>
+			var page = 1;
+			getMore()
+
+
+			function ToTop() {
+				$('html,body').scrollTop(0);
+			}
+
+
+				function getMore() {
+					//var height1=$(window).scrollTop()
+
+					$.ajax({
+						type: "post",
+						type: "get",
+						url: "/index.php/api/Active/getActive",
+						data: {
+							pc: 1,
+							aid: 612,
+							page: page,
+							pagesize: 20
+						},
+						dataType: "json",
+						success: function(data) {
+							if(data.status == 0) {
+								var dd = "";
+
+								for(var i in data.info.activeGoodsLists) {
+									var zt = "",
+										jg = "",
+										kk = "";
+									if(data.info.activeGoodsLists[i].isSold == 0) {
+										if(data.info.activeGoodsLists[i].activePrice) {
+											jg = data.info.activeGoodsLists[i].activePrice
+										} else {
+											if(data.info.activeGoodsLists[i].shopPrice) {
+												jg = data.info.activeGoodsLists[i].shopPrice
+											} else {
+												jg = data.info.activeGoodsLists[i].marketPrice
+											}
+										}
+										if(data.info.activeGoodsLists[i].askPrice == 1) {
+											zt = '<div class="price">请联系客服询价</div>'
+										} else {
+											zt = '<div class="price">结缘价：<span>￥' + jg + '元</span></div>'
+										}
+
+									} else {
+										zt = '<div class="price"><span>已结缘</span></div>'
+
+									}
+
+									kk = '<a href="' + data.info.activeGoodsLists[i].url + '">'
+
+									dd += '<div class="goodli">' + kk + '<div class="good"><div class="goodimg"><img src="';
+									dd += data.info.activeGoodsLists[i].thumb + '"></div><div class="title">';
+									dd += data.info.activeGoodsLists[i].goodsName + '</div><div class="relative"><div class="ordernum">货   号：';
+									dd += data.info.activeGoodsLists[i].goodsSn + '</div>';
+									dd += zt + '<div class="love"><img src="/h5/2018618/zhc/img/activeicon.png"></div></div></div></a></div>';
+								}
+
+								
+									$(".goodlist").append(dd);
+									
+									page++;
+							
+							} else {
+								//alert(data.msg);
+
+							}
+
+						}
+					});
+
+				}
+		</script>
+	</body>
+</html>

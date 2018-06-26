@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+		<title>奈莎珠宝断镯修复</title>
+		<script type="text/javascript" src="/h5/js/jquery-1.10.2.js"></script>
+		<script type="text/javascript" src="/h5/js/get_set_url.js"></script>
+		<script src="https://res.jaadee.net/rn/JaadeeAppJsBridge.js?v=1.4"></script>
+
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			.head{display: none;}
+			body {
+				background: #efefef;
+			}
+			
+			img {
+				display: block;
+				width: 100%;
+				pointer-events: none;
+			}
+			
+			
+			
+			.clear {
+				clear: both;
+			}
+			
+			.content {
+				padding: 0 2%;
+			}
+			.but2{width: 70%;margin: 0.4rem auto;margin-top: 1rem;}
+		</style>
+	</head>
+
+	<body>
+		<script type="text/javascript" src="/h5/js/flexible.debug.js"></script>
+		
+		<div class="head">
+			<style type="text/css">
+				.fiextop{ width: 100%; position: relative;}
+				.fiextop a{width: 100%;}
+				.fiextop img{width: 100%;}
+				.fiextop .close{position: absolute; z-index: 1; width: 20%; height: 100%; left: 0; top: 0;}
+				</style>
+				<div class="fiextop">
+					<a target="_blank" href="https://app.jaadee.com/do.php?canal=huodong">
+						<img src="https://appres.jaadee.com/apps/images/fiexdtop.jpg">
+						<!--img src="https://apps.jaadee.com/static/images/ten-downapp.jpg" / -->
+					</a>
+				    <div class="close" id="closeappimg"></div>
+				</div>
+				<script>
+					$("#closeappimg").click(function(){
+						$(".fiextop").remove();
+					});
+				</script>
+		</div>
+		<img src="img2/m__01.jpg">
+		<div class="content">
+			<div class="lx"><img src="img2/m__02.jpg"></div>
+			
+			<img src="img2/m__03.jpg">
+			<div class="lx"><img src="img2/m__04.jpg?v=1"></div>
+			<img src="img2/m__05.jpg">
+			<div class="lx"><img src="img2/m__06.jpg"></div>
+			<img src="img2/m__07.jpg">
+			<div class="lx"><img src="img2/m__08.jpg"></div>
+			<img src="img2/m__09.jpg">
+			<div class="lx"><img src="img2/m__10.jpg"></div>
+			<img src="img2/m__11.jpg">
+			<div class="lx"><img src="img2/m__12.jpg"></div>
+			<img src="img2/m__13.jpg">
+			<div class="lx"><img src="img2/m__14.jpg"></div>
+			<img src="img2/m__15.jpg">
+			<img src="img2/m__16.jpg">
+			<img src="img2/m__17.jpg">
+			<img src="img2/m__18.jpg">
+			<img src="img2/m__19.jpg">
+			<img src="img2/m__20.jpg">
+			<div class="but2"><img src="img/m__but2.png"></div>
+			<img src="img/m__15.jpg">
+		</div>
+	
+		<!--微信分享-->
+		<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+		<script>
+			
+			if(RNJsBriageObject.isInApp) {
+				//$(".but2 img").attr("src",'img/m__but2.png');
+			} else {
+				$(".head").show()
+				//$(".but2 img").attr("src",'/h5/2018618/ns2-618/img/m__21_2.png');
+			}
+			
+			$(".but2,.lx").click(function(){
+				if(RNJsBriageObject.isInApp) {
+					AppJump.chatWithServer('媛媛','http://appmanage.jaadee.com/newupload/rnAdmin/upload/archive/ec1523145de46d438a278b721a3bc4d0/200x200.jpg','NASAcb')
+				} else {
+					
+				}
+			})
+
+			
+			
+			
+			//RN分享参数默认值
+			RNJsBriageObject.shareInfo = {
+				name: '多款修复案例，最硬的设计，赋予断镯新生',
+				desc: '奈莎珠宝断镯修复，不仅让断镯重圆，更让断镯美上加美',
+				url: '/h5/ns_dzxf/dzcy.html?share=1',
+				logo: '/h5/ns_dzxf/img/m__01.jpg'
+			};
+			//微信分享
+
+			wxshare();
+
+			function wxshare() {
+				//				var title = sharetitle;
+				//				var desc = sharedes;
+				//				var linkurl = shareimgurl;
+				//				var imgurl = sharelink;
+				var title = "多款修复案例，最硬的设计，赋予断镯新生";
+				var desc = "奈莎珠宝断镯修复，不仅让断镯重圆，更让断镯美上加美";
+				var linkurl = encodeURIComponent(location.href.split('#')[0]);
+				var imgurl = "/h5/ns_dzxf/img/m__01.jpg";
+				$.ajax({
+					type: "post",
+					url: "/h5/active/getShareInfo",
+					data: {
+						imgurl: imgurl,
+						link: linkurl,
+						title: title,
+						desc: desc,
+						debug: false
+
+					},
+					// async: false,
+					dataType: "json",
+					success: function(data) {
+						data = JSON.parse(data)
+						console.log(data)
+						if(data.status == 0) {
+
+							$("body").append(data.info)
+							//console.log(JSON.stringify(data))
+							// 注意：所有的JS接口只能在公众号绑定的域名下调用，公众号开发者需要先登录微信公众平台进入“公众号设置”的“功能设置”里填写“JS接口安全域名”。
+							// 如果发现在 Android 不能分享自定义内容，请到官网下载最新的包覆盖安装，Android 自定义分享接口需升级至 6.0.2.58 版本及以上。
+
+						}
+
+					}
+				})
+			};
+		</script>
+	</body>
+
+</html>

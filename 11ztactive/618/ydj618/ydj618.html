@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+		<meta charset="utf-8" />
+		<title>《关公》系列</title>
+		<link rel="stylesheet" href="/h5/css/swiper.min.css" />
+		<script type="text/javascript" src="/h5/js/swiper.min.js" ></script>
+		<script type="text/javascript" src="/h5/js/jquery-1.10.2.js"></script>
+		<style>
+			*{margin: 0;padding: 0;box-sizing: border-box;}
+			a{text-decoration: none;}
+			body{    font-family: "微软雅黑";    font-size: 14px;background: #070707;}
+			img{width: 100%;display: block;}
+			.clear{clear: both;}
+			.content{width: 1200px;margin: auto;position: relative;}
+			.border1{margin-top: 20px;border-top: 5px solid #1b1b1b;}
+			.border2{padding-top: 45px;border-top: 5px solid #1b1b1b;}
+		
+			.coperight{color: #888b8b;font-size: 16px;padding: 80px 0 110px 0;text-align: center;}
+			.min-width{min-width: 1200px;}
+			.good-fj{width:1220px;margin: auto;margin-top: 60px;}
+			
+			.goodlist ,.goodlist2{width:1220px;margin: auto;padding: 5px;margin-top: 10px;}
+			
+			.goodlist:after,.goodlist2:after {content: "\0020";display: block;height: 0;clear: both;}
+			
+			.goodli {padding: 5px;width: 25%;float: left;}
+			
+			.good {background: #FFFFFF;}
+			
+			.title {margin: 10px 0;font-size: 16px;color: #2a2a2a;width: 100%;text-align: center;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;padding: 0 15px;}
+			
+			.ordernum {font-size: 14px;color: #626161;margin-bottom: 10px;padding: 0 15px;}
+			
+			.price {font-size: 14px;color: #626161;padding: 0 15px 30px 15px;}
+			
+			.price span {color: #990000;}
+			
+			.relative {position: relative;}
+			
+			.love {position: absolute;width: 30%;right: 0;top: 0;}
+			.linkmore {margin: 60px auto 0 auto;width: 280px;height: 60px;background: #41260b;border-radius: 60px;}
+			.linkmore .getmore {float: left;width: 270px;height: 50px;margin: 5px;text-align: center; color: #dbbf7e;border: 1px solid #71502f;box-sizing: border-box;line-height: 50px;font-size: 18px;border-radius: 50px;cursor: pointer;}
+			/*导航*/
+			.topnavw{ width:100%; height:auto; float:left;}
+			.topnavwb{ border-bottom:1px solid #e8e8e8; height:30px;}
+			.welws{ width:auto; float:left; color:#797979; font-size:12px; line-height:30px; float:left;}
+			.ydjoutgz{ width:auto; float:right;}
+			.ydjoutgz li{ width:auto; display:inline-block; margin-left:15px; cursor:pointer; height:31px; position:relative; padding:0 10px; line-height:30px;}
+			.top-r{ width:auto; float:right;}
+			.top-r a{ float:left; height:30px;}
+			.top-r a img{ float:left; max-height:22px; margin-top:4px;    width: auto;}
+			.top-r span{ margin:5px 5px 0 5px; float:left; color:#666;}
+			.topadv{ float:left; width:100%; height:150px; background:url(http://www.jaadee.com/static/jaadee2014/images/topbanner.jpg) center no-repeat;}
+			.count{ width:1200px; height:auto; margin:0 auto;}
+			.topinfo{ width:100%; height:30px; line-height:30px; float:left; color:#b2b2b2; font-size:12px;}
+			.welcome{ width:auto; float:left; float:left;}
+			.toptag{ width:auto; float:right;}
+			.toptag li{ width:auto; float:left; height:30px; padding:0 5px; margin:0 0 0 10px; position:relative;}
+			.toptag li:hover a{ text-decoration:underline;}
+			.toptag .hasson:hover{ background:url(https://ydj.jaadee.com/static/pc/images/shoutopbg.png); height:30px; float:left; width:auto; background-size:100% 100%;}
+			.toptag .hassonjt:hover .jtou{ background:url(https://ydj.jaadee.com/static/pc/images/jtdownimg.png) center right no-repeat;}
+			.topnavwnav{height:40px; background:#1e0906; line-height:40px;}
+			.ydjnavw { width:auto; float:left;}
+			.ydjnavw li{ width:auto; display:inline-block;}
+			.ydjnavw li a{ width:auto; color:#FFF; display:block; text-decoration:none; padding:0 23px;}
+			.ydjnavw li.thisli a{ background:#EEC87D; color:#000;}
+			.ydhifs{ width:auto; height:28px; float:right; margin:6px 0;}
+			.ydhifs input{ border:none; height:28px; line-height:28px; float:left;padding-left:10px;}
+			.ydjsubmit{ width:auto; padding:0 15px; background:#660000; color:#FFF;}
+			.loright{ width:1200px; float:right; height:110px; background:url(https://ydj.jaadee.com/static/pc/images/topimg2017.png) center right no-repeat;}
+			.smallinfo{ height:20px; line-height:20px; font-size:12px; color:#999999;}
+			/*尾部*/
+			.footer {
+			    width: 100%;
+			    height: auto;
+			    float: left;
+			    margin: 15px 0;
+			    font-size: 14px;
+			    line-height: 25px;
+			    color: #fff;
+			    text-align: center;
+			}
+			.fmainfoot{ text-align:center; margin:15px 0;}
+			.fmainfoot li{ display:inline-block; margin:0 10px;}
+		    .fmainfoot li a{ color:#fff;}
+		    .fmainfoot span{ color:#fff;}
+
+
+			.banner{background: url(img/pc__01.jpg) center;background-size: 1920px 762px; height: 762px;}
+			.bg1{background: url(img/pc__02.jpg) center;background-size: 1920px 685px; height:685px;padding-top: 50px;}
+			.spbox{width: 700px;height: 400px;margin:auto;position: relative;background: #312c29;}
+			.spbox video{width: 700px;height: 400px;}
+			.play{width: 68px;position: absolute;top: 50%;left: 50%;margin-top: -34px;margin-left: -34px;}
+			.spdes{font-size: 15px;text-align: center;color: #d9b85b;line-height: 36px;margin-top: 50px;}
+			.bg2{background: url(img/pc__03.jpg) center;background-size: 1200px 667px; height: 667px;position: relative;}
+			.bg2_tex1{position: absolute;width: 48%;left: 0;top: 560px;font-size: 15px;text-indent: 2em;color: #dcdddd;line-height: 30px;}
+			.bg2_tex2{position: absolute;width: 48%;right: 0;top: 560px;font-size: 15px;text-indent: 2em;color: #dcdddd;line-height: 30px;}
+			.bg3{font-size: 15px;color: #dcdddd;background: url(img/pc__04.jpg) center;background-size: 1200px 514px; height: 514px;position: relative;}
+			.bg3_tex1{position: absolute;bottom: 50px;left: 110px;}
+			.bg3_tex2{position: absolute;bottom: 50px;left: 320px;}
+			.bg3_tex3{position: absolute;bottom: 50px;left: 530px;}
+			.bg3_tex4{position: absolute;bottom: 50px;left: 740px;}
+			.bg3_tex5{position: absolute;bottom: 50px;left: 960px;}
+			.bg4{background: url(img/pc__05.jpg) center;background-size: 1200px 550px; height: 550px;position: relative;padding-top: 170px;}
+			.swiper-container{width: 1060px;margin: auto;}
+			.swiper-slide {padding: 10px;}
+			.bg4 .swiper-button-next{display: block;position: absolute;margin-top: 10px;width: 52px;height: 100px;opacity: 1;background-size: 52px 100px;} 
+			.bg4 .swiper-button-prev{display: block;position: absolute;margin-top: 10px;width: 52px;height: 100px;opacity: 1;background-size: 52px 100px;left: 5px;}
+			.bg5{font-size:15px;color: #dcdddd;line-height: 30px;background: url(img/pc__06.jpg) center;background-size: 1200px 1125px; height: 1125px;position: relative;}
+			.yellow{font-size: 18px;color: #d9b85b;line-height: 30px;text-indent: 0;}
+			.bg5_tex1{position: absolute;top: 200px;width: 745px;right: 0;text-indent: 2em;}
+			.bg5_tex2{position: absolute;font-size: 15px;color:#d9b85b;line-height: 30px;left: 130px;top: 690px;}
+			.bg6{line-height: 30px;background: url(img/pc__07.jpg) center;background-size: 1200px 431px; height: 431px;position: relative;}
+			.bg6_rightbox{width: 325px;top:100px;right: 160px;position: absolute;}
+			.bg6_leftbox{width: 325px;top:100px;left: 60px;position: absolute;}
+			.bg6_tex1{color: #d9b85b;font-size: 30px;line-height: 50px;margin-left: -15px;}
+			.bg6_tex2{color: #efefef;font-size: 16px;}
+			.bg6_tex3{color: #dcdddd;font-size: 18px;}
+			.bg6_tex4{color: #efefef;font-size: 14px;    margin-left: -8px;}
+			.jg_bg{margin-top: 20px;background: url(img/jg_bg.png) center;background-size: 230px 43px;height: 43px;width: 230px;position: relative;line-height: 43px;}
+			.jg_tex1{font-size: 18px;color: #070707;margin-left: 28px;}
+			.jg_tex2{font-size: 14px;color: #070707;margin-left: 30px;}
+			.bg7{line-height: 30px;background: url(img/pc__08.jpg) center;background-size: 1200px 429px; height: 429px;position: relative;}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div style="background: #fff;">
+			<div class="topnavw topnavwb">
+				<div class="count">
+					<span class="welws">玉雕界-翡翠王朝旗下品牌</span>
+					<div class="top-r">
+						<a href="https://www.jaadee.com/" target="_blank"><img src="https://www.zhubaoleyuan.com/static/images/icon-fcwc.png"></a>
+						<span>|</span>
+						<a href="http://www.zhubaoleyuan.com" target="_blank"><img src="https://www.zhubaoleyuan.com/static/images/icon-zbly.png"></a>
+						<span>|</span>
+						<a href="https://yd.jaadee.com/" target="_blank"><img src="https://www.zhubaoleyuan.com/static/images/icon-ydj.png"></a>
+						<span>|</span>
+						<a href="https://nasa.jaadee.com" target="_blank"><img src="https://www.zhubaoleyuan.com/static/images/icon-ns.png"></a>
+						<span>|</span>
+						<a href="https://www.nanhongzhimi.com" target="_blank"><img src="https://www.zhubaoleyuan.com/static/images/icon-nhzm.png"></a>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="count">
+			    <div class="loright"></div>
+				<div class="clear"></div>
+			</div>
+			<div class="topnavw topnavwnav">
+				<div class="count">
+					<ul class="ydjnavw">
+						<li>
+							<a target="_blank" class="thisa" href="https://www.jaadee.com">翡翠王朝</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://yd.jaadee.com">玉雕界首页</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://yd.jaadee.com/World/index.html">全国巡展</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://yd.jaadee.com/Graver/index.html">玉雕名家</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://yd.jaadee.com/Goods/index.html">最新作品</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://yd.jaadee.com/Wool/index/p/1.html">玉石原料</a>
+						</li>
+			
+						<li>
+							<a target="_blank" href="https://yd.jaadee.com/Collection/index.html">收藏推荐</a>
+						</li>
+			
+						<li>
+							<a target="_blank" href="https://yd.jaadee.com/ArticleCat/index.html">动 态</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://yd.jaadee.com/Aboutus/attention.html">关注我们</a>
+						</li>
+			
+					</ul>
+					<a class="ydhifs" target="_blank" href="https://yd.jaadee.com">
+						<input type="hidden" name="m" value="Search">
+						<input type="hidden" name="a" value="index">
+						<input type="text" name="keyword" value="" id="keyword">
+						<input class="ydjsubmit" type="submit" value="搜 索">
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="banner clear"></div>
+		<!--<a href="https://www.jaadee.com/Live/ydmj.html"><img src="img/pc__02.jpg" class="min-width"></a>-->
+		<div class="bg1">
+			<div class="content">
+				<div class="spbox">
+					<video id="sp" poster="img/spslt.jpg"  preload="meta"  name="media" x-webkit-airplay="true" playsinline="" webkit-playsinline="true" x5-video-player-type="h5">
+					<source src="https://appvideo.jaadee.net/2018/06/guanyu.mp4">
+				</video>
+					<img src="img/pc__zt.png" class="play" id="zt">
+				</div>
+				<div class="spdes">
+					<p>桃园结义薄云天，偃月青龙刀刃寒。 </p>
+					<p>一骑绝尘走千里，五关斩将震坤乾。</p>
+					<p>忠心报国为梁栋，肝胆护兄铸铁肩。</p>
+					
+				</div>
+			</div>
+		</div>
+		<div class="content">
+			<div class="bg2">
+				<div class="bg2_tex1">
+					关公是关羽的化身，以忠贞、守义、勇猛和武艺高强著称于世。气宇轩昂，凝重威武。在民间传说中，关公被视为武神、财神及保护商贾之神。
+				</div>
+				<div class="bg2_tex2">
+					作品选用产自澳大利亚的墨玉，摆脱颜色束缚，立体圆雕关公，打破于传统玉雕的关公造型，将其威严的部分淡化，塑造出别样的萌态之感。佩戴于胸前，神秘的黑色给人增添稳重而又不失时尚之感，又有祈福美好的寓意。
+				</div>
+			</div>
+			<div class="bg3">
+				<div class="bg3_tex1">工料俱佳，温润无暇</div>
+				<div class="bg3_tex2">神态端庄，造型别致</div>
+				<div class="bg3_tex3">精雕细琢，技法娴熟</div>
+				<div class="bg3_tex4">造型圆润，精光内敛</div>
+				<div class="bg3_tex5">侠骨柔肠，神形兼备</div>
+			</div>
+			<div class="bg4">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						 <div class="swiper-slide"><img src="img/04.jpg"></div>
+					    <div class="swiper-slide"><img src="img/05.jpg"></div>
+					    <div class="swiper-slide"><img src="img/06.jpg"></div>
+					    <div class="swiper-slide"><img src="img/01.jpg"></div>
+					    <div class="swiper-slide"><img src="img/02.jpg"></div>
+					    <div class="swiper-slide"><img src="img/03.jpg"></div>
+					   
+					    
+					</div>
+				</div>
+				<div class="swiper-button-prev"></div>
+    			<div class="swiper-button-next"></div>
+					<script> 
+					var mySwiper = new Swiper('.swiper-container', {
+						autoplay: 5000,//可选选项，自动滑动
+						slidesPerView:3,
+						slidesPerGroup : 3,
+						prevButton:'.swiper-button-prev',
+						nextButton:'.swiper-button-next',
+						autoplayDisableOnInteraction : false
+					})
+					</script>
+				
+			</div>
+			<div class="bg5">
+				<div class="bg5_tex1">
+					<p>关公是我国民间很受欢迎的一尊神灵，在过年的时候，每家每户都会将关公的形象作为门神贴在家中，祈祷来年的财气和运气。作为玉雕首饰来说，关公的挂牌也是很常见的，佩戴于胸前，不仅是贵气、财气、神气的象征，还能给人们带来财运、平安、福德。除此之外，武圣人“关公”在玉雕首饰中的寓意还有很多：</p>
+					<p class="yellow">【注：作品已申请国家外观专利及版权保护，仿冒必究。】</p>
+				</div>
+				<div class="bg5_tex2">
+				   <p>一、重情重义、坚守信用。</p>
+				   <p>二、饱读诗书、才高八斗。</p>
+				   <p>三、财运亨通、生意兴隆。</p>
+				   <p>四、驱邪避恶，镇宅挡煞。</p>
+				   <p>五、步步高升、事业顺利。</p>
+				</div>
+			</div>
+			<div class="bg6">
+				<div class="bg6_rightbox">
+					<div class="bg6_tex1">【优选】开运·关公</div>
+					<div class="bg6_tex2">消除小人邪佞，转运保平安、驱邪避煞。</div>
+					<div class="bg6_tex3">首发优选价：<span class="bg6_tex1">￥5600</span></div>
+					<div class="bg6_tex4">（可根据需求尺寸量身定制）</div>
+					<a href="https://yd.jaadee.com/Goods/178605.html">
+						<div class="jg_bg">
+							<span class="jg_tex1">咨询客服</span>
+							<span class="jg_tex2">查看详情</span>
+							
+						</div>
+					</a>	
+				</div>
+			</div>
+			<div class="bg7">
+				<div class="bg6_leftbox">
+					<div class="bg6_tex1">【优选】纳福·关公</div>
+					<div class="bg6_tex2">既能招财聚宝，又可纳吉挡煞、镇宅辟邪。</div>
+					<div class="bg6_tex3">首发优选价：<span class="bg6_tex1">￥5200</span></div>
+					<div class="bg6_tex4">（可根据需求尺寸量身定制）</div>
+					<a href="https://yd.jaadee.com/Goods/178604.html">
+						<div class="jg_bg">
+							<span class="jg_tex1">咨询客服</span>
+							<span class="jg_tex2">查看详情</span>
+						</div>
+					</a>	
+				</div>
+			</div>
+		</div>
+		
+		
+			
+				
+				
+				<script>
+					
+						var video1=document.getElementById("sp");
+						var video2=document.getElementById("zt");
+						
+						
+						video2.onclick=function(){
+								    if(video1.paused){
+								        video1.play();
+								        document.getElementById("zt").style.display="none";
+								    }else{
+								        video1.pause();
+								        document.getElementById("zt").style.display="block";
+								    }
+								}
+						
+							
+							video1.onclick=function(){
+							    if(video1.paused){
+							        video1.play();
+							        document.getElementById("zt").style.display="none";
+							    }else{
+							        video1.pause();
+							        document.getElementById("zt").style.display="block";
+							    }
+							}
+					
+				</script>
+		
+		
+			<ul class="fmainfoot">
+        		<li><a href="https://yd.jaadee.com/Aboutus/index.html" target="_blank">关于我们</a></li><span>|</span>
+            	<li><a href="https://yd.jaadee.com/Aboutus/contact.html" target="_blank">联系我们</a></li><span>|</span>
+            	<li><a href="https://yd.jaadee.com/Aboutus/aftersale.html" target="_blank">售后服务</a></li><span>|</span>
+            	<li><a href="https://yd.jaadee.com/Aboutus/howbuy.html" target="_blank">如何购买</a></li><span>|</span>
+            	<li><a href="https://yd.jaadee.com/ArticleCat/" target="_blank">最新动态</a></li><span>|</span>
+            	<li><a href="http://mp.weixin.qq.com/s?__biz=MzA3ODAwMTMwNA==&amp;mid=202540906&amp;idx=1&amp;sn=ce14f00cf000ea3e3808d6e4208bb33f&amp;scene=1&amp;from=singlemessage&amp;isappinstalled=0#rd" target="_blank">加入我们</a></li>
+        	</ul>
+				<div class="footer">
+	                玉雕行业“山寨成风”，谨防假冒，避免上当受骗，请认准玉雕界全国统一查询电话400-629-1314<br>
+	                2008-2017 翡翠王朝(www.jaadee.com)版权所有<br>
+	                ICP备案号:滇ICP备12006083号-1 / 公安备案号: 53010203502103 / 工商注册号: 530102100238794<br>
+	                公司地址：云南省瑞丽市金星石木文化城15栋1号 / 云南省昆明市人民中路169号(移动大厦17A)   / 广东省佛山市平洲翠宝园3栋46/47A<br>
+            </div>
+		<script>
+			var page = 1;
+			getMore()
+
+
+			function ToTop() {
+				$('html,body').scrollTop(0);
+			}
+
+			function getMore() {
+				$.ajax({
+					type: "post",
+					url: "https://apps.jaadee.com/Ydj/Active/GoodsListsDxzy",
+	                data: {
+	                   pageSize:20,
+	                   page:page
+	                   
+	                },
+					dataType: "json",
+					success: function(data) {
+						if(data.status == 0) {
+							var html="",dd="";
+							for(var i in data.activeGoods) {
+								var zt="";
+								if(data.activeGoods[i].is_sold==0){
+	                        		zt='<div class="price">结缘价：<span>￥'+data.activeGoods[i].shop_price+'元</span></div>'
+	                        	}else{
+	                        		zt='<div class="price"><span>已结缘</span></div>'
+	                        		
+	                        	}
+								html += '<div class="goodli"><a href="https://yd.jaadee.com/Goods/';
+								html += data.activeGoods[i].goods_id + '.html"><div class="good"><div class="goodimg"><img src="https://ydjimg.jaadee.net/';
+								html += data.activeGoods[i].goods_thumb + '"></div><div class="title">';
+								html += data.activeGoods[i].goods_name + '</div><div class="relative"><div class="ordernum">货   号：';
+								html += data.activeGoods[i].goods_sn + '</div>';
+								html += zt + '</div></div></a></div>';
+							}
+							for(var i in data.masterGoods) {
+								var zt="";
+								if(data.masterGoods[i].is_sold==0){
+	                        		zt='<div class="price">结缘价：<span>￥'+data.masterGoods[i].shop_price+'元</span></div>'
+	                        	}else{
+	                        		zt='<div class="price"><span>已结缘</span></div>'
+	                        		
+	                        	}
+								dd += '<div class="goodli"><a href="https://yd.jaadee.com/Goods/';
+								dd += data.masterGoods[i].goods_id + '.html"><div class="good"><div class="goodimg"><img src="https://ydjimg.jaadee.net/';
+								dd += data.masterGoods[i].goods_thumb + '"></div><div class="title">';
+								dd += data.masterGoods[i].goods_name + '</div><div class="relative"><div class="ordernum">货   号：';
+								dd += data.masterGoods[i].goods_sn + '</div>';
+								dd += zt+'</div></div></a></div>';
+							}
+							 if(page==1){
+	                        	 $(".goodlist").append(html);
+	                        }
+	                       
+	                        $(".goodlist2").append(dd);
+						} else {
+							//alert(data.msg);
+
+						}
+						page++;
+					}
+				});
+			}
+		</script>
+	</body>
+</html>

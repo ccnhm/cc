@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+		<meta charset="utf-8" />
+		<title>南红·君子之礼</title>
+		<script type="text/javascript" src="/h5/js/jquery-1.10.2.js"></script>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				font-family: "微软雅黑";
+				background: #000;
+				font-size: 14px;
+			}
+			
+			img {
+				width: 100%;
+				display: block;
+			}
+			
+			.content {
+				width: 1200px;
+				margin: auto;
+				position: relative;
+			}
+			
+			.banner {
+				background: url(img/pc__banner.jpg) center no-repeat;
+				background-size: auto 990px;
+				height: 990px;
+			}
+			
+			.coperight {
+				color: #888b8b;
+				font-size: 16px;
+				padding: 80px 0 110px 0;
+				text-align: center;
+			}
+			
+			.goodlist {
+				width: 1236px;
+				margin: auto;
+				padding: 5px;
+				margin-top: 30px;
+			}
+			.kk *{box-sizing: border-box;}
+			.goodlist:after,
+			.goodlist2:after {
+				content: "\0020";
+				display: block;
+				height: 0;
+				clear: both;
+			}
+			
+			.goodli {
+				padding: 5px;
+				width: 20%;
+				float: left;
+			}
+			
+			.good {
+				background: #FFFFFF;
+			}
+			
+			.goodimg {
+				width: 235px;
+				height: 235px;
+			}
+			
+			.title {
+				margin: 10px 0;
+				font-size: 16px;
+				color: #2a2a2a;
+				width: 100%;
+				text-align: center;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				white-space: nowrap;
+				padding: 0 15px;
+			}
+			
+			.ordernum {
+				font-size: 14px;
+				color: #626161;
+				margin-bottom: 10px;
+				padding: 0 15px;
+			}
+			
+			.price {
+				font-size: 14px;
+				color: #626161;
+				padding: 0 15px 30px 15px;
+			}
+			
+			.price span {}
+			
+			a {
+				text-decoration: none;
+			}
+			
+			.clear {
+				clear: both;
+			}
+			
+			.linkmore {
+				width: 260px;
+				height: 57px;
+				cursor: pointer;
+				margin: auto;
+				margin-top: 40px;
+			}
+			
+			.tab {
+				background: #ae262e;
+				top: 0;
+				width: 100%;
+				z-index: 10;
+			}
+			
+			.nav {
+				width: 25%;
+				float: left;
+				line-height: 80px;
+				text-align: center;
+				color: #FFFFFF;
+				font-size: 32px;
+				padding: 10px;
+				cursor: pointer;
+			}
+			
+			.love {
+				position: absolute;
+				width: 60px;
+				right: 10px;
+				top: 0;
+			}
+			
+			.xs {
+				position: absolute;
+				width: 1241px;
+				left: -3px;
+				top: -3px;
+			}
+			
+			.kk {
+				width: 1236px;
+				margin-top: -300px;
+				background: #550100;
+			}
+			
+			.relative {
+				position: relative;
+			}
+			/*南红之谜头部*/
+			
+			ul,
+			li {
+				list-style: none;
+			}
+			
+			.box {
+				width: 100%;
+				float: left
+			}
+			
+			.header {
+				width: 100%;
+				background: #fff
+			}
+			
+			.header-box {
+				float: left;
+				width: 100%;
+				background: url(http://www.nanhongzhimi.com/static/images/logo-bg.png) left center repeat-x;
+				background-size: auto 100%
+			}
+			
+			.header-box .intbox {
+				width: 1200px;
+				margin: 0 auto;
+			}
+			
+			.header-top {
+				height: 34px;
+				border-bottom: 1px solid #e8e8e8;
+				background: #fff;
+			}
+			
+			.header-top .top {
+				width: 1200px;
+				height: 100%;
+				margin: 0 auto
+			}
+			
+			.header-top .top-l {
+				float: left;
+				height: 100%
+			}
+			
+			.header-top .top-l p {
+				float: left;
+				height: 34px;
+				line-height: 34px;
+				color: #797979;
+				font-size: 13px;
+				margin-right: 22px
+			}
+			
+			.header-top .top-l a {
+				float: left;
+				height: 34px;
+				line-height: 34px;
+				color: #c01506;
+				text-decoration: none;
+				font-size: 13px
+			}
+			
+			.header-top .top-l span {
+				float: left;
+				color: #c01506;
+				line-height: 32px;
+				font-size: 12px;
+				margin: 0 12px
+			}
+			
+			.header-top .top-r {
+				float: right;
+				height: 100%
+			}
+			
+			.header-top .top-r p {
+				float: left;
+				line-height: 34px;
+				color: #333;
+				margin-right: 10px;
+				font-size: 12px
+			}
+			
+			.header-top .top-r a {
+				float: left
+			}
+			
+			.header-top .top-r a img {
+				float: left;
+				margin-top: 3px;
+				    width: auto;
+			}
+			
+			.header-top .top-r span {
+				float: left;
+				color: #e8e8e8;
+				line-height: 32px;
+				font-size: 12px;
+				margin: 0 6px
+			}
+			
+			.header .logo {
+				float: left;
+				height: 75px;
+				margin: 15px 0
+			}
+			
+			.header .logo img {
+				float: left;
+				max-height: 75px;
+			}
+			
+			.header .aside {
+				float: left;
+				font-size: 16px;
+				color: #666;
+				line-height: 105px;
+				margin-left: 10px;
+				letter-spacing: 5px
+			}
+			
+			.header .search-box {
+				float: right;
+				height: 60px;
+				width: 250px;
+				margin: 32px 16px 0 0
+			}
+			
+			.header .search {
+				float: left;
+				width: 100%;
+				height: 34px
+			}
+			
+			.header .search .input {
+				float: left;
+				width: 190px;
+				height: 32px;
+				border: 1px solid #ddd;
+				border-radius: 20px 0 0 20px;
+				padding-left: 14px
+			}
+			
+			.header .search .btn {
+				float: right;
+				width: 44px;
+				height: 34px;
+				background: #c01506 url(http://www.nanhongzhimi.com/static/images/search.png) center no-repeat;
+				border: 0;
+				border-radius: 0 20px 20px 0;
+				cursor: pointer
+			}
+			
+			.header .hot {
+				float: left;
+				width: 100%;
+				height: 20px;
+				overflow: hidden;
+				font-size: 12px;
+				margin-top: 6px
+			}
+			
+			.header .hot span {
+				float: left;
+				height: 20px;
+				line-height: 20px;
+				margin-left: 2px;
+				color: #fff
+			}
+			
+			.header .hot a {
+				float: left;
+				height: 20px;
+				line-height: 20px;
+				color: #fff;
+				text-decoration: none;
+				margin-right: 8px
+			}
+			
+			.header .ewm-box {
+				float: right;
+				margin: 5px 0
+			}
+			
+			.header .text {
+				float: left;
+				width: 72px;
+				height: 42px;
+				color: #fff;
+				border-left: 1px solid #fff;
+				margin: 26px 0 0 0;
+				padding-left: 20px;
+				margin-right: 6px
+			}
+			
+			.header .text h3 {
+				height: 24px;
+				line-height: 16px;
+				font-size: 18px;
+				text-align: right
+			}
+			
+			.header .text p {
+				height: 18px;
+				line-height: 22px;
+				font-size: 14px
+			}
+			
+			.header .ewm {
+				float: left;
+				width: 95px;
+				height: 95px
+			}
+			
+			.header .ewm img {
+				float: left;
+				width: 100%;
+				height: 100%
+			}
+			
+			.header .navbox {
+				float: left;
+				width: 100%;
+				height: 38px;
+				background: url(http://www.nanhongzhimi.com/static/images/navbg.png?v=1.2) left center repeat-x;
+			}
+			
+			.nav-ul {
+				width: 1200px;
+				height: 38px;
+				margin: 0 auto
+			}
+			
+			.header .nav-li {
+				float: left;
+				width: 100px;
+				background: url(http://www.nanhongzhimi.com/static/images/navbar.png) center right no-repeat;
+			}
+			
+			.header .nav-li:last-child {
+				background: none;
+			}
+			
+			.header .nav-li:last-child a {
+				width: 100%;
+			}
+			
+			.header .nav-li a {
+				float: left;
+				width: 96px;
+				height: 100%;
+				line-height: 38px;
+				color: #fff;
+				font-size: 16px;
+				text-align: center;
+				text-decoration: none
+			}
+			
+			.header .nav-li a:hover {
+				background: url(http://www.nanhongzhimi.com/static/images/navcur.png) center repeat-x;
+			}
+			/*南红之谜尾部*/
+			
+			.Footer {
+				width: 100%;
+				float: left;
+				margin-top: 20px;
+				
+			}
+			
+			.bottom-nav {
+				width: 100%;
+				height: 30px;
+				text-align: center;
+				padding: 20px 0 20px 0;
+			}
+			
+			.bottom-nav a {
+				line-height: 30px;
+				padding: 0 10px;
+				border-left: 1px solid #ddd;
+				text-decoration: none;
+				font-size: 14px;
+				color: #fff;
+			}
+			
+			.bottom-nav a:hover {
+				color: #960c30;
+				text-decoration: underline;
+			}
+			
+			.bottom-nav a:nth-of-type(1) {
+				border-left: none;
+			}
+			
+			.bottom-cont {
+				width: 100%;
+				line-height: 26px;
+				color: #fff;
+				font-size: 13px;
+				padding-bottom: 20px;
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="header clear">
+			<div class="box header-top">
+				<div class="top">
+					<div class="top-l">
+						<p>南红之谜是翡翠王朝旗下品牌</p>
+						<!--<p id="OnlineCount">暂时关闭访客人数统计</p>-->
+					</div>
+					<div class="top-r">
+						<a href="https://www.jaadee.com/" rel="nofollow" target="_blank"><img src="http://www.nanhongzhimi.com/static/images/icon-fcwc.png" alt="翡翠王朝"></a>
+						<span>|</span>
+						<a href="http://www.zhubaoleyuan.com" rel="nofollow" target="_blank"><img src="http://www.nanhongzhimi.com/static/images/icon-zbly.png" alt="珠宝乐园"></a>
+						<span>|</span>
+						<a href="https://ydj.jaadee.com/pc.php" rel="nofollow" target="_blank"><img src="http://www.nanhongzhimi.com/static/images/icon-ydj.png" alt="玉雕界"></a>
+						<span>|</span>
+						<a href="https://nasa.jaadee.com" rel="nofollow" target="_blank"><img src="http://www.nanhongzhimi.com/static/images/icon-ns.png" alt="奈莎NASA"></a>
+						<span>|</span>
+						<a href="https://www.nanhongzhimi.com" target="_blank"><img width="82" height="27" src="http://www.nanhongzhimi.com/static/images/icon-nhzm.png" alt="南红之谜"></a>
+					</div>
+				</div>
+			</div>
+			<div class="header-box">
+				<div class="intbox">
+					<a class="logo" href="http://www.nanhongzhimi.com"><img src="http://www.nanhongzhimi.com/static/images/top-logo.png"></a>
+					<div class="ewm-box">
+						<div class="text">
+							<h3>扫一扫</h3>
+							<p style="text-align:right;">下载APP
+								<!--进入手机站-->
+							</p>
+						</div>
+						<div class="ewm">
+							<!--<img src="/static/images/ewm-mobile.png?v=1.0">-->
+							<img src="http://www.nanhongzhimi.com/static/images/appdownindextop.jpg">
+						</div>
+					</div>
+					<div class="search-box">
+						<a class="search" href="http://www.nanhongzhimi.com">
+							<input class="input" type="text" name="key" placeholder="点击搜索宝贝" value="">
+							<input class="btn" type="submit" value="">
+						</a>
+						<a>
+						</a>
+						<div class="hot">
+							<a>
+								<span>热词：</span>
+							</a>
+							<a target="_blank" href="http://www.nanhongzhimi.com/Search/?key=珠串">珠串</a>
+							<a target="_blank" href="http://www.nanhongzhimi.com/Search/?key=柿子红">柿子红</a>
+							<a target="_blank" href="http://www.nanhongzhimi.com/Search/?key=樱桃红">樱桃红</a>
+							<a target="_blank" href="http://www.nanhongzhimi.com/Search/?key=10MM">10MM</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="navbox">
+				<ul class="nav-ul clear">
+					<li class="nav-li">
+						<a href="http://www.nanhongzhimi.com">首 页</a>
+					</li>
+					<li class="nav-li">
+						<a target="_blank" href="http://www.nanhongzhimi.com/today/index.html">每日上新</a>
+					</li>
+					<li class="nav-li">
+						<a target="_blank" href="http://www.nanhongzhimi.com/Recommend/index.html">收藏精品</a>
+					</li>
+					<li class="nav-li">
+						<a target="_blank" href="http://www.nanhongzhimi.com/Original/index.html">三燈推荐</a>
+					</li>
+					<li class="nav-li">
+						<a target="_blank" href="http://www.nanhongzhimi.com/Nhyd/index.html">名家作品</a>
+					</li>
+					<li class="nav-li">
+						<a target="_blank" href="http://www.nanhongzhimi.com/Collection/index.html">传家极品</a>
+					</li>
+					<li class="nav-li">
+						<a target="_blank" href="http://www.nanhongzhimi.com/cat1/c1t2j0o0b0p1.html">手串</a>
+					</li>
+					<li class="nav-li">
+						<a target="_blank" href="http://www.nanhongzhimi.com/cat1/c1t1j0o0b0p1.html">挂件</a>
+					</li>
+					<li class="nav-li">
+						<a target="_blank" href="http://www.nanhongzhimi.com/cat1/c1t5j0o0b0p1.html">项链</a>
+					</li>
+					<li class="nav-li">
+						<a target="_blank" href="http://www.nanhongzhimi.com/cat1/c1t8j0o0b0p1.html">戒指</a>
+					</li>
+					<li class="nav-li">
+						<a target="_blank" href="http://www.nanhongzhimi.com/Soldout/index.html">已售欣赏</a>
+					</li>
+					<li class="nav-li">
+						<a rel="nofollow" target="_blank" href="http://www.nanhongzhimi.com//about/index.html">关于我们</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="banner clear"></div>
+
+		<div class="content relative kk">
+			<div class="xs"><img src="img/pc__xs.png"></div>
+			<div class="goodlist">
+
+			</div>
+
+		</div>
+		<div class="linkmore" onclick="getMore()"><img src="img/pc__more.png"></div>
+		<div class="Footer bg1">
+			<div class="bottom-nav">
+				<a target="_blank" rel="nofollow" href="https://apps.jaadee.com/about/index.html">关于我们</a>
+				<a target="_blank" rel="nofollow" href="https://apps.jaadee.com/about/contact.html">联系我们</a>
+				<a target="_blank" rel="nofollow" href="https://apps.jaadee.com/about/service.html">售后服务</a>
+				<a target="_blank" rel="nofollow" href="https://apps.jaadee.com/about/buy.html">如何购买</a>
+			</div>
+			<div class="bottom-cont">
+				凉山南红之谜珠宝玉石有限公司@版权所有
+				<br>ICP备案号：蜀ICP备16028262号-1
+				<br>地址：四川省凉山州西昌市邛海生态湿地公园小渔村景区三栋
+			</div>
+		</div>
+
+		<script>
+			var page = 1;
+
+			getMore();
+
+			function getMore() {
+				//var height1=$(window).scrollTop()
+
+				$.ajax({
+					type: "post",
+					type: "get",
+					url: "/index.php/api/Active/getActive",
+					data: {
+						pc: 1,
+						aid: 474,
+						page: page,
+						pagesize: 20
+					},
+					dataType: "json",
+					success: function(data) {
+						if(data.status == 0) {
+							var dd = "";
+
+							for(var i in data.info.activeGoodsLists) {
+								var zt = "",
+									jg = "",
+									kk = "";
+								if(data.info.activeGoodsLists[i].isSold == 0) {
+									if(data.info.activeGoodsLists[i].activePrice) {
+										jg = data.info.activeGoodsLists[i].activePrice
+									} else {
+										if(data.info.activeGoodsLists[i].shopPrice) {
+											jg = data.info.activeGoodsLists[i].shopPrice
+										} else {
+											jg = data.info.activeGoodsLists[i].marketPrice
+										}
+									}
+									if(data.info.activeGoodsLists[i].askPrice == 1) {
+										zt = '<div class="price">请联系客服询价</div>'
+									} else {
+										zt = '<div class="price">结缘价：<span>￥' + jg + '元</span></div>'
+									}
+
+								} else {
+									zt = '<div class="price"><span>已结缘</span></div>'
+
+								}
+
+								kk = '<a href="' + data.info.activeGoodsLists[i].url + '">'
+
+								dd += '<div class="goodli">' + kk + '<div class="good"><div class="goodimg"><img src="';
+								dd += data.info.activeGoodsLists[i].thumb + '"></div><div class="title">';
+								dd += data.info.activeGoodsLists[i].goodsName + '</div><div class="relative"><div class="ordernum">货   号：';
+								dd += data.info.activeGoodsLists[i].goodsSn + '</div>';
+								dd += zt + '<div class="love"><img src="/h5/2018618/zhc/img/activeicon.png"></div></div></div></a></div>';
+							}
+
+							$(".goodlist").append(dd)
+
+							page++;
+
+						} else {
+							//alert(data.msg);
+
+						}
+
+					}
+				});
+
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+		<title>年中珠宝欢乐购</title>
+		<script type="text/javascript" src="/h5/js/jquery-1.10.2.js"></script>
+		<script type="text/javascript" src="/h5/js/get_set_url.js"></script>
+		<script src="https://res.jaadee.net/rn/JaadeeAppJsBridge.js?v=1.4"></script>
+
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			
+			.head {
+				display: none;
+			}
+			
+			body {
+				background: #740015;
+			}
+			
+			img {
+				display: block;
+				width: 100%;
+			}
+			
+			.banner {
+				height: 13rem;
+				background: url(img/m__banner.jpg) no-repeat;
+				background-size: 100% 100%;
+				position: relative;
+				overflow: hidden;
+			}
+			
+			.spbox {
+				margin-top: 0.4rem;
+				position: relative;
+			}
+			
+			.clear {
+				clear: both;
+			}
+			
+			.goodlist,
+			.ykjlist {
+				padding: 0.1rem;
+			}
+			
+			.ykjlist {
+				height: 39.5rem;
+			}
+			
+			.goodlist:after,
+			.ykjlist:after {
+				content: "\0020";
+				display: block;
+				height: 0;
+				clear: both;
+			}
+			
+			.goodli {
+				padding: 0.1rem;
+				float: left;
+				width: 50%;
+			}
+			
+			.goodli a {
+				text-decoration: none;
+			}
+			
+			.good {
+				background: #ffffff;
+			}
+			
+			.title {
+				text-align: center;
+				margin: 0.4rem 0;
+				font-size: 0.346666rem;
+				color: #2a2a2a;
+				width: 100%;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				white-space: nowrap;
+				padding: 0 0.266666rem;
+			}
+			
+			.ordernum {
+				font-size: 0.346666rem;
+				color: #626161;
+				margin-bottom: 0.4rem;
+				padding: 0 0.266666rem;
+			}
+			
+			.price {
+				font-size: 0.346666rem;
+				color: #626161;
+				padding: 0 0.266666rem 0.4rem 0.266666rem;
+			}
+			
+			.price span {
+				color: #990000;
+			}
+			
+			.relative {
+				position: relative;
+			}
+			
+			.love {
+				position: absolute;
+				width: 1.2rem;
+				right: 0.1rem;
+				top: 0;
+			}
+			
+			.copright {
+				font-size: 0.24rem;
+				color: #b0202a;
+				margin-top: 1.6rem;
+				text-align: center;
+				margin-bottom: 1.733333rem;
+			}
+			
+			.contentbox {
+				padding: 0 0.133333rem;
+				margin-top: 0.6rem;
+			}
+			
+			.linkmore {
+				width: 4rem;
+				margin: 0.466666rem auto;
+				
+			}
+			.linkmore img{pointer-events: none; }
+			
+			.returnTop {
+				position: fixed;
+				z-index: 999;
+				bottom: 1.8rem;
+				right: .4rem;
+				width: 1.066666rem;
+				height: 1.066666rem;
+				background: url(/h5/img/back_top.png) center no-repeat;
+				background-size: 100% auto;
+			}
+			
+			.content {
+				padding: 0 3%;
+			}
+			
+			.sj {
+				width: 0;
+				height: 0;
+				border-left: 0.333333rem solid transparent;
+				border-right: 0.333333rem solid transparent;
+				border-top: 0.333333rem solid #fbe96d;
+				bottom: -0.333333rem;
+				left: 50%;
+				margin-left: -0.333333rem;
+				position: absolute;
+				display: none;
+			}
+			
+			.active .sj {
+				display: block;
+			}
+			
+			.tab {
+				margin-bottom: 0.4rem;
+				width: 100%;
+				background: #ae262e;
+				top: 0;
+				width: 100%;
+				left: 0;
+				z-index: 1;
+			}
+			
+			.nav {
+				width: 20%;
+				float: left;
+				text-align: center;
+				color: #FFFFFF;
+				font-size: 0.4rem;
+				padding: 0.4rem 0;
+				position: relative;
+			}
+			
+			.nav:nth-child(3) {
+				width: 25%;
+			}
+			
+			.nav:nth-child(4) {
+				width: 35%;
+			}
+			
+			.nav:nth-child(4) .bor {
+				border: none;
+			}
+			
+			.bor {
+				border-right: 1px solid #fbe96d;
+			}
+			
+			.active {
+				background: #fbe96d;
+				color: #740015;
+			}
+			
+			@keyframes slideInUp2 {
+				0%,
+				100% {
+					transform: translateY(0) rotate(-6deg);
+				}
+				50% {
+					transform: translateY(-20px) rotate(8deg);
+				}
+			}
+			
+			.slideInUp2 {
+				animation: slideInUp2 6s ease-in-out infinite
+			}
+			
+			.qq2 {
+				width: 1.04rem;
+				right: 0.6rem;
+				top: 0.666666rem;
+				position: absolute;
+			}
+			
+			.hjtx {
+				animation: hjtx 10s ease-in-out infinite
+			}
+			
+			@keyframes hjtx {
+				0% {
+					transform: translate3d(-350%, 160%, 0);
+					opacity: 0
+				}
+				25% {
+					opacity: 1
+				}
+				100% {
+					transform: translateZ(0)
+				}
+			}
+			
+			.hj {
+				position: absolute;
+				width: 2.826666rem;
+				right: -2.7rem;
+				top: -2rem;
+			}
+			
+			.ztbox {
+				padding: 0.466666rem 0.266666rem 0.866666rem 0.266666rem;
+				height: 21.33rem;
+			}
+			
+			.ztli {
+				margin-bottom: 0.16rem;
+			}
+			
+			.ztleft {
+				width: 50%;
+				float: left;
+				padding-right: 0.1rem;
+			}
+			
+			.ztright {
+				width: 50%;
+				float: right;
+				padding-left: 0.1rem;
+			}
+			
+			.rk {
+				width: 6.666666rem;
+				margin: 0.4rem auto;
+			}
+			/*底部*/
+			.nav-box {width: 100%;background: #eee;border-top: 1px solid #d4d3d3;position: fixed;left: 0;bottom: 0;z-index: 99;}
+			.nav-box .nav-item {width: 33.3333%;height: 1.44rem;border-right: 0.02rem solid #d4d3d3;float: left;box-sizing: border-box;}
+			ul, li {list-style: none;}
+			.nav-box .nav-item a {text-decoration: none;display: block;width: 100%;height: 100%;display: flex;flex-direction: column;justify-content: center;align-items: center;}
+			.nav-box .nav-item .icon {margin-bottom: 0.05rem;width: 0.666666rem}
+			.nav-box .nav-item .text {font-size: 0.293333rem;color: #6b6c6b;}
+		</style>
+	</head>
+
+	<body>
+		<script type="text/javascript" src="/h5/js/flexible.debug.js"></script>
+
+		<div class="head">
+			<style type="text/css">
+				.fiextop {
+					width: 100%;
+					position: relative;
+				}
+				
+				.fiextop a {
+					width: 100%;
+				}
+				
+				.fiextop img {
+					width: 100%;
+				}
+				
+				.fiextop .close {
+					position: absolute;
+					z-index: 1;
+					width: 20%;
+					height: 100%;
+					left: 0;
+					top: 0;
+				}
+			</style>
+			<div class="fiextop">
+				<a target="_blank" href="https://app.jaadee.com/do.php?canal=huodong">
+					<img src="https://appres.jaadee.com/apps/images/fiexdtop.jpg">
+					<!--img src="https://apps.jaadee.com/static/images/ten-downapp.jpg" / -->
+				</a>
+				<div class="close" id="closeappimg"></div>
+			</div>
+			<script>
+				$("#closeappimg").click(function() {
+					$(".fiextop").remove();
+				});
+			</script>
+		</div>
+
+		<div class="banner">
+			<div class="qq2 slideInUp2"><img src="img/pc__qq2.png"></div>
+			<div class="hj hjtx"><img src="img/m__hj.png"></div>
+		</div>
+		<img src="img/m__01.jpg">
+		<div class="ztbox" style="height: auto;">
+			<div class="ztli">
+				<div class="ztleft">
+					<a href="javascript:void()" class="zt1"><img src="img/m__02.jpg"></a>
+				</div>
+				<div class="ztright">
+					<a href="javascript:void()" class="zt2"><img src="img/m__03.jpg"></a>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="ztli"><a href="javascript:void()" class="zt3"><img src="img/m__04.jpg"></a></div>
+			<div class="ztli"><a href="javascript:void()" class="zt4"><img src="img/m__05.jpg"></a></div>
+			<div class="ztli"><a href="javascript:void()" class="zt5" ><img src="img/m__yd1.jpg"></a></div>
+			<div class="ztli"><a href="javascript:void()" class="zt6"><img src="img/m__yd2.jpg"></a></div>
+			<div class="ztli"><a href="javascript:void()" class="zt7"><img src="img/m__ns.jpg"></a></div>
+			<div class="ztli"><a href="javascript:void()" class="zt8"><img src="img/m__wc.jpg"></a></div>
+			<div class="ztli"><a href="javascript:void()" class="zt9"><img src="img/m__mty.jpg"></a></div>
+		</div>
+		<img src="img/m__06.jpg">
+		<div class="ykjlist">
+
+		</div>
+		<a href="javascript:void()" class="rklink"><img src="img/m__rk.png" class="rk"></a>
+		<div class="tab">
+			<div class="relative">
+				<div class="nav  active">
+					<div class="bor">翡翠</div>
+					<div class="sj"></div>
+				</div>
+				<div class="nav">
+					<div class="bor">南红</div>
+					<div class="sj"></div>
+				</div>
+				<div class="nav">
+					<div class="bor">彩宝文玩</div>
+					<div class="sj"></div>
+				</div>
+				<div class="nav">
+					<div class="bor">玉雕&设计作品</div>
+					<div class="sj"></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+
+		<div class="goodlist">
+
+		</div>
+		<div  class="linkmore"  onclick="getMore()"><img src="img/m__more.png"></div>
+		
+		<div class="copright">云南翡翠王朝网络科技有限公司©版权所有</div>
+
+		<div class="returnTop" onclick="ToTop();"></div>
+		<ul class="nav-box clear">
+			<li class="nav-item">
+				<a href="javascript:void()" class="foot1">
+					<img src="/h5/2018618/zhc/img/foot-icon1.png" alt="" class="icon1 icon">
+					<p class="text">珠宝欢乐购</p>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a href="javascript:void()" class="foot2">
+					<img src="/h5/2018618/zhc/img/foot-icon2.png" alt="" class="icon3 icon">
+					<p class="text"> 一口价</p>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a href="javascript:void()" class="foot3">
+					<img src="/h5/2018618/zhc/img/foot-icon3.png" alt="" class="icon2 icon">
+					<p class="text">领取卡包</p>
+				</a>
+			</li>
+		</ul>
+		<!--微信分享-->
+		<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+		<script>
+			var topheight = 0;
+
+			$(window).scroll(function() {
+				if($(window).scrollTop() >= topheight) {
+					$(".tab").css({
+						"position": "fixed"
+					})
+					$(".goodlist").css({
+						"margin-top": "2.1rem"
+					})
+				} else {
+					$(".tab").css({
+						"position": "initial"
+					})
+					$(".goodlist").css({
+						"margin-top": "0"
+					})
+				}
+			})
+
+			var page = 1;
+			var aid = 451;
+			var gx = false;
+			var share = getUrlParam("share");
+			if(share == 1) {
+				$(".head").show()
+				topheight = $(window).width() * 8.88
+				//topheight = $(window).width() * 7.508
+				
+				$(".zt1").attr("href","/h5/Wuyi18/bind.html?share=1");
+				$(".zt2").click(function(){
+					var yy="";
+					yy+='<div class="tip" style="border-radius:0.1rem;width:3rem;color:#fff;background:#000;text-align:center;font-size:0.4rem;line-height:0.8rem;position:fixed;left:3.5rem;top:50%">请在app内打开</div>'
+					$("body").append(yy);
+					window.setTimeout(function(){$(".tip").remove()},2000)
+				})
+				$(".zt3,.rklink").attr("href","/h5/2018618/ykj/mykj.html?share=1");
+				$(".zt4").attr("href","/h5/2018618/nh618/mnh618.html?share=1");
+				$(".zt5").attr("href","/h5/2018618/ydj618/mydj618.html?share=1");
+				$(".zt6").attr("href","/h5/2018618/ydj618-02/mydj618.html?share=1");
+				$(".zt7").attr("href","/h5/2018618/ns618/index.html?share=1");
+				$(".zt8").attr("href","/h5/2018618/ns2-618/index.html?share=1");
+				$(".zt9").attr("href","/h5/2018618/mty/mmty.html?share=1");
+				
+				$(".foot1").attr("href","/h5/2018618/zhc/mzhc.html?share=1")
+				$(".foot2").attr("href","/h5/2018618/ykj/mykj.html?share=1")
+				$(".foot3").attr("href","/h5/Wuyi18/bind.html?share=1")
+				
+			} else {
+				topheight = $(window).width() * 8.73
+				//topheight = $(window).width() * 7.348;
+				
+				$(".zt1").attr("href","/h5/Wuyi18/bind.html")
+				$(".zt2").attr("href","/h5/tjr/index.html");
+				$(".zt3,.rklink").attr("href","/h5/2018618/ykj/mykj.html");
+				$(".zt4").attr("href","/h5/2018618/nh618/mnh618.html");
+				$(".zt5").attr("href","/h5/2018618/ydj618/mydj618.html");
+				$(".zt6").attr("href","/h5/2018618/ydj618-02/mydj618.html");
+				$(".zt7").attr("href","/h5/2018618/ns618/index.html");
+				$(".zt8").attr("href","/h5/2018618/ns2-618/index.html?share=2");
+				$(".zt9").attr("href","/h5/2018618/mty/mmty.html?share=2");
+				$(".foot1").attr("href","/h5/2018618/zhc/mzhc.html")
+				$(".foot2").attr("href","/h5/2018618/ykj/mykj.html")
+				$(".foot3").attr("href","/h5/Wuyi18/bind.html")
+				
+			}
+
+			function ToTop() {
+				$("html,body").animate({
+					"scrollTop": "0"
+				}, "normal")
+			}
+
+			ykjzc(451, 2);
+			ykjzc(456, 2);
+			ykjzc(457, 3);
+			ykjzc(459, 3);
+
+			$(".nav").click(function() {
+				$(this).addClass("active").siblings().removeClass("active");
+				if($(this).index() == 0) {
+					aid = 462
+				} else if($(this).index() == 1) {
+					aid = 465
+				} else if($(this).index() == 2) {
+					aid = 468
+				} else if($(this).index() == 3) {
+					aid = 471
+				}
+				page = 1;
+				gx = true
+				getMore();
+			})
+
+			getMore();
+
+			function getMore() {
+				$.ajax({
+					type: "get",
+					url: "/index.php/api/Active/getActive",
+					data: {
+						aid: aid,
+						page: page,
+						pagesize: 20
+					},
+					//async:false, 
+					dataType: "json",
+					success: function(data) {
+						if(data.status == 0) {
+							var html = "";
+
+							for(var i in data.info.activeGoodsLists) {
+								var kk = "";
+								if(share == 1) {
+
+									kk = '<a href="' + data.info.activeGoodsLists[i].url + '" >';
+								} else {
+									kk = '<a onclick="AppJump.goGoodsDetail(' + data.info.activeGoodsLists[i].platId + ',' + data.info.activeGoodsLists[i].goodsId + ',\'' + data.info.activeGoodsLists[i].goodsSn + '\',\'' + data.info.activeGoodsLists[i].thumb + '\')">';
+								}
+								if(data.info.activeGoodsLists[i].isSold == 0) {
+									if(data.info.activeGoodsLists[i].activePrice) {
+										jg = data.info.activeGoodsLists[i].activePrice
+									} else {
+										if(data.info.activeGoodsLists[i].shopPrice) {
+											jg = data.info.activeGoodsLists[i].shopPrice
+										} else {
+											jg = data.info.activeGoodsLists[i].marketPrice
+										}
+									}
+									if(data.info.activeGoodsLists[i].askPrice == 1) {
+										zt = '<div class="price">请联系客服询价</div>'
+									} else {
+										zt = '<div class="price">结缘价：<span>￥' + jg + '元</span></div>'
+									}
+
+								} else {
+									zt = '<div class="price"><span>已结缘</span></div>'
+
+								}
+
+								html += '<div class="goodli">' + kk + '<div class="good"><div class="goodimg"><img src="';
+								html += data.info.activeGoodsLists[i].thumb + '"></div><div class="title">';
+								html += data.info.activeGoodsLists[i].goodsName + '</div><div class="relative"><div class="ordernum">货   号：';
+								html += data.info.activeGoodsLists[i].goodsSn + '</div>';
+								html += zt + '<div class="love"><img src="img/activeicon.png"></div></div></div></a></div>';
+
+							}
+							if(gx == true) {
+								$(".goodlist").html(html)
+								$('html,body').scrollTop($(".goodlist").offset().top - $(".tab").height());
+							} else {
+								$(".goodlist").append(html)
+							}
+
+							page++;
+							gx = false;
+						} else {
+							//alert(data.msg);
+
+						}
+
+					}
+				});
+			}
+
+			function ykjzc(a, b) {
+				//var height1=$(window).scrollTop()
+
+				$.ajax({
+					type: "post",
+					type: "get",
+					url: "/index.php/api/Active/getActive",
+					data: {
+						aid: a,
+						page: 1,
+						pagesize: b
+					},
+					dataType: "json",
+					success: function(data) {
+						if(data.status == 0) {
+							var dd = "";
+
+							for(var i in data.info.activeGoodsLists) {
+								var kk = "";
+								if(share == 1) {
+
+									kk = '<a href="' + data.info.activeGoodsLists[i].url + '" >';
+								} else {
+									kk = '<a onclick="AppJump.goGoodsDetail(' + data.info.activeGoodsLists[i].platId + ',' + data.info.activeGoodsLists[i].goodsId + ',\'' + data.info.activeGoodsLists[i].goodsSn + '\',\'' + data.info.activeGoodsLists[i].thumb + '\')">';
+								}
+								if(data.info.activeGoodsLists[i].isSold == 0) {
+									if(data.info.activeGoodsLists[i].activePrice) {
+										jg = data.info.activeGoodsLists[i].activePrice
+									} else {
+										if(data.info.activeGoodsLists[i].shopPrice) {
+											jg = data.info.activeGoodsLists[i].shopPrice
+										} else {
+											jg = data.info.activeGoodsLists[i].marketPrice
+										}
+									}
+									if(data.info.activeGoodsLists[i].askPrice == 1) {
+										zt = '<div class="price">请联系客服询价</div>'
+									} else {
+										zt = '<div class="price">结缘价：<span>￥' + jg + '元</span></div>'
+									}
+
+								} else {
+									zt = '<div class="price"><span>已结缘</span></div>'
+
+								}
+
+								dd += '<div class="goodli">' + kk + '<div class="good"><div class="goodimg"><img src="';
+								dd += data.info.activeGoodsLists[i].thumb + '"></div><div class="title">';
+								dd += data.info.activeGoodsLists[i].goodsName + '</div><div class="relative"><div class="ordernum">货   号：';
+								dd += data.info.activeGoodsLists[i].goodsSn + '</div>';
+								dd += zt + '<div class="love"><img src="img/activeicon.png"></div></div></div></a></div>';
+
+							}
+
+							$(".ykjlist").append(dd)
+
+						} else {
+							//alert(data.msg);
+
+						}
+
+					}
+				});
+
+			}
+
+			//RN分享参数默认值
+			RNJsBriageObject.shareInfo = {
+				name: '【年中珠宝欢乐购】第二季来袭，珠宝盛宴别错过！',
+				desc: '人手一份超级卡包，限时限量速速领取！',
+				url: '/h5/2018618/zhc/mzhc.html?share=1',
+				logo: '/h5/2018618/zhc/img/share.jpg'
+			};
+			//微信分享
+
+			wxshare();
+
+			function wxshare() {
+				var title = "【年中珠宝欢乐购】第二季来袭，珠宝盛宴别错过！";
+				var desc = "人手一份超级卡包，限时限量速速领取！";
+				var linkurl = encodeURIComponent(location.href.split('#')[0]);
+				var imgurl = "/h5/2018618/zhc/img/share.jpg";
+				$.ajax({
+					type: "post",
+					url: "/h5/active/getShareInfo",
+					data: {
+						imgurl: imgurl,
+						link: linkurl,
+						title: title,
+						desc: desc,
+						debug: false
+
+					},
+					// async: false,
+					dataType: "json",
+					success: function(data) {
+						data = JSON.parse(data)
+						console.log(data)
+						if(data.status == 0) {
+
+							$("body").append(data.info)
+							//console.log(JSON.stringify(data))
+							// 注意：所有的JS接口只能在公众号绑定的域名下调用，公众号开发者需要先登录微信公众平台进入“公众号设置”的“功能设置”里填写“JS接口安全域名”。
+							// 如果发现在 Android 不能分享自定义内容，请到官网下载最新的包覆盖安装，Android 自定义分享接口需升级至 6.0.2.58 版本及以上。
+
+						}
+
+					}
+				})
+			};
+		</script>
+	</body>
+
+</html>
