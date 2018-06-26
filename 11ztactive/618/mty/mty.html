@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+		<meta charset="utf-8" />
+		<title>《猫头鹰》系列</title>
+		<script type="text/javascript" src="https://share.jaadee.net/h5/js/jquery-1.10.2.js" ></script>
+		<style>
+			*{margin: 0;padding: 0;box-sizing: border-box;}
+			body{    font-family: "微软雅黑";    font-size: 14px;}
+			img{width: 100%;display: block;}
+			.content{width: 1200px;margin: auto;position: relative;}
+			
+			.coperight{color: #888b8b;font-size: 16px;padding: 80px 0 110px 0;text-align: center;}
+
+			/*导航*/
+			.topnavw{ width:100%; height:auto; float:left;}
+			.topnavwb{ border-bottom:1px solid #e8e8e8; height:30px;}
+			.welws{ width:auto; float:left; color:#797979; font-size:12px; line-height:30px; float:left;}
+			.ydjoutgz{ width:auto; float:right;}
+			.ydjoutgz li{ width:auto; display:inline-block; margin-left:15px; cursor:pointer; height:31px; position:relative; padding:0 10px; line-height:30px;}
+			.top-r{ width:auto; float:right;}
+			.top-r a{ float:left; height:30px;}
+			.top-r a img{ float:left; max-height:22px; margin-top:4px;width: auto;}
+			.top-r span{ margin:5px 5px 0 5px; float:left; color:#666;}
+			.topadv{ float:left; width:100%; height:150px; background:url(http://www.jaadee.com/static/jaadee2014/images/topbanner.jpg) center no-repeat;}
+			.count{ width:1200px; height:auto; margin:0 auto;}
+			.topinfo{ width:100%; height:30px; line-height:30px; float:left; color:#b2b2b2; font-size:12px;}
+			.welcome{ width:auto; float:left; float:left;}
+			.toptag{ width:auto; float:right;}
+			.toptag li{ width:auto; float:left; height:30px; padding:0 5px; margin:0 0 0 10px; position:relative;}
+			.toptag li:hover a{ text-decoration:underline;}
+			.toptag .hasson:hover{ background:url(https://ydj.jaadee.com/static/pc/images/shoutopbg.png); height:30px; float:left; width:auto; background-size:100% 100%;}
+			.toptag .hassonjt:hover .jtou{ background:url(https://ydj.jaadee.com/static/pc/images/jtdownimg.png) center right no-repeat;}
+			.topnavwnav{height:40px; background:#1e0906; line-height:40px;}
+			.ydjnavw { width:auto; float:left;}
+			.ydjnavw li{ width:auto; display:inline-block;}
+			.ydjnavw li a{ width:auto; color:#FFF; display:block; text-decoration:none; padding:0 23px;}
+			.ydjnavw li.thisli a{ background:#EEC87D; color:#000;}
+			.ydhifs{ width:auto; height:28px; float:right; margin:6px 0;}
+			.ydhifs input{ border:none; height:28px; line-height:28px; float:left;padding-left:10px;}
+			.ydjsubmit{ width:auto; padding:0 15px; background:#660000; color:#FFF;}
+			.loright{ width:1200px; float:right; height:110px; background:url(https://ydj.jaadee.com/static/pc/images/topimg2017.png) center right no-repeat;}
+			.smallinfo{ height:20px; line-height:20px; font-size:12px; color:#999999;}
+				/*尾部*/
+			.footer {
+			    width: 100%;
+			    height: auto;
+			    float: left;
+			    margin: 15px 0;
+			    font-size: 14px;
+			    line-height: 25px;
+			    color: #5a5959;;
+			    text-align: center;
+			}
+			.fmainfoot{ text-align:center; margin:15px 0;}
+			.fmainfoot li{ display:inline-block; margin:0 10px;}
+		    .fmainfoot li a{ color:#5a5959;;}
+		    .fmainfoot span{ color:#5a5959;;}
+
+
+			.clear{clear: both;}
+			.banner{background: url(img/pc__01.jpg) center no-repeat; background-size: 1920px 799px; height: 799px;}
+			.bg1{background: url(img/pc__02.jpg) center no-repeat; background-size: 1920px 462px; height: 462px;}
+			.bg1_box{position: absolute;width: 450px;text-align: center;font-size: 18px; color: #ffffff;line-height: 40px;top: 80px;right: 180px;}
+			.bg1_title{font-size: 40px;margin-bottom: 20px;}
+			.tex1{text-align: center;font-size: 18px; color: #5a5959;line-height: 40px;margin-top:60px;margin-bottom: 50px;}
+			.bg2{position: relative;background: url(img/pc__03.jpg) no-repeat; background-size: 1200px 370px; height: 370px;font-size: 20px;color: #615b5c;}
+			.bg2_tex1{position: absolute;left: 72px;bottom: 44px;}
+			.bg2_tex2{position: absolute;left: 285px;bottom: 44px;}
+			.bg2_tex3{position: absolute;left: 540px;bottom: 44px;}
+			.bg2_tex4{position: absolute;left: 773px;bottom: 44px;}
+			.bg2_tex5{position: absolute;left: 1040px;bottom: 44px;}
+			.tex2{text-align: center;font-size: 40px;color: #000;margin: 70px 0 40px 0;}
+			.zs{width: 1210px;margin: auto;}
+			.zsli{width: 25%;float: left;padding: 5px;font-size: 20px;color: #000000;text-align: center;line-height: 40px;}
+			.zsli>a>div{background: #eeeeee;padding: 10px 10px 30px 10px;}
+			.zstitle{margin: 20px 0 0 0;}
+			.price{font-size: 24px; color: #c25246;}
+			.ck{width: 150px;line-height: 30px;color: #FFFFFF;border-radius: 15px;font-size: 16px;background: #c25246;margin: auto;margin-top:10px}
+			a{text-decoration: none;color: #000000;}
+			.bg3{padding-top: 90px;margin-top: 95px;position: relative;background: url(img/pc__08.jpg) center no-repeat; background-size: 1920px 550px; height: 550px;font-size: 18px;color: #5a5959;line-height: 40px;}
+			.bg3_texbox{width: 760px;height: 375px;background: rgba(255,255,255,0.5);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7Fffffff,endColorstr=#7Fffffff);  }
+			.bg3_tex1{font-size: 40px;color: #000000;padding-top: 70px;padding-left: 40px;margin-bottom: 35px;}
+			.bg3_tex2{padding-left: 40px;}
+			.bg4{padding-top: 50px;position: relative;background: url(img/pc__bg2.jpg) center no-repeat; background-size: 1920px 712px; height: 712px;font-size: 18px;color: #5a5959;line-height: 50px;}
+			.bg4_tex1{text-align: center;font-size: 40px;color: #5a5959;margin: 0 0 90px 0;font-size: 18px;line-height: 50px;}
+			.ztbox{height: 350px;background: #f2f2f2;padding: 10px;}
+			.ztli{width: 50%;float: left;padding: 10px;}
+			
+		
+		</style>
+	</head>
+	<body>
+		<div style="background: #fff;">
+			<div class="topnavw topnavwb">
+				<div class="count">
+					<span class="welws">玉雕界-翡翠王朝旗下品牌</span>
+					<div class="top-r">
+						<a href="https://www.jaadee.com/" target="_blank"><img src="https://www.zhubaoleyuan.com/static/images/icon-fcwc.png"></a>
+						<span>|</span>
+						<a href="http://www.zhubaoleyuan.com" target="_blank"><img src="https://www.zhubaoleyuan.com/static/images/icon-zbly.png"></a>
+						<span>|</span>
+						<a href="https://yd.jaadee.com/" target="_blank"><img src="https://www.zhubaoleyuan.com/static/images/icon-ydj.png"></a>
+						<span>|</span>
+						<a href="https://nasa.jaadee.com" target="_blank"><img src="https://www.zhubaoleyuan.com/static/images/icon-ns.png"></a>
+						<span>|</span>
+						<a href="https://www.nanhongzhimi.com" target="_blank"><img src="https://www.zhubaoleyuan.com/static/images/icon-nhzm.png"></a>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="count">
+			    <div class="loright"></div>
+				<div class="clear"></div>
+			</div>
+			<div class="topnavw topnavwnav">
+				<div class="count">
+					<ul class="ydjnavw">
+						<li>
+							<a target="_blank" class="thisa" href="https://www.jaadee.com">翡翠王朝</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://yd.jaadee.com">玉雕界首页</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://yd.jaadee.com/World/index.html">全国巡展</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://yd.jaadee.com/Graver/index.html">玉雕名家</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://yd.jaadee.com/Goods/index.html">最新作品</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://yd.jaadee.com/Wool/index/p/1.html">玉石原料</a>
+						</li>
+			
+						<li>
+							<a target="_blank" href="https://yd.jaadee.com/Collection/index.html">收藏推荐</a>
+						</li>
+			
+						<li>
+							<a target="_blank" href="https://yd.jaadee.com/ArticleCat/index.html">动 态</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://yd.jaadee.com/Aboutus/attention.html">关注我们</a>
+						</li>
+			
+					</ul>
+					<a class="ydhifs" target="_blank" href="https://yd.jaadee.com">
+						<input type="hidden" name="m" value="Search">
+						<input type="hidden" name="a" value="index">
+						<input type="text" name="keyword" value="" id="keyword">
+						<input class="ydjsubmit" type="submit" value="搜 索">
+					</a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="banner clear"></div>
+		<div class="bg1">
+			<div class="content">
+				<div class="bg1_box">
+					<p class="bg1_title">设计初衷</p>
+					<p>猫头鹰昼伏夜出，飞时像幽灵一样飘忽无声，</p>
+					<p>常常只见黑影一闪，动作灵敏，并充满智慧。</p>
+					<p>它的眼睛又大又圆，晶莹透亮，宛如闪闪发光的珠宝。</p>
+					<p>这也是人们对其映象深刻的原因之一。</p>
+				</div>
+			</div>
+		</div>
+		<div class="content">
+			<div class="tex1">
+				<p>现如今，首饰设计师杨相象 以猫头鹰眼睛为出发点，</p>
+				<p>采用翡翠的点“睛”之笔，用抽象雕塑为语言，结合传统木作方式，</p>
+				<p>缅甸黑檀、印度小叶紫檀榫卯结构无缝拼接，18K金镶嵌工艺，</p>
+				<p>最后呈现在大家面前的，是一款生动有趣、自然时尚的珠宝首饰。</p>
+				<p>简约而不简单，内敛中不失珠光宝气。</p>
+			</div>
+			<div class="bg2">
+				<div class="bg2_tex1">翡翠蛋面</div>
+				<div class="bg2_tex2">进口黑檀、紫檀</div>
+				<div class="bg2_tex3">榫卯木作结构</div>
+				<div class="bg2_tex4">数十道打磨工艺</div>
+				<div class="bg2_tex5">18K金镶嵌</div>
+			</div>
+			<div class="tex2">作品展示</div>
+		</div>
+		<div class="zs">
+			<div class="zsli">
+				<a href="https://yd.jaadee.com/Goods/40111.html">
+					<div>
+						<img src="img/pc__04.jpg">
+						<div class="zstitle">《猫头鹰》Ⅰ</div>
+						<div>预售价:<span class="price">￥3333</span></div>
+						<div class="ck">查看详情</div>
+					</div>
+				</a>	
+			</div>
+			<div class="zsli">
+				<a href="https://yd.jaadee.com/Goods/40112.html">
+					<div>
+						<img src="img/pc__05.jpg">
+						<div class="zstitle">《猫头鹰》Ⅱ</div>
+						<div>预售价:<span class="price">￥3333</span></div>
+						<div class="ck">查看详情</div>
+					</div>
+				</a>	
+			</div>
+			<div class="zsli">
+				<a href="https://yd.jaadee.com/Goods/40113.html">
+					<div>
+						<img src="img/pc__06.jpg">
+						<div class="zstitle">《猫头鹰》Ⅲ</div>
+						<div>预售价:<span class="price">￥3333</span></div>
+						<div class="ck">查看详情</div>
+					</div>
+				</a>	
+			</div>
+			<div class="zsli">
+				<a href="https://yd.jaadee.com/Goods/40114.html">
+					<div>
+						<img src="img/pc__07.jpg">
+						<div class="zstitle">《猫头鹰》Ⅳ</div>
+						<div>预售价:<span class="price">￥3333</span></div>
+						<div class="ck">查看详情</div>
+					</div>
+				</a>	
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="bg3">
+			<div class="content">
+				<div class="bg3_texbox">
+					<div class="bg3_tex1">寓 意</div>
+					<div class="bg3_tex2">
+						<p>作为珠宝艺术，猫头鹰在选材上突破了传统观念，具有国际范儿。猫头鹰的形象：</p>
+						<p>● 在古希腊，是智慧女神雅典娜的一只爱鸟，被尊称为智慧的象征；</p>
+						<p>● 在日本，猫头鹰被称为福鸟，代表着吉祥和幸福；</p>
+						<p>● 在英国，猫头鹰是最尊贵、最受欢迎的宠物，也是智慧的象征。</p>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="bg4">
+			<div class="content">
+				<div class="bg4_tex1">
+					<p>其实，我们大可不必去纠结和停留固有的意义，</p>
+					<p>作为佩戴之人，我们能从猫头鹰身上找到我们缺失或者独有的特质，</p>
+					<p>智慧、耐心和沉稳这些品质也应该是我们想要的。</p>
+				</div>
+				<img src="img/pc__09.png">
+			</div>
+		</div>
+		<div class="content">
+			<img src="img/pc__10.jpg">
+			<!--<div class="ztbox">
+				<div class="ztli"><a href="https://share.jaadee.net/h5/2018618/zhc/zhc.html"><img src="https://share.jaadee.net/h5/2018618/ykj/img/pc__zhc.jpg"></a></div>
+				<div class="ztli"><a href="https://share.jaadee.net/h5/2018618/ydj618/ydj618.html"><img src="https://share.jaadee.net/h5/2018618/zhc/img/pc__zt5.jpg"></a></div>
+				<div class="clear"></div>
+			</div>-->
+		</div>
+		
+		<div class="coperight">云南翡翠王朝网络科技有限公司©版权所有</div>
+		<ul class="fmainfoot">
+    		<li><a href="https://yd.jaadee.com/Aboutus/index.html" target="_blank">关于我们</a></li><span>|</span>
+        	<li><a href="https://yd.jaadee.com/Aboutus/contact.html" target="_blank">联系我们</a></li><span>|</span>
+        	<li><a href="https://yd.jaadee.com/Aboutus/aftersale.html" target="_blank">售后服务</a></li><span>|</span>
+        	<li><a href="https://yd.jaadee.com/Aboutus/howbuy.html" target="_blank">如何购买</a></li><span>|</span>
+        	<li><a href="https://yd.jaadee.com/ArticleCat/" target="_blank">最新动态</a></li><span>|</span>
+        	<li><a href="http://mp.weixin.qq.com/s?__biz=MzA3ODAwMTMwNA==&amp;mid=202540906&amp;idx=1&amp;sn=ce14f00cf000ea3e3808d6e4208bb33f&amp;scene=1&amp;from=singlemessage&amp;isappinstalled=0#rd" target="_blank">加入我们</a></li>
+    	</ul>
+			<div class="footer">
+                玉雕行业“山寨成风”，谨防假冒，避免上当受骗，请认准玉雕界全国统一查询电话400-629-1314<br>
+                2008-2017 翡翠王朝(www.jaadee.com)版权所有<br>
+                ICP备案号:滇ICP备12006083号-1 / 公安备案号: 53010203502103 / 工商注册号: 530102100238794<br>
+                公司地址：云南省瑞丽市金星石木文化城15栋1号 / 云南省昆明市人民中路169号(移动大厦17A)   / 广东省佛山市平洲翠宝园3栋46/47A<br>
+        </div>
+
+	</body>
+</html>
