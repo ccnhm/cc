@@ -1,0 +1,244 @@
+<html style="font-size: 55.2px;">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+		<title>精品琥珀展卖专场</title>
+		<link rel="stylesheet" type="text/css" href="https://apps.jaadee.com/static/zbly/amber/style.css">
+		<script src="https://res.jaadee.net/rn/JaadeeAppJsBridge.js?v=1.4"></script>
+		<script type="text/javascript" src="https://share.jaadee.net/h5/js/jquery-1.10.2.js"></script>
+		<script type="text/javascript" src="https://share.jaadee.net/h5/js/get_set_url.js"></script>
+		<script src="https://appres.jaadee.com/apps/js/zepto.min.js"></script>
+		<style>
+			.lazyimg {
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body data-ext-version="1.4.2" style="">
+
+		<div class="head"></div>
+		<div class="box">
+			<div class="box banner">
+				<img class="img" src="https://apps.jaadee.com/static/zbly/amber/banner.jpg">
+			</div>
+			<ul class="goodslist">
+
+			</ul>
+
+			<a onclick="getMore()" class="linkmore"><img src="https://appres.jaadee.com/apps/home/Seven/m/linkmore.png"></a>
+		</div>
+		<script src="https://appres.jaadee.com/apps/js/zepto.picLazyLoad.min.js"></script>
+		<!--微信分享-->
+		<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<script type="text/javascript ">
+			Zepto(function($) {
+				$('.lazyimg').picLazyLoad({
+					threshold: 100,
+				});
+			}); //懒加载js
+			document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+
+			var page = 1;
+			var share = getUrlParam("share");
+			if(share == 1) {
+				$(".head").load("Downapp.html", function() {})
+
+			} else {
+				//$(".head").load("Topper.html", function() {})
+			}
+
+			//
+			//		function tz(a) {
+			//			if(share == 1) {
+			//				window.location.href = "http://nasa.jaadee.com/Goods/" + a + ".html"
+			//			} else {
+			//				//goodsDetail(2, 1, 2, 0, a, 5, 0)
+			//				AppJump.goGoodsDetail(5,a,b,c)//plat id  idsn  thumb
+			//			}
+			//		}
+
+			var sharetitle = "",
+				sharedes = "",
+				shareimgurl = "",
+				sharelink = "";
+
+			function appshare() {
+				AppJump.share(sharetitle, shareimgurl, sharedes, sharelink)
+			}
+
+			function ToTop() {
+				$('html,body').scrollTop(0);
+			}
+			getMore()
+
+			function getMore() {
+				$.ajax({
+					type: "get",
+					url: "https://share.jaadee.net/index.php/api/Active/getActive",
+					data: {
+						aid: "84",
+						page: page,
+						pagesize: 20
+					},
+					dataType: "json",
+					success: function(data) {
+
+						if(data.status == 0) {
+							var html = "";
+							sharetitle = data.info.shareInfo.title;
+							sharedes = data.info.shareInfo.desc;
+							shareimgurl = data.info.shareInfo.link;
+							sharelink = data.info.shareInfo.logo;
+							//wxshare();
+							for(var i in data.info.activeGoodsLists) {
+								var kk = "",
+									uu = "";
+								if(share == 1) {
+
+									kk = '<a href="' + data.info.activeGoodsLists[i].url + '" >';
+								} else {
+									kk = '<a onclick="AppJump.goGoodsDetail(' + data.info.activeGoodsLists[i].platId + ',' + data.info.activeGoodsLists[i].goodsId + ',\'' + data.info.activeGoodsLists[i].goodsSn + '\',\'' + data.info.activeGoodsLists[i].thumb + '\')">';
+								}
+								if(data.info.activeGoodsLists[i].isSold == 0) {
+									if(data.info.activeGoodsLists[i].activePrice) {
+										jg = data.info.activeGoodsLists[i].activePrice
+									} else {
+										if(data.info.activeGoodsLists[i].shopPrice) {
+											jg = data.info.activeGoodsLists[i].shopPrice
+										} else {
+											jg = data.info.activeGoodsLists[i].marketPrice
+										}
+									}
+									if(data.info.activeGoodsLists[i].askPrice == 1) {
+										zt = '<p><b>请联系客服询价</b></p>'
+									} else {
+										zt = '<p>结缘价：<b>￥' + jg + '</b></p>'
+									}
+
+								} else {
+									zt = '<a class="yjy"></a><p class="align-c"><b>已结缘</b></p>'
+
+								}
+								if(data.info.activeGoodsLists[i].isVideo==1){
+									uu='<div class="videotag"></div>'
+								}else{
+									uu=""
+								}
+								html += '<li>' + kk + '<img class="lazyimg" src="';
+								html += data.info.activeGoodsLists[i].thumb + '">'+uu+'<h3>';
+								html += data.info.activeGoodsLists[i].goodsName + '</h3><div class="aside"><div class="aside-r"></div><div class="aside-l"><p>货号：';
+								html += data.info.activeGoodsLists[i].goodsSn + '</p>';
+								html += zt + '</div></div></a></li>'
+							}
+							$(".goodslist").append(html);
+						} else {
+							//alert(data.msg);
+
+						}
+						page++;
+					}
+				});
+			}
+
+			//RN分享参数默认值
+			RNJsBriageObject.shareInfo = {
+				name: '琥珀——时光的礼赠，瞬间的永恒',
+				desc: '琥珀被称为时光的礼赠，它们凝结着亿万年的生物能量',
+				url: 'https://share.jaadee.net/h5/hp/index.html?share=1',
+				logo: 'https://apps.jaadee.com/static/nasa/wuchen/share.jpg'
+			};
+			//微信分享
+
+			$(function() {
+				var title = "琥珀——时光的礼赠，瞬间的永恒";
+				var desc = "琥珀被称为时光的礼赠，它们凝结着亿万年的生物能量";
+				var linkurl = encodeURIComponent(location.href.split('#')[0]);
+				var imgurl = "https://apps.jaadee.com/static/zbly/amber/share.jpg";
+				$.ajax({
+					type: "post",
+					url: "https://share.jaadee.net/h5/active/getShareInfo",
+					data: {
+						imgurl: imgurl,
+						link: linkurl,
+						title: title,
+						desc: desc,
+						debug: false
+
+					},
+					// async: false,
+					dataType: "json",
+					success: function(data) {
+						data = JSON.parse(data)
+						console.log(data)
+						if(data.status == 0) {
+
+							$("body").append(data.info)
+							//console.log(JSON.stringify(data))
+							// 注意：所有的JS接口只能在公众号绑定的域名下调用，公众号开发者需要先登录微信公众平台进入“公众号设置”的“功能设置”里填写“JS接口安全域名”。
+							// 如果发现在 Android 不能分享自定义内容，请到官网下载最新的包覆盖安装，Android 自定义分享接口需升级至 6.0.2.58 版本及以上。
+							/*wx.config({
+								debug: false,
+								appId: data.data.appId,
+								timestamp: data.data.timestamp,
+								nonceStr: data.data.nonceStr,
+								signature: data.data.signature,
+								jsApiList: [
+									'onMenuShareTimeline',
+									'onMenuShareAppMessage'
+								]
+							});
+							wx.ready(function() {
+								wx.onMenuShareAppMessage({
+									title: title,
+									desc: desc,
+									link: data.data.url,
+									imgUrl: imgurl,
+									trigger: function(res) {
+										//alert('用户点击发送给朋友');
+									},
+									success: function(res) {
+										//alert('感谢您的使用');
+
+									},
+									cancel: function(res) {
+
+									},
+									fail: function(res) {
+										console.log("4____" + JSON.stringify(res))
+									}
+								});
+
+								// 2.2 监听“分享到朋友圈”按钮点击、自定义分享内容及分享结果接口
+
+								wx.onMenuShareTimeline({
+									title: title,
+									link: data.data.url,
+									imgUrl: imgurl,
+									trigger: function(res) {
+										//alert('用户点击分享到朋友圈');
+									},
+									success: function(res) {
+										//alert('已分享');
+									},
+									cancel: function(res) {
+										// alert('已取消');
+									},
+									fail: function(res) {
+										alert(JSON.stringify(res));
+									}
+								});
+
+							});*/
+
+						}
+
+					}
+				})
+			});
+		</script>
+
+	</body>
+
+</html>

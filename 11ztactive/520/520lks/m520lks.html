@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+		<title>宁静致远·雕心琢玉</title>
+		<script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+		<script type="text/javascript" src="js/get_set_url.js"></script>
+		<script src="https://res.jaadee.net/rn/JaadeeAppJsBridge.js?v=1.4"></script>
+
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			
+			body {
+				background: #74141b;
+				background: #100d08;
+			}
+			
+			img {
+				display: block;
+				width: 100%;
+			}
+			
+			.st {
+				width: 50%;
+				float: left;
+				margin-bottom: 0.3rem;
+			}
+			
+			.st:nth-child(2n+1) {
+				padding-right: 0.066666rem;
+			}
+			
+			.st:nth-child(2n) {
+				padding-left: 0.066666rem;
+			}
+			
+			.spbox {
+				margin-top: 0.4rem;
+				position: relative;
+			}
+			
+			.clear {
+				clear: both;
+			}
+			
+			.goodlist:.goodlist2 {
+				padding: 0.186666rem;
+			}
+			
+			.goodlist:after,
+			.goodlist2:after {
+				content: "\0020";
+				display: block;
+				height: 0;
+				clear: both;
+			}
+			
+			.goodli {
+				padding: 0.08rem;
+				float: left;
+				width: 50%;
+				margin-bottom: 0.266666rem;
+			}
+			
+			.goodli a {
+				text-decoration: none;
+			}
+			
+			.good {
+				background: #ffffff;
+			}
+			
+			.title {
+				text-align: center;
+				margin: 0.4rem 0;
+				font-size: 0.346666rem;
+				color: #2a2a2a;
+				width: 100%;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				white-space: nowrap;
+				padding: 0 0.266666rem;
+			}
+			
+			.ordernum {
+				font-size: 0.346666rem;
+				color: #626161;
+				margin-bottom: 0.4rem;
+				padding: 0 0.266666rem;
+			}
+			
+			.price {
+				font-size: 0.346666rem;
+				color: #626161;
+				padding: 0 0.266666rem 0.4rem 0.266666rem;
+			}
+			
+			.price span {
+				color: #990000;
+			}
+			
+			.relative {
+				position: relative;
+			}
+			
+			.love {
+				position: absolute;
+				width: 1.2rem;
+				right: 0.1rem;
+				top: 0;
+			}
+			
+			.copright {
+				font-size: 0.24rem;
+				color: #b0202a;
+				margin-top: 1.6rem;
+				text-align: center;
+				margin-bottom: 1.733333rem;
+			}
+			
+			.contentbox {
+				padding: 0 0.133333rem;
+				margin-top: 0.6rem;
+			}
+			
+			.linkmore {
+				font-size: 0.32rem;
+				color: #fff;
+				margin: .3rem auto;
+				width: 4rem;
+				height: 0.8rem;
+				line-height: 0.8rem;
+				border: 1px solid #fff;
+				border-radius: 0.533333rem;
+				text-align: center;
+			}
+			
+			.returnTop {
+				position: fixed;
+				z-index: 999;
+				bottom: 1.8rem;
+				right: .4rem;
+				width: 1.066666rem;
+				height: 1.066666rem;
+				background: url(https://apps.jaadee.com/h5/520/img/back_top.png) center no-repeat;
+				background-size: 100% auto;
+			}
+			
+			.paly {
+				position: absolute;
+				width: 1.2rem;
+				left: 50%;
+				margin-left: -0.6rem;
+				top: 32%;
+				z-index: 5;
+			}
+			
+			#sp {
+				position: absolute;
+				top: 9%;
+				width: 92%;
+				left: 3%;
+				height: 55%;
+			}
+			
+			.lef1 {
+				width: 46%;
+				margin-left: 3%;
+				bottom: 2%;
+				float: left;
+			}
+			
+			.rig1 {
+				width: 46%;
+				margin-right: 3%;
+				bottom: 2%;
+				float: right;
+			}
+			
+			.margin4 {
+				margin-top: 0.4rem;
+				margin-bottom: 0.4rem;
+			}
+			
+			.content {
+				padding: 0 3%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<script type="text/javascript" src="js/flexible.debug.js"></script>
+		<div class="head"></div>
+		<img src="img/m__01.jpg">
+		<a href="javascript:void()" class="live"><img src="img/m__02.jpg"></a>
+		<img src="img/m__03.jpg">
+		<img src="img/m__04.jpg">
+		<img src="img/m__05.jpg">
+		<img src="img/m__06.jpg">
+		<img src="img/m__07.jpg">
+		<div class="contentbox">
+			<div class="content">
+				<div class="st" onclick="tz('4','179629','YDJ037810','htpps://res.jaadee.net/goods/thumb/4-YDJ037810.jpg','037810')"><img src="img/m__08.jpg"></div>
+				<div class="st" onclick="tz('4','179630','YDJ037813','htpps://res.jaadee.net/goods/thumb/4-YDJ037813.jpg','037813')"><img src="img/m__09.jpg"></div>
+				<div class="st" onclick="tz('4','179628',' YDJ037807','htpps://res.jaadee.net/goods/thumb/4-YDJ037807.jpg','037807')"><img src="img/m__10.jpg"></div>
+				<div class="st" onclick="tz('4','179624','YDJ037795','htpps://res.jaadee.net/goods/thumb/4-YDJ037795.jpg','037795')"><img src="img/m__11.jpg"></div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="spbox">
+			<img src="img/m__12.jpg">
+			<video id="sp" poster="img/vediofm.png" preload="none" name="media" x-webkit-airplay="true" playsinline="" webkit-playsinline="true" x5-video-player-type="h5">
+				<source src="https://appvideo.jaadee.net/2018/05/ydj20180522puyujiangxin-x3.mp4">
+			</video>
+			<img src="img/pc__play.png" class="paly" id="zt">
+			<script>
+				var video1 = document.getElementById("sp");
+				var video2 = document.getElementById("zt");
+				//var u = navigator.userAgent;
+				//var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+				video1.addEventListener('pause', function() {
+					document.getElementById("zt").style.display = "block";
+				})
+				//document.getElementById("zt").style.display="none";
+				video2.onclick = function() {
+					if(video1.paused) {
+						video1.play();
+						document.getElementById("zt").style.display = "none";
+					} else {
+						video1.pause();
+						document.getElementById("zt").style.display = "block";
+					}
+				}
+
+				video1.onclick = function() {
+					if(video1.paused) {
+						video1.play();
+						document.getElementById("zt").style.display = "none";
+					} else {
+						video1.pause();
+						document.getElementById("zt").style.display = "block";
+					}
+				}
+			</script>
+
+		</div>
+		<div class="margin4">
+			<div class="lef1">
+				<a href="javascript:void()" class="tz"><img src="img/m__13.jpg"></a>
+			</div>
+			<div class="rig1">
+				<a href=""><img src="img/m__14.jpg"></a>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="content">
+			<img src="img/m__15.jpg">
+		</div>
+		<div class="goodlist">
+
+		</div>
+		<div class="content margin4">
+			<img src="img/m__16.jpg">
+		</div>
+
+		<div class="goodlist2">
+
+		</div>
+		<div class="linkmore" onclick="getMore()">查看更多>></div>
+		<div class="copright">云南翡翠王朝网络科技有限公司©版权所有</div>
+
+		<div class="returnTop" onclick="ToTop();"></div>
+		<!--微信分享-->
+		<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+		<script>
+			var page = 1;
+			var share = getUrlParam("share");
+			if(share == 1) {
+				$(".head").load("Downapp.html", function() {})
+				$(".rig1 a").attr("href", "https://share.jaadee.net/h5/520yz/m520yz.html?share=1")
+				$(".live").attr("href", "https://apps.jaadee.com/Home/Live/info.html?live_id=2854")
+				$(".tz").attr("href", "https://share.jaadee.net/h5/520h5/index.html?share=1")
+
+			} else {
+				//$(".head").load("Topper.html", function() {})
+				$(".rig1 a").attr("href", "https://share.jaadee.net/h5/520yz/m520yz.html")
+				$(".live").click(function() {
+					AppJump.goLive(2854)
+					//goGoodsList(1, 1, 13, '', 2854, 0, 0)
+				})
+				$(".tz").attr("href", "https://share.jaadee.net/h5/520h5/index.html")
+			}
+			
+			function tz(plat, goodsId, goodsSn, thumb,oldid) {
+				if(share == 1) {
+					window.location.href = "https://ydj.jaadee.com/Goods/" + oldid + ".html"
+				} else {
+					//goodsDetail(2,1,2,0,a,4,0)
+					AppJump.goGoodsDetail(plat, goodsId, goodsSn, thumb)
+				}
+			}
+
+			function ToTop() {
+				$('html,body').scrollTop(0);
+			}
+
+			var sharetitle = "",
+				sharedes = "",
+				shareimgurl = "",
+				sharelink = "";
+
+			function appshare() {
+				AppJump.share(sharetitle, shareimgurl, sharedes, sharelink)
+			}
+
+			function ToTop() {
+				$('html,body').scrollTop(0);
+			}
+			getlist();
+			getMore();
+
+
+			function getMore() {
+				$.ajax({
+					type: "get",
+					url: "https://share.jaadee.net/index.php/api/Master/getMasterGoods",
+					data: {
+						//masterId: 321,
+						masterId: 48,
+						page: page,
+						pagesize:20
+					},
+					dataType: "json",
+					success: function(data) {
+						if(data.status == 0) {
+							var html = "";
+							for(var i in data.info) {
+								var kk = "";
+								if(share == 1) {
+									kk = '<a href="'+ data.info[i].url + '" >';
+								} else {
+									kk = '<a onclick="AppJump.goGoodsDetail(' + data.info[i].platId + ',' + data.info[i].goodsId + ',\'' + data.info[i].goodsSn + '\',\'' + data.info[i].thumb + '\')">';
+								}
+								if(data.info[i].isSold == 0) {
+									if(data.info[i].activePrice) {
+										jg = data.info[i].activePrice
+									} else {
+										if(data.info[i].shopPrice) {
+											jg = data.info[i].shopPrice
+										} else {
+											jg = data.info[i].marketPrice
+										}
+									}
+									if(data.info[i].askPrice == 1) {
+										zt = '<div class="price">请联系客服询价</div>'
+									} else {
+										zt = '<div class="price">结缘价：<span>￥' + jg + '元</span></div>'
+									}
+
+								} else {
+									zt = '<div class="price"><span>已结缘</span></div>'
+
+								}
+
+								html += '<div class="goodli">' + kk + '<div class="good"><div class="goodimg"><img src="';
+								html += data.info[i].thumb + '"></div><div class="title">';
+								html += data.info[i].goodsName + '</div><div class="relative"><div class="ordernum">货   号：';
+								html += data.info[i].goodsSn + '</div>';
+								html += zt + '</div></div></a></div>';
+
+							}
+
+							
+								page++;
+								$(".goodlist2").append(html);
+
+						
+						} else {
+							//alert(data.msg);
+
+						}
+
+					}
+				});
+			}
+
+			function getlist() {
+				$.ajax({
+					type: "get",
+					url: "https://share.jaadee.net/index.php/api/Active/getActive",
+					data: {
+						aid: 363,
+						page: page,
+						pagesize:50
+					},
+					//async:false, 
+					dataType: "json",
+					success: function(data) {
+						if(data.status == 0) {
+							var html = "";
+							sharetitle = data.info.shareInfo.title;
+							sharedes = data.info.shareInfo.desc;
+							shareimgurl = data.info.shareInfo.link;
+							sharelink = data.info.shareInfo.logo;
+							//wxshare();
+							for(var i in data.info.activeGoodsLists) {
+								var kk = "";
+								if(share == 1) {
+									
+									kk = '<a href="'+ data.info.activeGoodsLists[i].url + '" >';
+								} else {
+									kk = '<a onclick="AppJump.goGoodsDetail(' + data.info.activeGoodsLists[i].platId + ',' + data.info.activeGoodsLists[i].goodsId + ',\'' + data.info.activeGoodsLists[i].goodsSn + '\',\'' + data.info.activeGoodsLists[i].thumb + '\')">';
+								}
+								if(data.info.activeGoodsLists[i].isSold == 0) {
+									if(data.info.activeGoodsLists[i].activePrice) {
+										jg = data.info.activeGoodsLists[i].activePrice
+									} else {
+										if(data.info.activeGoodsLists[i].shopPrice) {
+											jg = data.info.activeGoodsLists[i].shopPrice
+										} else {
+											jg = data.info.activeGoodsLists[i].marketPrice
+										}
+									}
+									if(data.info.activeGoodsLists[i].askPrice == 1) {
+										zt = '<div class="price">请联系客服询价</div>'
+									} else {
+										zt = '<div class="price">结缘价：<span>￥' + jg + '元</span></div>'
+									}
+
+								} else {
+									zt = '<div class="price"><span>已结缘</span></div>'
+
+								}
+
+								html += '<div class="goodli">' + kk + '<div class="good"><div class="goodimg"><img src="';
+								html += data.info.activeGoodsLists[i].thumb + '"></div><div class="title">';
+								html += data.info.activeGoodsLists[i].goodsName + '</div><div class="relative"><div class="ordernum">货   号：';
+								html += data.info.activeGoodsLists[i].goodsSn + '</div>';
+								html += zt + '</div></div></a></div>';
+
+							}
+
+							
+								$(".goodlist").append(html)
+							
+
+							                                                                       
+						} else {
+							//alert(data.msg);
+
+						}
+
+					}
+				});
+			}
+			 //RN分享参数默认值
+	        RNJsBriageObject.shareInfo = {
+	        	name:'大国工匠|南派玉雕大师李克生花甲之年·匠心铭刻·传承推荐',
+	            desc:'花甲之年再创佳作&亲工收藏级作品官网同步上线&新疆和田独籽原石定制',
+	            url:'https://share.jaadee.net/h5/520lks/m520lks.html?share=1',
+	            logo:'https://apps.jaadee.com/h5/520lks/img/share.jpg'
+	        };
+			//微信分享
+			
+			wxshare();
+			function wxshare() {
+//				var title = sharetitle;
+//				var desc = sharedes;
+//				var linkurl = shareimgurl;
+//				var imgurl = sharelink;
+					var title = "大国工匠|南派玉雕大师李克生花甲之年·匠心铭刻·传承推荐";
+                    var desc = "花甲之年再创佳作&亲工收藏级作品官网同步上线&新疆和田独籽原石定制";
+                    var linkurl = encodeURIComponent(location.href.split('#')[0]);
+                    var imgurl = "https://apps.jaadee.com/h5/520lks/img/share.jpg";
+				$.ajax({
+					type: "post",
+					url: "https://share.jaadee.net/h5/active/getShareInfo",
+					data: {
+						imgurl: imgurl,
+						link: linkurl,
+						title: title,
+						desc: desc,
+						debug:false
+
+					},
+					// async: false,
+					dataType: "json",
+					success: function(data) {
+						data=JSON.parse(data)
+						console.log(data)
+						if(data.status == 0) {
+	
+							$("body").append(data.info)
+							//console.log(JSON.stringify(data))
+							// 注意：所有的JS接口只能在公众号绑定的域名下调用，公众号开发者需要先登录微信公众平台进入“公众号设置”的“功能设置”里填写“JS接口安全域名”。
+							// 如果发现在 Android 不能分享自定义内容，请到官网下载最新的包覆盖安装，Android 自定义分享接口需升级至 6.0.2.58 版本及以上。
+							
+
+						}
+
+					}
+				})
+			};
+		</script>
+	</body>
+
+</html>

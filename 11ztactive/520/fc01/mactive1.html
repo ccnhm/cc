@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+		<title>王朝美玉，盛世典藏</title>
+		<script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+		<script type="text/javascript" src="js/get_set_url.js"></script>
+		<script src="js/swiper.min.js"></script>
+		<script src="https://res.jaadee.net/rn/JaadeeAppJsBridge.js?v=1.4"></script>
+		<link rel="stylesheet" href="css/swiper.min.css" />
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			
+			body {
+				background: #1d1010;
+				color: #FFFFFF;
+			}
+			
+			img {
+				display: block;
+				width: 100%;
+			}
+			
+			.content {
+				padding: 0 0.266666rem;
+				line-height: 0.6rem;
+				font-size: 0.32rem;
+			}
+			
+			.clear {
+				clear: both;
+			}
+			
+			.goodlist:.goodlist2 {
+				padding: 0.186666rem;
+			}
+			
+			.goodlist:after,
+			.goodlist2:after {
+				content: "\0020";
+				display: block;
+				height: 0;
+				clear: both;
+			}
+			
+			.goodli {
+				padding: 0.08rem;
+				float: left;
+				width: 50%;
+				margin-bottom: 0.266666rem;
+			}
+			
+			.goodli a {
+				text-decoration: none;
+			}
+			
+			.good {
+				background: #ffffff;
+			}
+			
+			.title {
+				text-align: center;
+				margin: 0.4rem 0;
+				font-size: 0.346666rem;
+				color: #2a2a2a;
+				width: 100%;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				white-space: nowrap;
+				padding: 0 0.266666rem;
+			}
+			
+			.ordernum {
+				font-size: 0.346666rem;
+				color: #626161;
+				margin-bottom: 0.4rem;
+				padding: 0 0.266666rem;
+			}
+			
+			.price {
+				font-size: 0.346666rem;
+				color: #626161;
+				padding: 0 0.266666rem 0.4rem 0.266666rem;
+			}
+			
+			.price span {
+				color: #990000;
+			}
+			
+			.relative {
+				position: relative;
+			}
+			
+			.love {
+				position: absolute;
+				width: 1.2rem;
+				right: 0.1rem;
+				top: 0;
+			}
+			
+			.copright {
+				font-size: 0.24rem;
+				color: #b0202a;
+				margin-top: 1.6rem;
+				text-align: center;
+				margin-bottom: 1.733333rem;
+			}
+			
+			.contentbox {
+				padding: 0 0.133333rem;
+				margin-top: 0.6rem;
+			}
+			
+			.linkmore {
+				font-size: 0.32rem;
+				color: #eed38e;
+				margin: .3rem auto;
+				width: 4rem;
+				height: 0.8rem;
+				line-height: 0.7rem;
+				border: 1px solid #eed38e;
+				border-radius: 0.533333rem;
+				text-align: center;
+			}
+			
+			.returnTop {
+				position: fixed;
+				z-index: 999;
+				bottom: 1.8rem;
+				right: .4rem;
+				width: 1.066666rem;
+				height: 1.066666rem;
+				background: url(https://apps.jaadee.com/h5/520/img/back_top.png) center no-repeat;
+				background-size: 100% auto;
+			}
+			
+			.bg1 {
+				padding: 0.666666rem;
+				background: #130a08;
+				color: #FFFFFF;
+				text-indent: 2em;
+			}
+			
+			.yellow {
+				color: #edcb79;
+			}
+			
+			.tex1 {
+				text-align: center;
+				margin-top: 0.533333rem;
+				color: #edcb79;
+				margin-top: 0.533333rem;
+				margin-bottom: 0.2rem;
+			}
+			
+			.span50 {
+				width: 50%;
+				float: left;
+			}
+			
+			.text-left {
+				text-align: left;
+			}
+			
+			.text-right {
+				text-align: right;
+			}
+			
+			.text-center {
+				text-align: center;
+			}
+			
+			.slh {
+				margin-bottom: 0.3rem;
+			}
+			
+			.texbox {
+				padding: 0.6rem 0.266666rem;
+				background: #130a08;
+				line-height: 0.6rem;
+				font-size: 0.32rem;
+			}
+			
+			.tex2 {
+				text-indent: 2em;
+			}
+			
+			.tex3 {
+				text-indent: 2em;
+			}
+			
+			.bg2 {
+				background: #130a08;
+			}
+			
+			.bg3 {
+				background: #251414
+			}
+			
+			.tex4 {
+				padding: 0.4rem 0.266666rem 0.8rem 0.266666rem;
+			}
+			
+			.tab {
+				margin: 0.4rem 0 0.533333rem 0;
+				width: 100%;
+				background: #1d1010;
+			}
+			
+			.nav {
+				border: 1px solid #352020;
+				width: 25%;
+				float: left;
+				line-height: 1.066666rem;
+				text-align: center;
+				color: #FFFFFF;
+				font-size: 0.4rem;
+			}
+			
+			.nav:nth-child(1) {
+				border-right: none;
+			}
+			
+			.nav:nth-child(4) {
+				border-left: none;
+			}
+			
+			.lllibox {
+				z-index: 10;
+				display: none;
+				position: absolute;
+				width: 25%;
+				left: 0;
+				top: 1.1rem;
+				line-height: 1.066666rem;
+				text-align: center;
+				color: #FFFFFF;
+				font-size: 0.4rem;
+			}
+			
+			.llli {
+				border: 1px solid #352020;
+				background: #1d1010;
+			}
+			
+			.active {
+				color: #281818;
+				background: url(img/buttonbg.jpg) no-repeat;
+				background-size: 100% 100%;
+			}
+			
+			.arrow {
+				width: 0.4rem;
+				margin-left: 0.2rem;
+				width: 0.4rem;
+				display: initial;
+				vertical-align: sub;
+			}
+			
+			.gd {
+				position: fixed;
+				top: 1.146666rem;
+				z-index: 10;
+				margin-top: 0;
+			}
+			
+			.gd1 {
+				position: fixed;
+				z-index: 10;
+				margin-top: 0;
+				top: 0
+			}
+			
+			.disblock {
+				display: block;
+			}
+		</style>
+	</head>
+
+	<body>
+		<script type="text/javascript" src="js/flexible.debug.js"></script>
+		<div class="head"></div>
+		<img src="img/m__01.jpg">
+		<div class="content bg1">
+			<span class="yellow">玉是中国传统文化的一个重要组成部分,</span>以玉为中心载体的玉文化，深深影响了中国人的思想观念，成为中国文化不可缺少的 部分。
+		</div>
+		<div class="content bg2">
+			<img src="img/m__02.jpg">
+			<div class="tex1">玉文化包含有：</div>
+			<div>
+				<div class="span50 text-left">“宁为玉碎”的爱国民族气节；</div>
+				<div class="span50 text-right">“化为玉帛”的团结友爱风尚；</div>
+				<div class="span50 text-left">“润泽以温”的无私奉献品德；</div>
+				<div class="span50 text-right">“瑕不 掩瑜”的清正廉洁气魄；</div>
+				<div class="text-center slh">……</div>
+				<div class="clear"></div>
+			</div>
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide"><img src="img/banner1.jpg"></div>
+					<div class="swiper-slide"><img src="img/banner2.jpg"></div>
+					<div class="swiper-slide"><img src="img/banner3.jpg"></div>
+					<div class="swiper-slide"><img src="img/banner4.jpg"></div>
+					<div class="swiper-slide"><img src="img/banner5.jpg"></div>
+					<div class="swiper-slide"><img src="img/banner6.jpg"></div>
+
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>
+
+			<script>
+				var mySwiper = new Swiper('.swiper-container', {
+					autoplay: 3000,
+					autoplayDisableOnInteraction: false,
+					pagination: '.swiper-pagination',
+				})
+			</script>
+		</div>
+		<div class="texbox">
+			<div class="tex2 yellow">俗话有云：乱世藏金，盛世藏玉。</div>
+			<div class="tex3">如今正处盛世，喜爱玩玉、藏玉的人越来越多，这不仅与中国几千年的玉文化历史有关， 更是经济蓬勃发展的象征。</div>
+		</div>
+		<img src="img/m__04.jpg">
+		<div class="content bg3">
+			<img src="img/m__05.jpg">
+
+		</div>
+		<div class="content bg3 tex4">针对高端收藏品提供预约送货上门服务，您只需联系客服，约定时间，我们会安排专业人员为您提供送货上门服务，您可以当场看货、验货、试戴，购买收藏更放心。</div>
+
+		<div class="ll relative">
+			<div class="tab">
+				<div class="relative">
+					<div class="nav active">精品翡翠</div>
+					<div class="nav">精品南红</div>
+					<div class="nav">精品和田玉</div>
+					<div class="nav">其它精品</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="lllibox">
+				<div class="llli">翡翠手镯</div>
+				<div class="llli">翡翠挂件</div>
+				<div class="llli">杂项</div>
+
+			</div>
+			<div class="goodlist">
+
+			</div>
+			<div class="linkmore" onclick="getMore(this);">点击查看更多<img src="img/arrow.png" class="arrow"></div>
+			<div class="copright">云南翡翠王朝网络科技有限公司©版权所有</div>
+		</div>
+		<div class="returnTop" onclick="ToTop();"></div>
+		<!--微信分享-->
+		<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+		<script>
+			var sharetitle = "",
+				sharedes = "",
+				shareimgurl = "",
+				sharelink = "";
+			//var tophe=$(".tab").offset().top;
+			
+			function appshare() {
+				AppJump.share(sharetitle, shareimgurl, sharedes, sharelink)
+			}
+			$(".nav").click(function() {
+				if($(this).index() == 0) {
+
+					if($(".lllibox").hasClass("disblock")) {
+						$(".lllibox").removeClass("disblock");
+					} else {
+						$(".lllibox").addClass("disblock");
+					}
+				} else {
+					$(".lllibox").removeClass("disblock");
+				}
+			})
+			$(".llli").click(function() {
+				$(".nav:nth-child(1)").html($(this).html());
+				$(".lllibox").removeClass("disblock");
+				$(".tab .nav:nth-child(1)").addClass("active").siblings().removeClass("active");
+				if($(this).index() == 0) {
+					id = 369;
+					page = 1;
+					gx = true;
+					getMore()
+				} else if($(this).index() == 1) {
+					id = 372;
+					page = 1;
+					gx = true;
+					getMore()
+				} else if($(this).index() == 2) {
+					id = 375;
+					page = 1;
+					gx = true;
+					getMore()
+
+				}
+
+			})
+			$(".tab .nav").click(function() {
+				if($(this).index() == 0) {
+
+				} else if($(this).index() == 1) {
+					id = 387;
+					$(this).addClass("active").siblings().removeClass("active");
+					page = 1;
+					gx = true;
+					getMore()
+				} else if($(this).index() == 2) {
+					id = 391;
+					$(this).addClass("active").siblings().removeClass("active");
+					page = 1;
+					gx = true;
+					getMore()
+				} else if($(this).index() == 3) {
+					id = 394;
+					$(this).addClass("active").siblings().removeClass("active");
+					page = 1;
+					gx = true;
+					getMore()
+
+				}
+
+			})
+
+			var page = 1;
+			var id = 369;
+			var gx = true;
+			var share = getUrlParam("share");
+			
+			if(share == 1) {
+				//滚动到一定高度后分享网页固定栏样式
+				var tophe = $(window).width() * 5.05
+				$(window).resize(function() {
+					//tophe=$(".tab").offset().top;
+					tophe = $(window).width() * 5.05
+				});
+				$(window).scroll(function() {
+					if($(window).scrollTop() >= tophe) {
+						$(".tab").addClass("gd1")
+						$(".goodlist").css("margin-top", "1.866666rem")
+						$(".lllibox").css("position", "fixed")
+					} else {
+						$(".tab").removeClass("gd1")
+						$(".goodlist").css("margin-top", "0")
+						$(".lllibox").css("position", "absolute")
+
+					}
+				})
+				$(".head").load("Downapp.html", function() {})
+
+			} else {
+				//滚动到一定高度后app固定栏样式
+				var tophe = $(window).width() * 4.9
+				$(window).resize(function() {
+					//tophe=$(".tab").offset().top;
+					tophe = $(window).width() * 4.9
+				});
+				$(window).scroll(function() {
+					if($(window).scrollTop() >= tophe) {
+						$(".tab").addClass("gd1")
+						$(".goodlist").css("margin-top", "1.866666rem")
+						$(".lllibox").css("position", "fixed")
+					} else {
+						$(".tab").removeClass("gd1")
+						$(".goodlist").css("margin-top", "0")
+						$(".lllibox").css("position", "absolute")
+
+					}
+				})
+				//$(".head").load("Topper.html", function() {})
+
+			}
+			getMore()
+
+			function ToTop() {
+				$('html,body').scrollTop(0);
+			}
+
+			function getMore() {
+				$.ajax({
+					type: "get",
+					url: "https://share.jaadee.net/index.php/api/Active/getActive",
+					data: {
+						aid: id,
+						page: page,
+						pagesize: 20
+					},
+					dataType: "json",
+					success: function(data) {
+						if(data.status == 0) {
+							var html = "";
+							sharetitle = data.info.shareInfo.title;
+							sharedes = data.info.shareInfo.desc;
+							shareimgurl = data.info.shareInfo.link;
+							sharelink = data.info.shareInfo.logo;
+							//wxshare();
+							for(var i in data.info.activeGoodsLists) {
+								var kk = "";
+								if(share == 1) {
+
+									kk = '<a href="' + data.info.activeGoodsLists[i].url + '" >';
+								} else {
+									kk = '<a onclick="AppJump.goGoodsDetail(' + data.info.activeGoodsLists[i].platId + ',' + data.info.activeGoodsLists[i].goodsId + ',\'' + data.info.activeGoodsLists[i].goodsSn + '\',\'' + data.info.activeGoodsLists[i].thumb + '\')">';
+								}
+								if(data.info.activeGoodsLists[i].isSold == 0) {
+									if(data.info.activeGoodsLists[i].activePrice) {
+										jg = data.info.activeGoodsLists[i].activePrice
+									} else {
+										if(data.info.activeGoodsLists[i].shopPrice) {
+											jg = data.info.activeGoodsLists[i].shopPrice
+										} else {
+											jg = data.info.activeGoodsLists[i].marketPrice
+										}
+									}
+									if(data.info.activeGoodsLists[i].askPrice == 1) {
+										zt = '<div class="price">请联系客服询价</div>'
+									} else {
+										zt = '<div class="price">结缘价：<span>￥' + jg + '元</span></div>'
+									}
+
+								} else {
+									zt = '<div class="price"><span>已结缘</span></div>'
+
+								}
+
+								html += '<div class="goodli">' + kk + '<div class="good"><div class="goodimg"><img src="';
+								html += data.info.activeGoodsLists[i].thumb + '"></div><div class="title">';
+								html += data.info.activeGoodsLists[i].goodsName + '</div><div class="relative"><div class="ordernum">货   号：';
+								html += data.info.activeGoodsLists[i].goodsSn + '</div>';
+								html += zt + '</div></div></a></div>';
+
+							}
+							if(gx == true) {
+								//$(".goodlist").children('.goodli').remove()
+								$(".goodlist").html("")
+								$(".goodlist").css({
+									"height": $(window).height()-$(window).width()*0.5
+								})
+								window.setTimeout(function() {
+									$(".goodlist").css({
+										"height": "auto"
+									})
+
+									$(".goodlist").html(html);
+								}, 50)
+
+							} else {
+								$(".goodlist").append(html);
+							}
+							gx = false;
+
+							
+							page++;
+
+						} else {
+							//alert(data.msg);
+
+						}
+
+					}
+				});
+			}
+			 //RN分享参数默认值
+	        RNJsBriageObject.shareInfo = {
+	        	name:'【王朝美玉，盛世典藏】传世高端翡翠专场',
+	            desc:'翡翠王朝服务再升级，高端收藏品送货上门服务现已开通，点击了解详情',
+	            url:'https://share.jaadee.net/h5/fc01/mactive1.html?share=1',
+	            logo:'https://apps.jaadee.com/h5/fc01/img/m__01.jpg'
+	        };
+			//微信分享
+			wxshare();
+			function wxshare() {
+//				var title = sharetitle;
+//				var desc = sharedes;
+//				var linkurl = shareimgurl;
+//				var imgurl = sharelink;
+					var title = "【王朝美玉，盛世典藏】传世高端翡翠专场";
+                    var desc = "翡翠王朝服务再升级，高端收藏品送货上门服务现已开通，点击了解详情";
+                    var linkurl = encodeURIComponent(location.href.split('#')[0]);
+                    var imgurl = "https://apps.jaadee.com/h5/fc01/img/m__01.jpg";
+				$.ajax({
+					type: "post",
+					url: "https://share.jaadee.net/h5/active/getShareInfo",
+					data: {
+						imgurl: imgurl,
+						link: linkurl,
+						title: title,
+						desc: desc,
+						debug:false
+
+					},
+					// async: false,
+					dataType: "json",
+					success: function(data) {
+						data=JSON.parse(data)
+						console.log(data)
+						if(data.status == 0) {
+	
+							$("body").append(data.info)
+							//console.log(JSON.stringify(data))
+							// 注意：所有的JS接口只能在公众号绑定的域名下调用，公众号开发者需要先登录微信公众平台进入“公众号设置”的“功能设置”里填写“JS接口安全域名”。
+							// 如果发现在 Android 不能分享自定义内容，请到官网下载最新的包覆盖安装，Android 自定义分享接口需升级至 6.0.2.58 版本及以上。
+							
+						}
+
+					}
+				})
+			};
+		</script>
+	</body>
+
+</html>

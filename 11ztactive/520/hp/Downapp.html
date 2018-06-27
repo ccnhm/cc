@@ -1,0 +1,18 @@
+<style type="text/css">
+.fiextop{ float: left; width: 100%; position: relative;}
+.fiextop a{float: left;width: 100%;}
+.fiextop img{float: left; width: 100%;}
+.fiextop .close{position: absolute; z-index: 1; width: 20%; height: 100%; left: 0; top: 0;}
+</style>
+<div class="fiextop">
+	<a target="_blank" href="https://app.jaadee.com/do.php?canal=huodong">
+		<img src="https://appres.jaadee.com/apps/images/fiexdtop.jpg" />
+		<!--img src="https://apps.jaadee.com/static/images/ten-downapp.jpg" / -->
+	</a>
+    <div class="close" id="closeappimg"></div>
+</div>
+<script>
+	$("#closeappimg").click(function(){
+		$(".fiextop").remove();
+	});
+</script>

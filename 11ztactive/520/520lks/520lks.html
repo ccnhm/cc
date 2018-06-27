@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+		<meta charset="utf-8" />
+		<title>宁静致远·雕心琢玉</title>
+		<script type="text/javascript" src="js/jquery-1.10.2.js" ></script>
+		<style>
+			*{margin: 0;padding: 0;box-sizing: border-box;}
+			a{text-decoration: none;}
+			body{    font-family: "微软雅黑";    font-size: 14px;background: #070707;}
+			img{width: 100%;display: block;}
+			.clear{clear: both;}
+			.content{width: 1200px;margin: auto;position: relative;}
+			.border1{margin-top: 20px;border-top: 5px solid #1b1b1b;}
+			.border2{padding-top: 45px;border-top: 5px solid #1b1b1b;}
+			
+			.bg1{width: 1300px;margin: auto;position: relative;}
+			.paly{position: absolute;width: 90px;left: 335px;top: 251px;}
+			.hx{width: 104px;position: absolute;left: -104px;top: 27px;}
+			.coperight{color: #888b8b;font-size: 16px;padding: 80px 0 110px 0;text-align: center;}
+			.min-width{min-width: 1200px;}
+			.good-fj{width:1220px;margin: auto;margin-top: 60px;}
+			
+			.goodlist ,.goodlist2{width:1220px;margin: auto;padding: 5px;margin-top: 10px;}
+			
+			.goodlist:after,.goodlist2:after {content: "\0020";display: block;height: 0;clear: both;}
+			
+			.goodli {padding: 5px;width: 25%;float: left;}
+			
+			.good {background: #FFFFFF;}
+			
+			.title {margin: 10px 0;font-size: 16px;color: #2a2a2a;width: 100%;text-align: center;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;padding: 0 15px;}
+			
+			.ordernum {font-size: 14px;color: #626161;margin-bottom: 10px;padding: 0 15px;}
+			
+			.price {font-size: 14px;color: #626161;padding: 0 15px 30px 15px;}
+			
+			.price span {color: #990000;}
+			
+			.relative {position: relative;}
+			
+			.love {position: absolute;width: 30%;right: 0;top: 0;}
+			.linkmore {margin: 60px auto 0 auto;width: 280px;height: 60px;background: #41260b;border-radius: 60px;}
+			.linkmore .getmore {float: left;width: 270px;height: 50px;margin: 5px;text-align: center; color: #dbbf7e;border: 1px solid #71502f;box-sizing: border-box;line-height: 50px;font-size: 18px;border-radius: 50px;cursor: pointer;}
+			/*导航*/
+			.topnavw{ width:100%; height:auto; float:left;}
+			.topnavwb{ border-bottom:1px solid #e8e8e8; height:30px;}
+			.welws{ width:auto; float:left; color:#797979; font-size:12px; line-height:30px; float:left;}
+			.ydjoutgz{ width:auto; float:right;}
+			.ydjoutgz li{ width:auto; display:inline-block; margin-left:15px; cursor:pointer; height:31px; position:relative; padding:0 10px; line-height:30px;}
+			.top-r{ width:auto; float:right;}
+			.top-r a{ float:left; height:30px;}
+			.top-r a img{ float:left; max-height:22px; margin-top:4px;    width: auto;}
+			.top-r span{ margin:5px 5px 0 5px; float:left; color:#666;}
+			.topadv{ float:left; width:100%; height:150px; background:url(http://www.jaadee.com/static/jaadee2014/images/topbanner.jpg) center no-repeat;}
+			.count{ width:1200px; height:auto; margin:0 auto;}
+			.topinfo{ width:100%; height:30px; line-height:30px; float:left; color:#b2b2b2; font-size:12px;}
+			.welcome{ width:auto; float:left; float:left;}
+			.toptag{ width:auto; float:right;}
+			.toptag li{ width:auto; float:left; height:30px; padding:0 5px; margin:0 0 0 10px; position:relative;}
+			.toptag li:hover a{ text-decoration:underline;}
+			.toptag .hasson:hover{ background:url(https://ydj.jaadee.com/static/pc/images/shoutopbg.png); height:30px; float:left; width:auto; background-size:100% 100%;}
+			.toptag .hassonjt:hover .jtou{ background:url(https://ydj.jaadee.com/static/pc/images/jtdownimg.png) center right no-repeat;}
+			.topnavwnav{height:40px; background:#1e0906; line-height:40px;}
+			.ydjnavw { width:auto; float:left;}
+			.ydjnavw li{ width:auto; display:inline-block;}
+			.ydjnavw li a{ width:auto; color:#FFF; display:block; text-decoration:none; padding:0 23px;}
+			.ydjnavw li.thisli a{ background:#EEC87D; color:#000;}
+			.ydhifs{ width:auto; height:28px; float:right; margin:6px 0;}
+			.ydhifs input{ border:none; height:28px; line-height:28px; float:left;padding-left:10px;}
+			.ydjsubmit{ width:auto; padding:0 15px; background:#660000; color:#FFF;}
+			.loright{ width:1200px; float:right; height:110px; background:url(https://ydj.jaadee.com/static/pc/images/topimg2017.png) center right no-repeat;}
+			.smallinfo{ height:20px; line-height:20px; font-size:12px; color:#999999;}
+			/*尾部*/
+			.fcwc-footer {
+			    width: 100%;
+			    padding: 50px 0;
+			}
+			.fcwc-footer .navbox {
+			    width: 100%;
+			    text-align: center;
+			}
+			ul, li {
+			    list-style: none;
+			}
+			.fcwc-footer .navbox li {
+			    display: inline-block;
+			    height: 50px;
+			    line-height: 50px;
+			}
+			.fcwc-footer .navbox a {
+			    margin: 0 5px;
+			    display: inline-block;
+			    font-size: 14px;
+			    color: #FFFFFF;
+			}
+			.fcwc-footer .copyright {
+			    width: 100%;
+			    text-align: center;
+			    line-height: 25px;
+			    font-size: 14px;
+			    color: #FFFFFF;
+			}
+			.st{margin-right: -15px;}
+			.st .span25{position: relative;width: 25%;float: left;padding:10px;}
+			.st a{display: block;height: 500px;}
+			.stbg{background: url(newimg/st.jpg) no-repeat;background-size: auto 100%;height: 523px;padding: 10px;}
+			.stimg{width: 263px;}
+			.stdes{font-size: 14px; color: #d6d6d6;padding: 0 10px;}
+			.sttitle{font-size: 20px; color: #d3b56f;text-align: center;margin: 10px 0 40px 0;}
+			.stxj{position: absolute;font-size: 18px; color: #070707; left: 90px;bottom: 77px;}
+			.stxq{position: absolute;font-size: 14px; color: #070707; left: 157px;bottom: 79px;}
+			#sp{    width: 660px;position: absolute;top: 100px;left: 50px;height: 372px;}
+			.lef1{width: 593px;position: absolute;left: 50px;top: 530px;}
+			.rig1{width: 593px;position: absolute;right: 50px;top: 532px;}
+			.banner{background: url(img/pc__01.jpg) center no-repeat;background-size: auto 710px;height: 710px;}
+			.mk1{background: url(img/pc__02.jpg) center no-repeat;background-size: auto 100%;height: 760px;}
+			.mk2{background: url(newimg/bg2.jpg) center no-repeat;background-size: auto 100%;height: 1248px;font-size: 15px;line-height: 30px;}
+			.tex1{color: #dcdddd;text-align: center;top: 60px;position: absolute;width: 100%;}
+			.tex2{color: #dcdddd;text-align: center;top: 300px;right: 50px;position: absolute;width: 450px;text-align: left;}
+			.flag1{position: absolute;color: #9fa0a0;top: 600px;left: 125px;}
+			.flag2{position: absolute;color: #9fa0a0;top: 600px;left: 455px;}
+			.flag3{position: absolute;color: #9fa0a0;top: 1143px;right: 220px;}
+			.tex3{position: absolute;top: 720px; left: 10px;color: #303030;}
+			.tex4{position: absolute;top: 902px; left: 10px;color: #727171;}
+			.spq1{font-size: 15px;color: #000;left:60px;top: 73px;position: absolute;}
+			.spq2{font-size: 15px;color: #dcdddd;right: 112px;top:250px;position: absolute;width: 440px;line-height: 30px;}
+			.author{text-align: right;margin-top: 25px;}
+			.dztitle{font-size: 26px;color: #000;position: absolute;top: 50px; text-align: center;width: 100%;}
+			.dztex1{font-size: 18px;color: #595757;position: absolute;top: 100px; text-align: center;width: 100%;}
+			.dztex2{font-size: 15px;color: #595757;position: absolute;top: 130px; text-align: center;width: 100%;}
+			.dztex2 span{font-size: 20px;color: #c60000;}
+			.dztex3{font-size: 15px;color: #070707;position: absolute;top: 180px; text-align: center;width: 100%;}
+			
+		</style>
+	</head>
+	<body>
+		<div style="background: #fff;">
+			<div class="topnavw topnavwb">
+				<div class="count">
+					<span class="welws">玉雕界-翡翠王朝旗下品牌</span>
+					<div class="top-r">
+						<a href="https://www.jaadee.com/" target="_blank"><img src="https://www.zhubaoleyuan.com/static/images/icon-fcwc.png"></a>
+						<span>|</span>
+						<a href="http://www.zhubaoleyuan.com" target="_blank"><img src="https://www.zhubaoleyuan.com/static/images/icon-zbly.png"></a>
+						<span>|</span>
+						<a href="https://yd.jaadee.com/" target="_blank"><img src="https://www.zhubaoleyuan.com/static/images/icon-ydj.png"></a>
+						<span>|</span>
+						<a href="https://nasa.jaadee.com" target="_blank"><img src="https://www.zhubaoleyuan.com/static/images/icon-ns.png"></a>
+						<span>|</span>
+						<a href="https://www.nanhongzhimi.com" target="_blank"><img src="https://www.zhubaoleyuan.com/static/images/icon-nhzm.png"></a>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="count">
+			    <div class="loright"></div>
+				<div class="clear"></div>
+			</div>
+			<div class="topnavw topnavwnav">
+				<div class="count">
+					<ul class="ydjnavw">
+						<li>
+							<a target="_blank" class="thisa" href="https://www.jaadee.com">翡翠王朝</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://yd.jaadee.com">玉雕界首页</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://yd.jaadee.com/World/index.html">全国巡展</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://yd.jaadee.com/Graver/index.html">玉雕名家</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://yd.jaadee.com/Goods/index.html">最新作品</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://yd.jaadee.com/Wool/index/p/1.html">玉石原料</a>
+						</li>
+			
+						<li>
+							<a target="_blank" href="https://yd.jaadee.com/Collection/index.html">收藏推荐</a>
+						</li>
+			
+						<li>
+							<a target="_blank" href="https://yd.jaadee.com/ArticleCat/index.html">动 态</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://yd.jaadee.com/Aboutus/attention.html">关注我们</a>
+						</li>
+			
+					</ul>
+					<a class="ydhifs" target="_blank" href="https://yd.jaadee.com">
+						<input type="hidden" name="m" value="Search">
+						<input type="hidden" name="a" value="index">
+						<input type="text" name="keyword" value="" id="keyword">
+						<input class="ydjsubmit" type="submit" value="搜 索">
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="banner"></div>
+		<!--<a href="https://www.jaadee.com/Live/ydmj.html"><img src="img/pc__02.jpg" class="min-width"></a>-->
+		<a href="https://www.jaadee.com/Live/ydmj.html">
+			<div class="mk1">
+				
+			</div>
+		</a>
+		<div class="mk2">
+			<div class="content relative">
+				<img src="newimg/02.png">
+				<div class="tex1">
+					<p>李老师于2000年创办璞玉斋，</p>
+					<p>秉承“精益求精、雕心琢玉”的创作理念，</p>
+					<p>从原料到成品，每一步都一丝不苟，形成特有作品风格，在业界独树一帜。</p>
+					<p>“李氏璞玉斋”亲工雕刻作品落款为“李”字款、“璞”字款。</p>
+				</div>
+				<div class="tex2">李”字款作品与“璞”字款作品本质上并没有区别，区别只是在创作过程中，出于对佛家题材或一些私人信仰饰品及婚姻需求题材定制的考虑，落下姓氏有所不妥，便落款为“璞”，两种落款作品都是李老师亲工作品。</div>
+				<div class="flag1">“李”字款</div>
+				<div class="flag2">“璞”字款</div>
+				<div class="flag3">“克生”款</div>
+				<div class="tex3">
+					<p>今年61岁的李克生，</p>
+					<p>花甲一分水岭，守艺雕刻再续经典，</p>
+					<p>花甲之年，李老师亲工雕刻收藏级作品落款由“克”“生”二字设计而成，</p>
+					<p>整体呈葫芦样式，寓意美好</p>
+				</div>
+				<div class="tex4">
+					<p> “克生”款作品，是李克生老师六十岁之后的亲工收藏级作品。</p>
+					<p>六十而后作，作品符合李老师本人的人文艺术表达，</p>
+					<p>承载丰富的文化内涵和独到的创作理念。</p>
+				</div>
+			</div>
+		</div>
+		<div class="content">
+			<img src="img/pc__05.jpg">
+			<div class="st">
+				<div class="span25">
+					<div class="stbg">
+						<a href="https://yd.jaadee.com/Goods/037810.html">
+							<div class="stimg"><img src="newimg/st1.jpg"></div>
+							<div class="sttitle">《光前裕后》</div>
+							<div class="stdes">牌型精致大方，取为葫芦牌型，寓意福禄双全</div>
+							<div class="stxj">询价</div>
+							<div class="stxq">查看详情</div>
+						</a>
+					</div>
+				</div>	
+				<div class="span25">
+					<div class="stbg">
+						<a href="https://yd.jaadee.com/Goods/037813.html">
+							<div class="stimg"><img src="newimg/st2.jpg"></div>
+							<div class="sttitle">《伊人》</div>
+							<div class="stdes" style="text-align: center;"><p>蒹葭苍苍，白露为霜；</p><p>所谓伊人，在水一方。</p></div>
+							<div class="stxj">询价</div>
+							<div class="stxq">查看详情</div>
+						</a>
+					</div>
+				</div>	
+				<div class="span25">
+					<div class="stbg">
+						<a href="https://yd.jaadee.com/Goods/037807.html">
+							<div class="stimg"><img src="newimg/st3.jpg"></div>
+							<div class="sttitle">《振家声》</div>
+							<div class="stdes">两小孩喜笑颜开，敲锣打鼓，喜气洋洋。龙凤腾跃，寓意龙凤呈祥，光宗耀祖。</div>
+							<div class="stxj">询价</div>
+							<div class="stxq">查看详情</div>
+						</a>
+					</div>
+				</div>	
+				<div class="span25">
+					<div class="stbg">
+						<a href="https://yd.jaadee.com/Goods/037795.html">
+							<div class="stimg"><img src="newimg/st4.jpg"></div>
+							<div class="sttitle">《岁月静好》</div>
+							<div class="stdes">江南水乡，美人婀娜聘婷，倚窗凝望。背面描绘了你若芬芳，蝴蝶自来的美好意境。</div>
+							<div class="stxj">询价</div>
+							<div class="stxq">查看详情</div>
+						</a>
+					</div>
+				</div>	
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="border1">
+			<div class="bg1 relative">
+				<div class="spq1">《璞玉匠心》纪录片  点击查看视频</div>
+				<div class="spq2">技与艺是相辅相成的，缺乏技而空谈艺，则是无根之木；独守技而舍弃艺，则是故步自封。玉雕行业的匠心，是技与艺结合的完美展示，更是技艺与生命灵魂的结合，生命有限，匠心永恒。<p class="author">——李克生 </p></div>
+				<img src="img/pc__10.jpg">
+				<video id="sp" poster="img/vediofm.png"  preload="load"  name="media" x-webkit-airplay="true" playsinline="" webkit-playsinline="true" x5-video-player-type="h5">
+					<source src="https://appvideo.jaadee.net/2018/05/ydj20180522puyujiangxin-x3.mp4">
+				</video>
+				<img src="img/pc__play.png" class="paly" id="zt">
+				<div class="lef1"><img src="img/pc__13.jpg"></div>
+				<div class="rig1"><a href="https://apps.jaadee.com/h5/520yz/520yz.html"><img src="img/pc__14.jpg"></a></div>
+				<script>
+					
+						var video1=document.getElementById("sp");
+						var video2=document.getElementById("zt");
+						
+						
+						video2.onclick=function(){
+								    if(video1.paused){
+								        video1.play();
+								        document.getElementById("zt").style.display="none";
+								    }else{
+								        video1.pause();
+								        document.getElementById("zt").style.display="block";
+								    }
+								}
+						
+							
+							video1.onclick=function(){
+							    if(video1.paused){
+							        video1.play();
+							        document.getElementById("zt").style.display="none";
+							    }else{
+							        video1.pause();
+							        document.getElementById("zt").style.display="block";
+							    }
+							}
+					
+				</script>
+			</div>
+		</div>
+		<div class="border2">
+			<div class="content relative">
+				<img src="img/pc__11.jpg">
+				<div class="dztitle">新疆和田独籽原石定制【专场特献】</div>
+				<div class="dztex1">——  你出想法，我设计   ——</div>
+				<div class="dztex2">注：5月23日-5月31日期间，<span>史无前例的定制工费6000/件</span></div>
+				<div class="dztex3">◆产地新疆，一级白。     ◆  玉质洁白细腻，把玩手感极佳。◆可做小手玩件、挂件、印章等。</div>
+				
+			</div>
+		</div>
+		<div class="goodlist">
+
+		</div>
+		<div class="good-fj"><img src="img/pc__12.jpg"> </div>
+		<div class="goodlist2">
+			
+		</div>
+		<div class="linkmore clear">
+					<div class="getmore" onclick="getMore(this);">点击加载更多</div>
+				</div>
+				<div class="fcwc-footer">
+					<ul class="navbox">
+						<li>
+							<a target="_blank" href="https://www.jaadee.com/Help/about.html">关于我们</a>
+						</li><span>|</span>
+						<li>
+							<a target="_blank" href="https://www.jaadee.com/Help/contactus.html">联系我们</a>
+						</li><span>|</span>
+						<li>
+							<a target="_blank" href="https://www.jaadee.com/Help/sale_service.html">售后服务</a>
+						</li><span>|</span>
+						<li>
+							<a target="_blank" href="https://www.jaadee.com/Help/howbuy.html">如何购买</a>
+						</li><span>|</span>
+						<li>
+							<a target="_blank" href="https://www.jaadee.com/zixun/index.html">王朝学院</a>
+						</li>
+					</ul>
+				<div class="copyright">
+					<!--©2008-2015 翡翠王朝(www.jaadee.com)版权所有<br>-->
+					©2008-2017 云南牧仁者商贸有限公司(www.jaadee.com)版权所有<br> ICP备案号:滇ICP备12006083号-1 / 公安备案号: 53010203502103 / 工商注册号: 533102100010883<br> 公司地址：云南省瑞丽市金星石木文化城15栋1号 / 云南省昆明市人民中路169号(移动大厦17A) <span style="display:none;">/ 广东省佛山市平洲翠宝园3栋46/47A</span><br>
+				</div>
+		<script>
+			var page = 1;
+			getMore()
+
+
+			function ToTop() {
+				$('html,body').scrollTop(0);
+			}
+
+			function getMore() {
+				$.ajax({
+					type: "post",
+					url: "https://apps.jaadee.com/Ydj/Active/GoodsListsDxzy",
+	                data: {
+	                   pageSize:20,
+	                   page:page
+	                   
+	                },
+					dataType: "json",
+					success: function(data) {
+						if(data.status == 0) {
+							var html="",dd="";
+							for(var i in data.activeGoods) {
+								var zt="";
+								if(data.activeGoods[i].is_sold==0){
+	                        		zt='<div class="price">结缘价：<span>￥'+data.activeGoods[i].shop_price+'元</span></div>'
+	                        	}else{
+	                        		zt='<div class="price"><span>已结缘</span></div>'
+	                        		
+	                        	}
+								html += '<div class="goodli"><a href="https://yd.jaadee.com/Goods/';
+								html += data.activeGoods[i].goods_id + '.html"><div class="good"><div class="goodimg"><img src="https://ydjimg.jaadee.net/';
+								html += data.activeGoods[i].goods_thumb + '"></div><div class="title">';
+								html += data.activeGoods[i].goods_name + '</div><div class="relative"><div class="ordernum">货   号：';
+								html += data.activeGoods[i].goods_sn + '</div>';
+								html += zt + '</div></div></a></div>';
+							}
+							for(var i in data.masterGoods) {
+								var zt="";
+								if(data.masterGoods[i].is_sold==0){
+	                        		zt='<div class="price">结缘价：<span>￥'+data.masterGoods[i].shop_price+'元</span></div>'
+	                        	}else{
+	                        		zt='<div class="price"><span>已结缘</span></div>'
+	                        		
+	                        	}
+								dd += '<div class="goodli"><a href="https://yd.jaadee.com/Goods/';
+								dd += data.masterGoods[i].goods_id + '.html"><div class="good"><div class="goodimg"><img src="https://ydjimg.jaadee.net/';
+								dd += data.masterGoods[i].goods_thumb + '"></div><div class="title">';
+								dd += data.masterGoods[i].goods_name + '</div><div class="relative"><div class="ordernum">货   号：';
+								dd += data.masterGoods[i].goods_sn + '</div>';
+								dd += zt+'</div></div></a></div>';
+							}
+							 if(page==1){
+	                        	 $(".goodlist").append(html);
+	                        }
+	                       
+	                        $(".goodlist2").append(dd);
+						} else {
+							//alert(data.msg);
+
+						}
+						page++;
+					}
+				});
+			}
+		</script>
+	</body>
+</html>

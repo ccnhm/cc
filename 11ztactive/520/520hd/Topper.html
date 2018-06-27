@@ -1,0 +1,160 @@
+<style type="text/css">
+	/*头部*/
+	
+	header {width: 100%;height: 1.146666rem;background: #05160e;position: fixed;z-index: 99;top: 0;left: 0;}
+	header .head-l {float: left;height: 100%;}
+	header .head-l a {float: left;height: 1.146666rem;padding: 0 0 0 .7rem;}
+	header .head-l .back {background: url(/h5/img/icons-back.png) center no-repeat;background-size: 90%;}
+	header .head-l .close {background: url(/h5/img/icons-close.png) center no-repeat;background-size: 90%;margin-left: 0.1rem;}
+	header .head-r {float: right;height:0.6rem;width:0.6rem;margin:0.273333rem .2rem;border-radius:.4rem;background: #1e2e26 url(/h5/img/icons-share.png) center no-repeat;background-size: 100%;}
+	header .head-m {height: 1.146666rem;line-height: 1.146666rem;text-align: center;overflow: hidden;color: #fff;font-size: .5rem;}
+	.headclear {float: left;width: 100%;height: 1.146666rem;}
+</style>
+<header>
+	<div class="head-l">
+		
+		<a class="back" onclick="history.go(-1)"></a>
+		<a class="close" onclick="closeweb()"></a>
+		
+	</div>
+	<div class="head-r" onclick="appshare()"></div>
+	<div class="head-m">《梭·忆》原创首饰</div>
+</header>
+<div class="headclear"></div>
+<script>
+	var appUser = {};
+	appUser.UserName = '';
+	appUser.Avatar = '';
+	appUser.Token = '';
+	appUser.vision='';
+	appUser.model='';
+	var jsForApp = {};
+	jsForApp.SetUser = function(obj) {
+		try {
+			appUser.UserName = obj.username;
+			appUser.Avatar = obj.avatar;
+			appUser.Token = obj.token;
+			appUser.vision = obj.vision;
+			appUser.model = obj.model;
+		} catch(e) {
+
+		}
+	}
+
+	function closeweb() {
+		if(appUser.vision) {
+			if(appUser.model == 2) {
+				appConnect.popToRootController();
+			}else if(appUser.model == 1){
+				window.webkit.messageHandlers.popToRootController.postMessage(null);
+			}
+		}else{
+			appConnect.popToRootController();
+		}
+	}
+/*
+	function shareweb() {
+		var obj = {};
+		obj.title = "红豆生南国·此物最相思|杨相象南红《梭·忆》系列原创首饰";
+		obj.desc = "既是对传统文化手工艺的传承，也是传递爱、表达爱的一种方式，限量发售999 套。";
+		obj.url = "https://apps.jaadee.com/h5/520hd/m520hd.html?share=1";
+		obj.img = "https://apps.jaadee.com/h5/520hd/img/yd_01.jpg";
+		var str = JSON.stringify(obj);
+		
+		if(appUser.vision) {
+			if(appUser.model == 2) {
+				appConnect.shareMessage(str);
+			}else{
+				window.webkit.messageHandlers.shareMessage.postMessage(str);
+			}
+		}else{
+			appConnect.shareMessage(str);
+		}
+		
+	}
+	
+	function goodsDetail(mark_id, ad_type, view_type, filter_key, filter_value, plat_id, fromps) {
+		var obj = {};
+		//新方法参数
+		obj.mark_id = mark_id;
+		obj.ad_type = ad_type;
+		obj.view_type = view_type;
+		obj.filter_key = filter_key;
+		obj.filter_value = filter_value;
+		obj.plat_id = plat_id;
+		obj.fromps = fromps;
+		//老方法参数
+		//obj.plat_id = plat_id;
+		obj.goods_id = filter_value;
+		obj.video = 0;
+		var str = JSON.stringify(obj);
+				
+		if(appUser.vision) {
+			var visionstr = appUser.vision;
+			var int_vision = parseInt(visionstr.replace(/[^0-9]+/g, ''));
+			
+			if(int_vision > 201){
+				//调用跳转方式
+				if(appUser.model == 2) {
+					appConnect.jumpAndroidView(str);
+				} else if(appUser.model == 1) {
+					window.webkit.messageHandlers.jumpAdverView.postMessage(str);
+				}
+			}else{
+				//调用跳转方式
+				window.webkit.messageHandlers.goGoodsDetailPage.postMessage(str);
+			}
+		} else {
+			//调用跳转方式
+			appConnect.goGoodsDetailPage(str);
+		}
+
+	}
+
+	function goGoodsList(mark_id, ad_type, view_type, filter_key, filter_value, plat_id, fromps) {
+		var obj = {};
+		//新方法参数
+		obj.mark_id = mark_id;
+		obj.ad_type = ad_type;
+		obj.view_type = view_type;
+		obj.filter_key = filter_key;
+		obj.filter_value = filter_value;
+		obj.plat_id = plat_id;
+		obj.fromps = fromps;
+		//老方法参数
+		obj.catid = filter_value;
+		obj.plat = plat_id;
+		var str = JSON.stringify(obj);
+				
+		if(appUser.vision) {
+			var visionstr = appUser.vision;
+			var int_vision = parseInt(visionstr.replace(/[^0-9]+/g, ''));
+			
+			if(int_vision > 201){
+				//调用跳转方式
+				if(appUser.model == 2) {
+					appConnect.jumpAndroidView(str);
+				} else if(appUser.model == 1) {
+					window.webkit.messageHandlers.jumpAdverView.postMessage(str);
+				}
+			}else{
+				//调用跳转方式
+				window.webkit.messageHandlers.goGoodsListPage.postMessage(str);
+			}
+		} else {
+			//调用跳转方式
+			appConnect.goGoodsListPage(str);
+		}
+
+	}*/
+	
+	function EnterService(kfid){
+		if(appUser.vision) {
+			if(appUser.model == 2){
+				appConnect.EnterService(kfid);
+			}else if(appUser.model == 1){
+				window.webkit.messageHandlers.EnterService.postMessage(kfid);
+			}
+		} 
+	}
+</script>

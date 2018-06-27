@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+		<meta charset="utf-8" />
+		<title>《梭·忆》原创首饰</title>
+		<script type="text/javascript" src="js/jquery-1.10.2.js" ></script>
+		<style>
+			*{margin: 0;padding: 0;box-sizing: border-box;}
+			body{    font-family: "微软雅黑";    font-size: 14px;}
+			img{width: 100%;display: block;}
+			.content{width: 1200px;margin: auto;position: relative;}
+			.left-zs,.right-zs{ margin-bottom: 10px;background: #f3f3f0;width: 1200px;margin: auto;margin-bottom: 10px;}
+			.left-zs:after,.right-zs:after {content: "\0020";display: block;height: 0;clear: both;}
+			.right-zs .zsbox{padding-left: 0;padding-right: 10px;}
+			.zsimg{float: left;width: 650px;height: 400px;}
+			.zsbox{float: left;width: 540px;padding-left: 15px;}
+			.zstitle{font-size: 32px; color: #b8001e;margin-bottom: 10px;    margin-left: 100px;margin-top: 90px;}
+			.zsdes{font-size: 16px;color: #030303;line-height: 30px;height: 50px;overflow: hidden;}
+			.pricetitle{float: left;font-size: 18px;color: #b8001e;margin: 10px 20px 10px 120px;}
+			.an{background: #b8001e;height: 44px;border-radius: 22px;display: table;padding: 4px 20px 4px 4px;}
+			.qyprice{background: #ffffff;line-height: 36px; font-size: 30px;height: 36px;border-radius: 18px;color: #bf1907;float: left;padding: 0 20px;}
+			.cx{color: #FFFFFF;font-size: 16px;    float: left;margin-left: 10px;line-height: 36px;}
+			.bg1{background: url(img/pc_bg01.png) no-repeat; background-size: 100%;}
+			.bg2{background: #f3f3f0;padding: 50px 0;}
+			.bg3{background: url(img/pc_bg03.jpg) no-repeat;background-size: 100% 100%;}
+			.bg4{background: url(img/pc_bg02.png) no-repeat;}
+			.hx{width: 104px;position: absolute;left: -104px;top: 27px;}
+			.coperight{color: #888b8b;font-size: 16px;padding: 80px 0 110px 0;text-align: center;}
+			.min-width{min-width: 1200px;}
+			/*导航*/
+			.topnavw{ width:100%; height:auto; float:left;}
+			.topnavwb{ border-bottom:1px solid #e8e8e8; height:30px;}
+			.welws{ width:auto; float:left; color:#797979; font-size:12px; line-height:30px; float:left;}
+			.ydjoutgz{ width:auto; float:right;}
+			.ydjoutgz li{ width:auto; display:inline-block; margin-left:15px; cursor:pointer; height:31px; position:relative; padding:0 10px; line-height:30px;}
+			.top-r{ width:auto; float:right;}
+			.top-r a{ float:left; height:30px;}
+			.top-r a img{ float:left; max-height:22px; margin-top:4px;}
+			.top-r span{ margin:5px 5px 0 5px; float:left; color:#666;}
+			.topadv{ float:left; width:100%; height:150px; background:url(http://www.jaadee.com/static/jaadee2014/images/topbanner.jpg) center no-repeat;}
+			.count{ width:1200px; height:auto; margin:0 auto;}
+			.topinfo{ width:100%; height:30px; line-height:30px; float:left; color:#b2b2b2; font-size:12px;}
+			.welcome{ width:auto; float:left; float:left;}
+			.toptag{ width:auto; float:right;}
+			.toptag li{ width:auto; float:left; height:30px; padding:0 5px; margin:0 0 0 10px; position:relative;}
+			.toptag li:hover a{ text-decoration:underline;}
+			.toptag .hasson:hover{ background:url(https://ydj.jaadee.com/static/pc/images/shoutopbg.png); height:30px; float:left; width:auto; background-size:100% 100%;}
+			.toptag .hassonjt:hover .jtou{ background:url(https://ydj.jaadee.com/static/pc/images/jtdownimg.png) center right no-repeat;}
+			.topnavwnav{height:40px; background:#1e0906; line-height:40px;}
+			.ydjnavw { width:auto; float:left;}
+			.ydjnavw li{ width:auto; display:inline-block;}
+			.ydjnavw li a{ width:auto; color:#FFF; display:block; text-decoration:none; padding:0 23px;}
+			.ydjnavw li.thisli a{ background:#EEC87D; color:#000;}
+			.ydhifs{ width:auto; height:28px; float:right; margin:6px 0;}
+			.ydhifs input{ border:none; height:28px; line-height:28px; float:left;padding-left:10px;}
+			.ydjsubmit{ width:auto; padding:0 15px; background:#660000; color:#FFF;}
+			.loright{ width:1200px; float:right; height:110px; background:url(https://ydj.jaadee.com/static/pc/images/topimg2017.png) center right no-repeat;}
+			.smallinfo{ height:20px; line-height:20px; font-size:12px; color:#999999;}
+
+		</style>
+	</head>
+	<body>
+		<div style="background: #fff;">
+			<div class="topnavw topnavwb">
+				<div class="count">
+					<span class="welws">玉雕界-翡翠王朝旗下品牌</span>
+					<div class="top-r">
+						<a href="https://www.jaadee.com/" target="_blank"><img src="https://www.zhubaoleyuan.com/static/images/icon-fcwc.png"></a>
+						<span>|</span>
+						<a href="http://www.zhubaoleyuan.com" target="_blank"><img src="https://www.zhubaoleyuan.com/static/images/icon-zbly.png"></a>
+						<span>|</span>
+						<a href="https://yd.jaadee.com/" target="_blank"><img src="https://www.zhubaoleyuan.com/static/images/icon-ydj.png"></a>
+						<span>|</span>
+						<a href="https://nasa.jaadee.com" target="_blank"><img src="https://www.zhubaoleyuan.com/static/images/icon-ns.png"></a>
+						<span>|</span>
+						<a href="https://www.nanhongzhimi.com" target="_blank"><img src="https://www.zhubaoleyuan.com/static/images/icon-nhzm.png"></a>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="count">
+			    <div class="loright"></div>
+				<div class="clear"></div>
+			</div>
+			<div class="topnavw topnavwnav">
+				<div class="count">
+					<ul class="ydjnavw">
+						<li>
+							<a target="_blank" class="thisa" href="https://www.jaadee.com">翡翠王朝</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://yd.jaadee.com">玉雕界首页</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://yd.jaadee.com/World/index.html">全国巡展</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://yd.jaadee.com/Graver/index.html">玉雕名家</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://yd.jaadee.com/Goods/index.html">最新作品</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://yd.jaadee.com/Wool/index/p/1.html">玉石原料</a>
+						</li>
+			
+						<li>
+							<a target="_blank" href="https://yd.jaadee.com/Collection/index.html">收藏推荐</a>
+						</li>
+			
+						<li>
+							<a target="_blank" href="https://yd.jaadee.com/ArticleCat/index.html">动 态</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://yd.jaadee.com/Aboutus/attention.html">关注我们</a>
+						</li>
+			
+					</ul>
+					<a class="ydhifs" target="_blank" href="https://yd.jaadee.com">
+						<input type="hidden" name="m" value="Search">
+						<input type="hidden" name="a" value="index">
+						<input type="text" name="keyword" value="" id="keyword">
+						<input class="ydjsubmit" type="submit" value="搜 索">
+					</a>
+				</div>
+			</div>
+		</div>
+		<img src="img/pc_01.jpg" class="min-width">
+		<div class="content">
+			<img src="img/pc_02.jpg">
+		</div>
+		<div class="bg1">
+			<div class="content"><img src="img/pc_03.png"></div>
+		</div>
+		<div class="bg2">
+			<div class="content">
+				<div class="left-zs">
+					<div class="zsimg"><img src="img/pc_04.jpg"></div>
+					<div class="zsbox">
+						<div class="zstitle">《梭.忆》Ⅰ</div>
+						<div class="zsdes"></div>
+						<div class="pricetitle">全国统一售价：</div>
+						<a href="https://yd.jaadee.com/Goods/037156.html">
+							<div class="an">
+								<div class="qyprice">￥2800</div>
+								<div class="cx">查看详情</div>
+							</div>
+						</a>	
+					</div>
+				</div>	
+				<div class="right-zs">
+					<div class="zsbox">
+						<div class="zstitle">《梭.忆》Ⅱ</div>
+						<div class="zsdes"></div>
+						<div class="pricetitle">全国统一售价：</div>
+						<a href="https://yd.jaadee.com/Goods/037159.html">
+							<div class="an">
+								<div class="qyprice">￥2800</div>
+								<div class="cx">查看详情</div>
+							</div>
+						</a>	
+					</div>
+					<div class="zsimg"><img src="img/pc_05.jpg"></div>
+				</div>
+			</div>
+		</div>
+			<div class="content">
+				<img src="img/pc_hx.jpg" class="hx">
+				<img src="img/pc_06.jpg">
+			</div>
+			<div class="bg4">
+				<div class="content">
+					<img src="img/pc_07.jpg">
+				</div>
+			</div>
+		<div class="bg2">
+			<div class="content">
+				<div class="left-zs">
+					<div class="zsimg"><img src="img/pc_08.jpg"></div>
+					<div class="zsbox">
+						<div class="zstitle">《梭.忆》Ⅲ</div>
+						<div class="zsdes"></div>
+						<div class="pricetitle">全国统一售价：</div>
+						<a href="https://yd.jaadee.com/Goods/037165.html">
+							<div class="an">
+								<div class="qyprice">￥2800</div>
+								<div class="cx">查看详情</div>
+							</div>
+						</a>	
+					</div>
+				</div>
+				<div class="right-zs">
+					<div class="zsbox">
+						<div class="zstitle">《梭.忆》Ⅳ</div>
+						<div class="zsdes"></div>
+						<div class="pricetitle">全国统一售价：</div>
+						<a href="https://yd.jaadee.com/Goods/037162.html">
+							<div class="an">
+								<div class="qyprice">￥2800</div>
+								<div class="cx">查看详情</div>
+							</div>
+						</a>	
+					</div>
+					<div class="zsimg"><img src="img/pc_09.jpg"></div>
+				</div>
+				<div class="left-zs">
+					<div class="zsimg"><img src="img/pc_10.jpg"></div>
+					<div class="zsbox">
+						<div class="zstitle">《梭.忆》Ⅴ</div>
+						<div class="zsdes"></div>
+						<div class="pricetitle">全国统一售价：</div>
+						<a href="https://yd.jaadee.com/Goods/037153.html">
+							<div class="an">
+								<div class="qyprice">￥2800</div>
+								<div class="cx">查看详情</div>
+							</div>
+						</a>	
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="content">
+			<img src="img/pc_11.jpg">
+		</div>
+		<div class="bg3">
+			<div class="content">
+				<img src="img/pc_12.jpg">
+			</div>
+		</div>
+		<div class="bg1" style="background-position:bottom">
+			<div class="content">
+				<img src="img/pc_13.png">
+			</div>
+		</div>
+			<div class="content">
+				<img src="img/pc_14.jpg">
+			</div>
+		<div class="coperight">云南翡翠王朝文化传播有限公司©版权所有</div>
+		
+	</body>
+</html>
