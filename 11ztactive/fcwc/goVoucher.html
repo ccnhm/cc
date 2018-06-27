@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+		<title>翡翠王朝推荐人</title>
+		<script type="text/javascript" src="js/get_set_url.js" ></script>
+		<script type="text/javascript" src="js/jquery-1.10.2.js" ></script>
+		<style>
+			*{margin:0;padding:0;box-sizing: border-box;}
+			a{text-decoration: none;}
+			.decor{background: #efefef;height: 0.2rem;}
+			.purkura{width: 2.133333rem;height: 2.133333rem;border-radius: 100%;overflow: hidden;margin:0.5rem auto;}
+			.purkura img{width: 100%;}
+			.describe{font-size: 0.373333rem;text-align: center;color: #595959;margin-bottom: 0.5rem;}
+			.coupen{padding: 0.4rem 0;}
+			.coupen .li{position: relative; color: #FFFFFF;margin-bottom: 0.2rem;}
+			.coupen .li img{width: 100%;}
+			.jtype{font-size: 0.266666rem;position: absolute;left: 1rem;top: 0.1rem;}
+			.jname{font-size: 0.56rem;position: absolute;left: 1.2rem;top: 0.8rem;}
+			.jsm{font-size: 0.293333rem;position: absolute; left: 1rem; top: 1.6rem;}
+			.rule{text-align: right; padding: 0 0.3rem 0.3rem 0; font-size: 0.32rem;color: #333333;}
+			.lqbox{background: #efefef;padding: 0.24rem 0 0.426666rem 0;}
+			
+			.lq{width: 92%;margin: auto;background: #e03a2e;line-height: 1.066666rem;text-align: center;color: #FFFFFF;font-size: 0.4rem;border-radius: 0.2rem;}
+			.list:after{content:"."; display:block; height:0; visibility:hidden; clear:both;}
+			.list{padding: 0.2rem;margin-bottom: 1.6rem;}	
+			.listli{padding: 0.066666rem;width: 33.33333%;float: left;}		
+			.listli img{width: 100%;}
+			.clear{clear: both;}
+			.foot{position: fixed;width: 100%;bottom: 0;}
+			.foot img{width: 100%;display: block;}
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript" src="js/flexible.debug.js" ></script>
+		<div class="purkura"><img src="img/purkura.png"></div>
+		<div class="describe"><span></span>送给您TA的专属邀请券</div>
+		<div class="decor"></div>
+		<div class="coupen">
+			<div class="li">
+				<img src="img/coupen.png">
+				<div class="jtype">翡翠王朝专属邀请券</div>
+				<div class="jname">9.5折优惠券</div>
+				<div class="jsm">注：联系客服使用</div>
+			</div>
+			<div class="li">
+				<img src="img/coupen.png">
+				<div class="jtype">翡翠王朝专属邀请券</div>
+				<div class="jname">9折优惠券</div>
+				<div class="jsm">注：联系客服使用</div>
+			</div>
+		</div>
+		<a href="rule.html"><div class="rule">活动规则 ></div></a>
+		<div class="lqbox">
+			<a href="javascript():void" class="kk"><div class="lq">立即领取</div></a>
+		</div>
+		<div class="list">
+			
+		</div>
+		<a href="https://app.jaadee.com/down.php?fromc=tuijianren"><div class="foot"><img src="img/app.jpg"></div></a>
+		<script>
+			var token = getUrlParam("token");
+			
+			$(".kk").attr("href","Voucher.html?token="+token);
+			if(localStorage.getItem("lqfinished")) {
+					$(".lq").css({"background":"#c2c2c2"})
+					$(".lq").html("已领取");
+				}
+			$.ajax({
+                    type: "get",
+                    url: "https://share.jaadee.net/H5/recommend/sharePage?token="+token,
+                    data: {
+                    	token:token
+                    },
+                    dataType: "json",
+                    success: function(data) {
+                        data=JSON.parse(data)
+                    	if(data.status==0){
+                        	var list='';
+                        	console.log(data.info.userData.avatar)
+                           $(".purkura img").attr("src",data.info.userData.avatar);
+                           $(".describe span").html(data.info.userData.name);
+                           for(var i in data.info.goods){
+                           	 list+='<div class="listli"> <a href="'+data.info.goods[i].url+'"><img src="'+data.info.goods[i].goods_thumb+'"></a></div>'
+                           }
+                          $(".list").html(list); 
+                        }else{
+                           
+                        }
+                    }
+                });
+		</script>
+	</body>
+</html>
