@@ -1,0 +1,190 @@
+<html data-dpr="1" style="font-size: 96.2px;"><head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+		<title>分享榜单</title>
+		<script type="text/javascript" src="https://share.jaadee.net/h5/js/jquery-1.10.2.js?v=333"></script>
+		<script src="https://res.jaadee.net/rn/JaadeeAppJsBridge.js?v=1.4"></script>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			
+			body {
+				background: #000000;
+				color: #FFFFFF;
+			}
+			
+			img {
+				display: block;
+				width: 100%;
+			}
+			
+			.content {
+				padding: 0 3.4%;
+				line-height: 0.6rem;
+				font-size: 0.32rem;
+			}
+			
+			.clear {
+				clear: both;
+			}
+			
+			.goodlist {
+				padding: 0.186666rem;
+			}
+			
+			.goodlist:after,
+			{
+				content: "\0020";
+				display: block;
+				height: 0;
+				clear: both;
+			}
+			.jz{margin-top: -0.2rem;}
+			.jztitle{text-align: center;}
+			.time{background: url(img/bg.png) no-repeat;background-size: 100% 100%;font-size: 0.426666rem;color: #e8c965;line-height: 0.6rem;padding: 0.7rem 9% 0.5rem 9%}
+			.bg1{background: url(img/bg1.jpg) repeat;    padding: 0 2.37% 2.37% 2.87%;}
+			.zw{background: #555555;padding: 0.666666rem 0.266666rem;}
+			.tjtime{color: #f9d768;font-size: 0.293333rem;text-align: center;}
+			.span15{width: 15%;float: left;border: 1px solid #454444;border-bottom: none;}
+			.span30{width: 30%;float: left;border: 1px solid #454444;border-bottom: none;}
+			.span55{width: 55%;float: left;border: 1px solid #454444;border-left: none;border-right: none;border-bottom: none;}
+			.head,.list{text-align: center;font-size: 0.4rem;color: #f9d768;line-height: 1rem;}
+			.list{padding-bottom: 1rem;}
+			.head:after,.li:after{content: "\0020";display: block;height: 0;clear: both;}
+			.list .li:last-child{border-bottom: 1px solid #454444;}
+			.icon{height: 0.5rem;width: auto;margin:0.25rem auto;}
+			.purkura{width: 0.6rem;height: 0.6rem;overflow: hidden;border-radius: 100%;background: #313131;float: left;margin: 0.2rem 0.2rem 0.2rem 0.7rem;margin-right: 0.2rem;}
+			.name{width: 3rem;float: left;text-align: left;}
+			.db{width: 3.8rem;margin: 1rem auto;}
+		</style>
+	</head>
+
+	<body>
+		<script type="text/javascript" src="https://share.jaadee.net/h5/js/flexible.debug.js"></script>
+		<div class=""><img src="img/m__01.jpg"></div>
+		<div class="jz"><img src="img/m__jz1.png"></div>
+		<div class="content">
+			<div class="time">
+				<div class="jztitle">本周邀请礼品描述</div>
+				<p>这里是描述这里是描述这里是描述这里是描述这里是描述这里是描述这里是</p>
+			</div>
+			<div class="bg1">
+				<div class="zw">
+					<div class="tjtime">统计时间：2017年7月31日~8月7日</div>
+					<div class="head">
+						<div class="span15">排名</div>
+						<div class="span55">昵称</div>
+						<div class="span30">邀请人数</div>
+					</div>
+					<div class="list">
+						<div class="li">
+							<div class="span15"><img src="img/m__icon1.png" class="icon"></div>
+							<div class="span55"><div class="purkura"></div><div class="name">宝迷***4555</div></div>
+							<div class="span30">99</div>
+						</div>
+						<div class="li">
+							<div class="span15"><img src="img/m__icon2.png" class="icon"></div>
+							<div class="span55"><div class="purkura"></div><div class="name">宝迷宝迷宝迷</div></div>
+							<div class="span30">99</div>
+						</div>
+						<div class="li">
+							<div class="span15"><img src="img/m__icon3.png" class="icon"></div>
+							<div class="span55"><div class="purkura"></div><div class="name">宝迷宝迷宝迷宝</div></div>
+							<div class="span30">99</div>
+						</div>
+						<div class="li">
+							<div class="span15">4</div>
+							<div class="span55"><div class="purkura"></div><div class="name">宝迷111111111</div></div>
+							<div class="span30">99</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="db"><img src="img/m__db.png"></div>
+		</div>
+		
+		
+		<!--微信分享-->
+		<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+		<script>
+			var sharetitle = "",
+				sharedes = "",
+				shareimgurl = "",
+				sharelink = "";
+			//var tophe=$(".tab").offset().top;
+		
+		
+			
+
+		
+
+			function getMore() {
+				$.ajax({
+					type: "get",
+					url: "/index.php/api/Active/getActive",
+					data: {
+						pagesize: 20
+					},
+					dataType: "json",
+					success: function(data) {
+						if(data.status == 0) {
+							var html = "";
+
+						} else {
+							//alert(data.msg);
+
+						}
+
+					}
+				});
+			}
+			 //RN分享参数默认值
+	        RNJsBriageObject.shareInfo = {
+	        	name:sharetitle,
+	            desc:sharedes,
+	            url:sharelink,
+	            logo:shareimgurl
+	        };
+			//微信分享
+			wxshare();
+			function wxshare() {
+					var title = sharetitle;
+                    var desc = sharedes;
+                    var linkurl = encodeURIComponent(location.href.split('#')[0]);
+                    var imgurl = shareimgurl;
+				$.ajax({
+					type: "post",
+					url: "/h5/active/getShareInfo",
+					data: {
+						imgurl: imgurl,
+						link: linkurl,
+						title: title,
+						desc: desc,
+						debug:false
+
+					},
+					// async: false,
+					dataType: "json",
+					success: function(data) {
+						data=JSON.parse(data)
+						console.log(data)
+						if(data.status == 0) {
+	
+							$("body").append(data.info)
+							//console.log(JSON.stringify(data))
+							// 注意：所有的JS接口只能在公众号绑定的域名下调用，公众号开发者需要先登录微信公众平台进入“公众号设置”的“功能设置”里填写“JS接口安全域名”。
+							// 如果发现在 Android 不能分享自定义内容，请到官网下载最新的包覆盖安装，Android 自定义分享接口需升级至 6.0.2.58 版本及以上。
+							
+						}
+
+					}
+				})
+			};
+		</script>
+	
+
+</body></html>
