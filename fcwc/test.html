@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>测试链接</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+	</head>
+	<body>
+		<br /><br/>
+		<a href="https://apps.jaadee.com/h5/520lks/m520lks.html">https://apps.jaadee.com/h5/520lks/m520lks.html</a>
+		<a href="https://apps.jaadee.com/h5/520yz/m520yz.html">https://apps.jaadee.com/h5/520yz/m520yz.html</a><br><br>
+		<a href="https://apps.jaadee.com/h5/fc01/mactive1.html">https://apps.jaadee.com/h5/fc01/mactive1.html</a>
+		
+		<script type="text/javascript" src="js/jquery-1.10.2.js" ></script>
+		
+		<script>
+			checkMobile()
+			 function checkMobile() {
+            	//closeLayer();
+                $.ajax({
+                    type: "post",
+//                  headers:{"userToken":RNJsBriageObject.userInfo.userToken,"Content-Type":"text/plain;charset=UTF-8"},
+                    //url: "/h5/wuyi18/checkmobile.html",
+                    url:"https://newapi.jaadee.net/index.php/index/Member/memberInfo.html",
+                    beforeSend: function(request) {
+                        request.setRequestHeader("userToken","11A7DC90E9AEEC5F2DCE9C4C3A04355A");
+                    },
+                    data: {},
+                    dataType: "json",
+                    success: function(data) {
+                    	alert(RNJsBriageObject.userInfo.userToken)
+                    		alert("检查手机返回"+JSON.stringify(data))
+                        if(data['status'] == 1) {
+                        	alert("已绑定")
+                        	clickBind()
+                        	if(lq==true){ //点击领取
+                        		lq=false;
+                        		window.location.href="beReferee.html?share=0";
+                        	}
+                        } else {
+                        	
+                        	clickBind()
+                        }
+                    }
+                });
+            }
+		</script>
+	</body>
+</html>
